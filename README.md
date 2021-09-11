@@ -1,2 +1,3 @@
 # TestQua-Project-APP
-<img src="/GRWolfy/TestQua-Project-APP-/blob/master/TestQua%20project.gif?raw=true" alt="TestQua project.gif">
+![TestQua project](https://user-images.githubusercontent.com/67980159/132934529-0d7bc739-f5c4-413a-9c81-bce62cccf2d4.gif)
+
