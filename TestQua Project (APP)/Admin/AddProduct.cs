@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Text;
 using System.Linq;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace TestQua_Project__APP_.Admin
 {
@@ -45,7 +46,12 @@ namespace TestQua_Project__APP_.Admin
             BinaryReader br = new BinaryReader(fs);
             img = br.ReadBytes((int)fs.Length);
 
-            Connection
+            Connection.DB();
+            Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage)VALUES('"+ txtbProductName +"', '"+ txtbProductDescription + "', '" + txtbProductPrice +"')";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.ExecuteNonQuery();
+            MessageBox.Show("Registration success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Connection.con.Close();
          }
 
          catch (Exception ex)

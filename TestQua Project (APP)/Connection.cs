@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace BankSystem
+namespace TestQua_Project__APP_
 {
    public class Connection
    {

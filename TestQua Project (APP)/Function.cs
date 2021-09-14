@@ -2,9 +2,9 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace BankSystem
+namespace TestQua_Project__APP_
 {
-   public class Functions
+   public class Function
    {
       public static string gen = ""; //variable to hold SQL statements
       public static SqlConnection con;
