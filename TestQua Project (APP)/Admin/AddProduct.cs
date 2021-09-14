@@ -66,7 +66,6 @@ namespace TestQua_Project__APP_.Admin
       {
          try
          {
-            MessageBox.Show("FIRST DAPIT");
             Connection.DB();
             Function.gen = "SELECT * FROM ProductInformation WHERE ProductId = '"+ txtbProductId.Text +"' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
@@ -75,7 +74,6 @@ namespace TestQua_Project__APP_.Admin
             if (Function.reader.HasRows)
             {
                Function.reader.Read();
-               MessageBox.Show("HAS ROWS DAPIT");
                txtbProductName.Text = Function.reader["ProductName"].ToString();
                txtbProductDescription.Text = Function.reader["ProductDescrip"].ToString();
                txtbProductPrice.Text = Function.reader["ProductPrice"].ToString();
@@ -84,17 +82,12 @@ namespace TestQua_Project__APP_.Admin
                if (img == null)
                {
                   pictureBox.Image = null;
-                  MessageBox.Show("EMPTY");
                }
                else
                {
                   MemoryStream ms = new MemoryStream(img);
                   pictureBox.Image = Image.FromStream(ms);
                }
-            }
-            else
-            {
-               MessageBox.Show("ERROR DRI");
             }
 
             Connection.con.Close();
