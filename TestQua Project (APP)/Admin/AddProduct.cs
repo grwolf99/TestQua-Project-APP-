@@ -47,8 +47,10 @@ namespace TestQua_Project__APP_.Admin
             img = br.ReadBytes((int)fs.Length);
 
             Connection.DB();
-            Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage)VALUES('"+ txtbProductName +"', '"+ txtbProductDescription + "', '" + txtbProductPrice +"')";
+            Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage)VALUES('"+ txtbProductName.Text +"', '"+ txtbProductDescription.Text + "', '" + txtbProductPrice.Text +"', @img)";
+
             Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.Parameters.Add(new SqlParameter("@img", img));
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Registration success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Connection.con.Close();
