@@ -5,6 +5,7 @@ using System.Text;
 using System.Linq;
 using System.IO;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace TestQua_Project__APP_.Admin
 {
@@ -48,11 +49,54 @@ namespace TestQua_Project__APP_.Admin
 
             Connection.DB();
             Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage)VALUES('"+ txtbProductName.Text +"', '"+ txtbProductDescription.Text + "', '" + txtbProductPrice.Text +"', @img)";
-
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.Parameters.Add(new SqlParameter("@img", img));
             Function.command.ExecuteNonQuery();
-            MessageBox.Show("Registration success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Connection.con.Close();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
+
+      private void btnShow_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            MessageBox.Show("FIRST DAPIT");
+            Connection.DB();
+            Function.gen = "SELECT * FROM ProductInformation WHERE ProductId = '"+ txtbProductId.Text +"' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.reader = Function.command.ExecuteReader();
+
+            if (Function.reader.HasRows)
+            {
+               Function.reader.Read();
+               MessageBox.Show("HAS ROWS DAPIT");
+               txtbProductName.Text = Function.reader["ProductName"].ToString();
+               txtbProductDescription.Text = Function.reader["ProductDescrip"].ToString();
+               txtbProductPrice.Text = Function.reader["ProductPrice"].ToString();
+               byte[] img = (byte[])(Function.reader[4]);
+
+               if (img == null)
+               {
+                  pictureBox.Image = null;
+                  MessageBox.Show("EMPTY");
+               }
+               else
+               {
+                  MemoryStream ms = new MemoryStream(img);
+                  pictureBox.Image = Image.FromStream(ms);
+               }
+            }
+            else
+            {
+               MessageBox.Show("ERROR DRI");
+            }
+
             Connection.con.Close();
          }
 

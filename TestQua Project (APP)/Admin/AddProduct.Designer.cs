@@ -38,6 +38,8 @@ namespace TestQua_Project__APP_.Admin
          this.txtbProductPrice = new System.Windows.Forms.TextBox();
          this.label2 = new System.Windows.Forms.Label();
          this.label3 = new System.Windows.Forms.Label();
+         this.btnShow = new System.Windows.Forms.Button();
+         this.txtbProductId = new System.Windows.Forms.TextBox();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
          this.SuspendLayout();
          // 
@@ -118,11 +120,30 @@ namespace TestQua_Project__APP_.Admin
          this.label3.TabIndex = 9;
          this.label3.Text = "Product Price";
          // 
+         // btnShow
+         // 
+         this.btnShow.Location = new System.Drawing.Point(529, 299);
+         this.btnShow.Name = "btnShow";
+         this.btnShow.Size = new System.Drawing.Size(75, 23);
+         this.btnShow.TabIndex = 10;
+         this.btnShow.Text = "Show";
+         this.btnShow.UseVisualStyleBackColor = true;
+         this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+         // 
+         // txtbProductId
+         // 
+         this.txtbProductId.Location = new System.Drawing.Point(228, 35);
+         this.txtbProductId.Name = "txtbProductId";
+         this.txtbProductId.Size = new System.Drawing.Size(100, 20);
+         this.txtbProductId.TabIndex = 11;
+         // 
          // AddProduct
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(800, 450);
+         this.Controls.Add(this.txtbProductId);
+         this.Controls.Add(this.btnShow);
          this.Controls.Add(this.label3);
          this.Controls.Add(this.label2);
          this.Controls.Add(this.txtbProductPrice);
@@ -151,5 +172,7 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.TextBox txtbProductPrice;
       private System.Windows.Forms.Label label2;
       private System.Windows.Forms.Label label3;
+      private System.Windows.Forms.Button btnShow;
+      private System.Windows.Forms.TextBox txtbProductId;
    }
 }
