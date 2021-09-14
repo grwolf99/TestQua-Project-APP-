@@ -40,12 +40,13 @@ namespace TestQua_Project__APP_.Admin
          this.label3 = new System.Windows.Forms.Label();
          this.btnShow = new System.Windows.Forms.Button();
          this.txtbProductId = new System.Windows.Forms.TextBox();
+         this.btnViewProduct = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
          this.SuspendLayout();
          // 
          // txtbProductName
          // 
-         this.txtbProductName.Location = new System.Drawing.Point(228, 109);
+         this.txtbProductName.Location = new System.Drawing.Point(110, 93);
          this.txtbProductName.Name = "txtbProductName";
          this.txtbProductName.Size = new System.Drawing.Size(100, 20);
          this.txtbProductName.TabIndex = 0;
@@ -53,7 +54,7 @@ namespace TestQua_Project__APP_.Admin
          // label1
          // 
          this.label1.AutoSize = true;
-         this.label1.Location = new System.Drawing.Point(143, 112);
+         this.label1.Location = new System.Drawing.Point(25, 96);
          this.label1.Name = "label1";
          this.label1.Size = new System.Drawing.Size(75, 13);
          this.label1.TabIndex = 1;
@@ -61,7 +62,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // pictureBox
          // 
-         this.pictureBox.Location = new System.Drawing.Point(482, 78);
+         this.pictureBox.Location = new System.Drawing.Point(216, 96);
          this.pictureBox.Name = "pictureBox";
          this.pictureBox.Size = new System.Drawing.Size(141, 120);
          this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -70,7 +71,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnBrowse
          // 
-         this.btnBrowse.Location = new System.Drawing.Point(596, 222);
+         this.btnBrowse.Location = new System.Drawing.Point(238, 240);
          this.btnBrowse.Name = "btnBrowse";
          this.btnBrowse.Size = new System.Drawing.Size(75, 23);
          this.btnBrowse.TabIndex = 3;
@@ -80,7 +81,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnSave
          // 
-         this.btnSave.Location = new System.Drawing.Point(473, 222);
+         this.btnSave.Location = new System.Drawing.Point(135, 240);
          this.btnSave.Name = "btnSave";
          this.btnSave.Size = new System.Drawing.Size(75, 23);
          this.btnSave.TabIndex = 4;
@@ -90,14 +91,14 @@ namespace TestQua_Project__APP_.Admin
          // 
          // txtbProductDescription
          // 
-         this.txtbProductDescription.Location = new System.Drawing.Point(228, 150);
+         this.txtbProductDescription.Location = new System.Drawing.Point(110, 134);
          this.txtbProductDescription.Name = "txtbProductDescription";
          this.txtbProductDescription.Size = new System.Drawing.Size(100, 20);
          this.txtbProductDescription.TabIndex = 5;
          // 
          // txtbProductPrice
          // 
-         this.txtbProductPrice.Location = new System.Drawing.Point(228, 190);
+         this.txtbProductPrice.Location = new System.Drawing.Point(110, 174);
          this.txtbProductPrice.Name = "txtbProductPrice";
          this.txtbProductPrice.Size = new System.Drawing.Size(100, 20);
          this.txtbProductPrice.TabIndex = 6;
@@ -105,7 +106,7 @@ namespace TestQua_Project__APP_.Admin
          // label2
          // 
          this.label2.AutoSize = true;
-         this.label2.Location = new System.Drawing.Point(122, 157);
+         this.label2.Location = new System.Drawing.Point(4, 141);
          this.label2.Name = "label2";
          this.label2.Size = new System.Drawing.Size(100, 13);
          this.label2.TabIndex = 8;
@@ -114,7 +115,7 @@ namespace TestQua_Project__APP_.Admin
          // label3
          // 
          this.label3.AutoSize = true;
-         this.label3.Location = new System.Drawing.Point(143, 197);
+         this.label3.Location = new System.Drawing.Point(25, 181);
          this.label3.Name = "label3";
          this.label3.Size = new System.Drawing.Size(71, 13);
          this.label3.TabIndex = 9;
@@ -122,7 +123,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnShow
          // 
-         this.btnShow.Location = new System.Drawing.Point(529, 299);
+         this.btnShow.Location = new System.Drawing.Point(202, 304);
          this.btnShow.Name = "btnShow";
          this.btnShow.Size = new System.Drawing.Size(75, 23);
          this.btnShow.TabIndex = 10;
@@ -132,16 +133,27 @@ namespace TestQua_Project__APP_.Admin
          // 
          // txtbProductId
          // 
-         this.txtbProductId.Location = new System.Drawing.Point(228, 35);
+         this.txtbProductId.Location = new System.Drawing.Point(110, 19);
          this.txtbProductId.Name = "txtbProductId";
          this.txtbProductId.Size = new System.Drawing.Size(100, 20);
          this.txtbProductId.TabIndex = 11;
+         // 
+         // btnViewProduct
+         // 
+         this.btnViewProduct.Location = new System.Drawing.Point(59, 324);
+         this.btnViewProduct.Name = "btnViewProduct";
+         this.btnViewProduct.Size = new System.Drawing.Size(75, 23);
+         this.btnViewProduct.TabIndex = 12;
+         this.btnViewProduct.Text = "ViewProduct";
+         this.btnViewProduct.UseVisualStyleBackColor = true;
+         this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
          // 
          // AddProduct
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(800, 450);
+         this.Controls.Add(this.btnViewProduct);
          this.Controls.Add(this.txtbProductId);
          this.Controls.Add(this.btnShow);
          this.Controls.Add(this.label3);
@@ -174,5 +186,6 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.Label label3;
       private System.Windows.Forms.Button btnShow;
       private System.Windows.Forms.TextBox txtbProductId;
+      private System.Windows.Forms.Button btnViewProduct;
    }
 }

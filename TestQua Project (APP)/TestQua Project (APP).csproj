@@ -52,6 +52,12 @@
     <Compile Include="Admin\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ViewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewProduct.Designer.cs">
+      <DependentUpon>ViewProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Customer\ViewProduct.cs">
       <SubType>Form</SubType>
@@ -70,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Admin\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ViewProduct.resx">
+      <DependentUpon>ViewProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>

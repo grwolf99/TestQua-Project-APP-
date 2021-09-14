@@ -105,5 +105,11 @@ namespace TestQua_Project__APP_.Admin
             MessageBox.Show(ex.Message);
          }
       }
+
+      private void btnViewProduct_Click(object sender, EventArgs e)
+      {
+         var viewproduct = new ViewProduct();
+         viewproduct.Show();
+      }
    }
 }
