@@ -52,7 +52,7 @@ namespace TestQua_Project__APP_.Admin
             pic.BackgroundImageLayout = ImageLayout.Stretch;
 
             MemoryStream ms = new MemoryStream(array);
-            System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+            Bitmap bitmap = new Bitmap(ms);
             pic.BackgroundImage = bitmap; 
 
             flowLayoutPanel1.Controls.Add(pic);
