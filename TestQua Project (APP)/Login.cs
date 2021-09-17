@@ -16,5 +16,17 @@ namespace TestQua_Project__APP_
       {
          InitializeComponent();
       }
+
+      private void Login_Load(object sender, EventArgs e)
+      {
+         viewTestingUser();
+      }
+
+      private void viewTestingUser()
+      {
+         Connection.DB();
+         Function.gen = "SELECT userid AS USERID FROM testinguser INNER JOIN userid ";
+         Function.fill(Function.gen, datagridTestingUser); 
+      }
    }
 }

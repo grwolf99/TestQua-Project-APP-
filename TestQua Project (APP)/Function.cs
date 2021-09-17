@@ -16,7 +16,7 @@ namespace TestQua_Project__APP_
       public static SqlCommand command;
       public static SqlDataReader reader;
 
-      public static void fill(string q, DataGridView dgv)
+      public static void fill(string q, DataGridView dgv) // gen(query), datagrid
       {
          try
          {
