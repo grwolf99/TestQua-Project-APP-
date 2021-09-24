@@ -16,5 +16,19 @@ namespace TestQua_Project__APP_
       {
          InitializeComponent();
       }
+
+      private void btnLogin_Click(object sender, EventArgs e)
+      {
+         var login = new Login();
+         login.Show();
+         Hide();
+      }
+
+      private void btnRegister_Click(object sender, EventArgs e)
+      {
+         var register = new Register();
+         register.Show();
+         Hide();
+      }
    }
 }

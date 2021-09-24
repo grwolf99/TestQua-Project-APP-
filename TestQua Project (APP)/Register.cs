@@ -18,21 +18,25 @@ namespace TestQua_Project__APP_
          InitializeComponent();
       }
 
-      private void btnLogin_Click(object sender, EventArgs e)
+      private void btnSaveRegister_Click(object sender, EventArgs e)
       {
-         var login = new Login();
-         login.Show();
-         Hide();
-      }
+         try
+         {
+            Connection.DB();
+            Function.gen = "INSERT INTO UserInformation(RoleId, Firstname, Lastname, Age, Address, Gender, Email, DateRegistered, Username, Password, ContactNo) VALUES('"+ 2 + "', '"+ txtFirstname.Text + "', '"+ txtLastname.Text + "', '"+ txtAge.Text + "', '"+ txtAddress.Text + "', '"+ cmbGender.Text + "', '"+ txtEmail.Text + "', '"+ DateTime.Now.ToString() + "', '"+ txtUsername.Text + "', '"+ txtPassword.Text +"', '"+ txtContacno.Text +"')";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.ExecuteNonQuery();
+            MessageBox.Show("Registration success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Connection.con.Close();
+            var login = new Login();
+            login.Show();
+            Hide();
+         }
 
-      private void btnSave_Click(object sender, EventArgs e)
-      {
-         Connection.DB();
-         Function.gen = "INSERT INTO testinguser(firstname, lastname, age, contact, dateregistered)VALUES('"+ txtbFname.Text + "', '" + txtbLname.Text + "', '" + txtbAge.Text + "', '" + txtContact.Text + "', '"+ DateTime.Now.ToString(/) +"')";
-         Function.command = new SqlCommand(Function.gen, Connection.con);
-         Function.command.ExecuteNonQuery();
-         MessageBox.Show("SUCCCCCEESS");
-
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
       }
    }
 }

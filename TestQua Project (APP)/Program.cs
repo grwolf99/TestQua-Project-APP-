@@ -16,7 +16,7 @@ namespace TestQua_Project__APP_
       {
          Application.EnableVisualStyles();
          Application.SetCompatibleTextRenderingDefault(false);
-         Application.Run(new Register());
+         Application.Run(new Homepage());
       }
    }
 }
