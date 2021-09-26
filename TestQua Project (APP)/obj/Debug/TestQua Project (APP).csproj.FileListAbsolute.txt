@@ -1,0 +1,16 @@
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\bin\Debug\TestQua Project (APP).exe.config
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\bin\Debug\TestQua Project (APP).exe
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\bin\Debug\TestQua Project (APP).pdb
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csprojAssemblyReference.cache
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Admin.AddProduct.resources
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Admin.ViewProduct.resources
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.ViewProduct.resources
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Homepage.resources
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Login.resources
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Properties.Resources.resources
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Register.resources
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csproj.GenerateResource.cache
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).exe
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).pdb
+C:\Users\LENOVO\source\repos\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Splashscreen.resources
