@@ -37,7 +37,16 @@ namespace TestQua_Project__APP_
                roleid = Convert.ToInt32(Function.reader["RoleId"]);
 
                if (roleid == 1){    //Admin
-               
+                  txtUsername.Text = Function.reader["Username"].ToString();
+                  txtPassword.Text = Function.reader["Password"].ToString();
+
+                  firstname = Function.reader["Firstname"].ToString();
+                  lastname = Function.reader["Lastname"].ToString();
+                  userid = Convert.ToInt32(Function.reader["UserId"]);
+                  roleid = Convert.ToInt32(Function.reader["RoleId"]);
+                  var adminDashboard = new Admin.AdminDashboard();
+                  adminDashboard.Show();
+                  Hide();
                }
                else if(roleid == 2){  //Customer
                   txtUsername.Text = Function.reader["Username"].ToString();
@@ -47,8 +56,8 @@ namespace TestQua_Project__APP_
                   lastname = Function.reader["Lastname"].ToString();
                   userid = Convert.ToInt32(Function.reader["UserId"]);
                   roleid = Convert.ToInt32(Function.reader["RoleId"]);
-                  var homepage = new Homepage();
-                  homepage.Show();
+                  var customerDashboard = new Customer.CustomerDashboard();
+                  customerDashboard.Show();
                   Hide();
                }
                else if(roleid == 3){ //Supplier

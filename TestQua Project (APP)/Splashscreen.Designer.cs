@@ -29,31 +29,32 @@ namespace TestQua_Project__APP_
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splashscreen));
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(-31, -45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(884, 754);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Splashscreen
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 660);
-            this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Splashscreen";
-            this.Text = "Splashscreen";
-            this.ResumeLayout(false);
+         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splashscreen));
+         this.button1 = new System.Windows.Forms.Button();
+         this.SuspendLayout();
+         // 
+         // button1
+         // 
+         this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+         this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+         this.button1.Location = new System.Drawing.Point(-31, -45);
+         this.button1.Name = "button1";
+         this.button1.Size = new System.Drawing.Size(872, 754);
+         this.button1.TabIndex = 0;
+         this.button1.UseVisualStyleBackColor = true;
+         this.button1.Click += new System.EventHandler(this.button1_Click);
+         // 
+         // Splashscreen
+         // 
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.ClientSize = new System.Drawing.Size(800, 660);
+         this.Controls.Add(this.button1);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+         this.Name = "Splashscreen";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+         this.Text = "Splashscreen";
+         this.ResumeLayout(false);
 
         }
 
