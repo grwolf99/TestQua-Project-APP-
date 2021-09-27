@@ -53,7 +53,7 @@ namespace TestQua_Project__APP_.Customer
          try
          {
             Connection.DB();
-            Function.gen = "SELECT * FROM UserInformation WHERE UserId = '"+ txtUserid.Text +"' ";
+            Function.gen = "SELECT * FROM UserInformation WHERE UserId = '" + txtUserid.Text + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
@@ -131,7 +131,7 @@ namespace TestQua_Project__APP_.Customer
             img = br.ReadBytes((int)fs.Length);
 
             Connection.DB();
-            Function.gen = "UPDATE Userinformation Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', Profilepicture = '"+ img +"'  ";
+            Function.gen = "UPDATE Userinformation Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', Profilepicture = '" + img + "'  ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Profile Saved");
