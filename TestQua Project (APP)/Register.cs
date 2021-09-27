@@ -38,5 +38,10 @@ namespace TestQua_Project__APP_
             MessageBox.Show(ex.Message);
          }
       }
-   }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
