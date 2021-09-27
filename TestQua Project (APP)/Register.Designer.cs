@@ -79,6 +79,9 @@ namespace TestQua_Project__APP_
          this.pictureBox23 = new System.Windows.Forms.PictureBox();
          this.pictureBox24 = new System.Windows.Forms.PictureBox();
          this.btnBack = new System.Windows.Forms.Button();
+         this.pbMale = new System.Windows.Forms.PictureBox();
+         this.pbOther = new System.Windows.Forms.PictureBox();
+         this.pbFemale = new System.Windows.Forms.PictureBox();
          this.panel1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -104,6 +107,9 @@ namespace TestQua_Project__APP_
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.pbMale)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.pbOther)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.pbFemale)).BeginInit();
          this.SuspendLayout();
          // 
          // label1
@@ -295,6 +301,9 @@ namespace TestQua_Project__APP_
          // 
          this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+         this.panel1.Controls.Add(this.pbFemale);
+         this.panel1.Controls.Add(this.pbOther);
+         this.panel1.Controls.Add(this.pbMale);
          this.panel1.Controls.Add(this.label11);
          this.panel1.Controls.Add(this.label12);
          this.panel1.Location = new System.Drawing.Point(1, 0);
@@ -576,6 +585,39 @@ namespace TestQua_Project__APP_
          this.btnBack.UseVisualStyleBackColor = true;
          this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
          // 
+         // pbMale
+         // 
+         this.pbMale.Image = ((System.Drawing.Image)(resources.GetObject("pbMale.Image")));
+         this.pbMale.Location = new System.Drawing.Point(664, 12);
+         this.pbMale.Name = "pbMale";
+         this.pbMale.Size = new System.Drawing.Size(101, 82);
+         this.pbMale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+         this.pbMale.TabIndex = 61;
+         this.pbMale.TabStop = false;
+         this.pbMale.Visible = false;
+         // 
+         // pbOther
+         // 
+         this.pbOther.Image = ((System.Drawing.Image)(resources.GetObject("pbOther.Image")));
+         this.pbOther.Location = new System.Drawing.Point(918, 12);
+         this.pbOther.Name = "pbOther";
+         this.pbOther.Size = new System.Drawing.Size(101, 82);
+         this.pbOther.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+         this.pbOther.TabIndex = 62;
+         this.pbOther.TabStop = false;
+         this.pbOther.Visible = false;
+         // 
+         // pbFemale
+         // 
+         this.pbFemale.Image = ((System.Drawing.Image)(resources.GetObject("pbFemale.Image")));
+         this.pbFemale.Location = new System.Drawing.Point(799, 9);
+         this.pbFemale.Name = "pbFemale";
+         this.pbFemale.Size = new System.Drawing.Size(101, 82);
+         this.pbFemale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+         this.pbFemale.TabIndex = 63;
+         this.pbFemale.TabStop = false;
+         this.pbFemale.Visible = false;
+         // 
          // Register
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,7 +677,6 @@ namespace TestQua_Project__APP_
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Register                                                                         " +
     "     ";
-         this.Load += new System.EventHandler(this.Register_Load);
          this.panel1.ResumeLayout(false);
          this.panel1.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -662,6 +703,9 @@ namespace TestQua_Project__APP_
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.pbMale)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.pbOther)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.pbFemale)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -717,5 +761,8 @@ namespace TestQua_Project__APP_
       private System.Windows.Forms.PictureBox pictureBox23;
       private System.Windows.Forms.PictureBox pictureBox24;
       private System.Windows.Forms.Button btnBack;
+      private System.Windows.Forms.PictureBox pbFemale;
+      private System.Windows.Forms.PictureBox pbOther;
+      private System.Windows.Forms.PictureBox pbMale;
    }
 }

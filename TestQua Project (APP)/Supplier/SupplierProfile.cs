@@ -4,21 +4,26 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestQua_Project__APP_.Customer
+namespace TestQua_Project__APP_.Supplier
 {
-   public partial class CustomerProfile : Form
+   public partial class SupplierProfile : Form
    {
-      string imageLocation = "";
-
-      public CustomerProfile()
+      public SupplierProfile()
       {
          InitializeComponent();
+      }
+
+      private void SupplierProfile_Load(object sender, EventArgs e)
+      {
+         btnProfile.FlatStyle = FlatStyle.Standard;
+         txtUserid.Text = Login.userid.ToString();
+         getFields();
+         fieldUpdate(false);
       }
 
       private void fieldUpdate(bool status)
@@ -86,79 +91,14 @@ namespace TestQua_Project__APP_.Customer
       {
          var homepage = new Homepage();
          homepage.Show();
-         Hide();
-      }
-
-      private void btnBrowsePicture_Click(object sender, EventArgs e)
-      {
-         try
-         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|PNG Files (*.png)|*.png| All Files (*.*)|*.*";
-            dlg.Title = "Select Product Picture";
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-               imageLocation = dlg.FileName.ToString();
-               pbProfilePicture.ImageLocation = imageLocation;
-            }
-         }
-
-         catch (Exception ex)
-         {
-            MessageBox.Show(ex.Message);
-         }
-      }
-
-      private void CustomerDashboard_Load(object sender, EventArgs e)
-      {
-         btnProfile.FlatStyle = FlatStyle.Standard;
-         txtUserid.Text = Login.userid.ToString();
-         getFields();
-         fieldUpdate(false);
-      }
-
-      private void btnLogout_Click_1(object sender, EventArgs e)
-      {
-         var homepage = new Homepage();
-         homepage.Show();
-         Hide();
-      }
-
-      private void btnUpdate_Click(object sender, EventArgs e)
-      {
-         fieldUpdate(true);
-      }
-
-      private void btnSave_Click(object sender, EventArgs e)
-      {
-         try
-         {
-            byte[] img = null;
-            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            img = br.ReadBytes((int)fs.Length);
-
-            Connection.DB();
-            Function.gen = "UPDATE Userinformation Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', Profilepicture = '" + img + "' WHERE Userid = '"+ txtUserid.Text +"' ";
-            Function.command = new SqlCommand(Function.gen, Connection.con);
-            Function.command.ExecuteNonQuery();
-            MessageBox.Show("Profile Saved");
-            Connection.con.Close();
-            fieldUpdate(false);
-            getFields();
-         }
-
-         catch (Exception ex)
-         {
-            MessageBox.Show(ex.Message);
-         }
+         Close();
       }
 
       private void btnHome_Click(object sender, EventArgs e)
       {
-         var customerhome = new CustomerHome();
-         customerhome.Show();
-         Hide();
+         var supplierhome = new SupplierHome();
+         supplierhome.Show();
+         Close();
       }
    }
 }

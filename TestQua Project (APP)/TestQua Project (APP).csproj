@@ -116,6 +116,18 @@
     <Compile Include="Splashscreen.Designer.cs">
       <DependentUpon>Splashscreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Supplier\SupplierHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierHome.Designer.cs">
+      <DependentUpon>SupplierHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\SupplierProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierProfile.Designer.cs">
+      <DependentUpon>SupplierProfile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +171,12 @@
     <EmbeddedResource Include="Splashscreen.resx">
       <DependentUpon>Splashscreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\SupplierHome.resx">
+      <DependentUpon>SupplierHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\SupplierProfile.resx">
+      <DependentUpon>SupplierProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,7 +193,6 @@
   <ItemGroup>
     <Folder Include="Guest\" />
     <Folder Include="Pictures\" />
-    <Folder Include="Supplier\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\8-83080_64-images-about-flower-png-on-we-heart.png" />

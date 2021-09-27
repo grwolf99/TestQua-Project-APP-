@@ -16,5 +16,24 @@ namespace TestQua_Project__APP_.Supplier
       {
          InitializeComponent();
       }
+
+      private void SupplierHome_Load(object sender, EventArgs e)
+      {
+         btnHome.FlatStyle = FlatStyle.Standard;
+      }
+
+      private void btnLogout_Click(object sender, EventArgs e)
+      {
+         var homepage = new Homepage();
+         homepage.Show();
+         Close();
+      }
+
+      private void btnProfile_Click(object sender, EventArgs e)
+      {
+         var supplierprofile = new SupplierProfile();
+         supplierprofile.Show();
+         Close();
+      }
    }
 }

@@ -154,6 +154,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnProducts.TabIndex = 36;
          this.btnProducts.Text = "Products";
          this.btnProducts.UseVisualStyleBackColor = false;
+         this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
          // 
          // pictureBox1
          // 

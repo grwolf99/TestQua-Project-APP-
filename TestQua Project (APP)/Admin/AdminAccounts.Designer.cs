@@ -37,9 +37,9 @@ namespace TestQua_Project__APP_.Admin
          this.btnProducts = new System.Windows.Forms.Button();
          this.btnReports = new System.Windows.Forms.Button();
          this.btnLogout = new System.Windows.Forms.Button();
-         this.tabcontrolAccounts = new System.Windows.Forms.TabControl();
+         this.tabcontrolAdminAccounts = new System.Windows.Forms.TabControl();
          this.tabPage1 = new System.Windows.Forms.TabPage();
-         this.Delete = new System.Windows.Forms.Button();
+         this.btnDelete = new System.Windows.Forms.Button();
          this.btnUpdate = new System.Windows.Forms.Button();
          this.btnSave = new System.Windows.Forms.Button();
          this.cmbRole = new System.Windows.Forms.ComboBox();
@@ -68,8 +68,9 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage2 = new System.Windows.Forms.TabPage();
          this.viewAccounts = new System.Windows.Forms.DataGridView();
          this.button1 = new System.Windows.Forms.Button();
+         this.txtRoleId = new System.Windows.Forms.TextBox();
          this.panel1.SuspendLayout();
-         this.tabcontrolAccounts.SuspendLayout();
+         this.tabcontrolAdminAccounts.SuspendLayout();
          this.tabPage1.SuspendLayout();
          this.tabPage2.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.viewAccounts)).BeginInit();
@@ -173,20 +174,21 @@ namespace TestQua_Project__APP_.Admin
          this.btnLogout.UseVisualStyleBackColor = false;
          this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
          // 
-         // tabcontrolAccounts
+         // tabcontrolAdminAccounts
          // 
-         this.tabcontrolAccounts.Controls.Add(this.tabPage1);
-         this.tabcontrolAccounts.Controls.Add(this.tabPage2);
-         this.tabcontrolAccounts.Location = new System.Drawing.Point(176, 133);
-         this.tabcontrolAccounts.Name = "tabcontrolAccounts";
-         this.tabcontrolAccounts.SelectedIndex = 0;
-         this.tabcontrolAccounts.Size = new System.Drawing.Size(899, 519);
-         this.tabcontrolAccounts.TabIndex = 18;
+         this.tabcontrolAdminAccounts.Controls.Add(this.tabPage1);
+         this.tabcontrolAdminAccounts.Controls.Add(this.tabPage2);
+         this.tabcontrolAdminAccounts.Location = new System.Drawing.Point(176, 133);
+         this.tabcontrolAdminAccounts.Name = "tabcontrolAdminAccounts";
+         this.tabcontrolAdminAccounts.SelectedIndex = 0;
+         this.tabcontrolAdminAccounts.Size = new System.Drawing.Size(899, 519);
+         this.tabcontrolAdminAccounts.TabIndex = 18;
          // 
          // tabPage1
          // 
          this.tabPage1.BackColor = System.Drawing.Color.LightGray;
-         this.tabPage1.Controls.Add(this.Delete);
+         this.tabPage1.Controls.Add(this.txtRoleId);
+         this.tabPage1.Controls.Add(this.btnDelete);
          this.tabPage1.Controls.Add(this.btnUpdate);
          this.tabPage1.Controls.Add(this.btnSave);
          this.tabPage1.Controls.Add(this.cmbRole);
@@ -219,14 +221,15 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage1.TabIndex = 0;
          this.tabPage1.Text = "Manage Account";
          // 
-         // Delete
+         // btnDelete
          // 
-         this.Delete.Location = new System.Drawing.Point(589, 359);
-         this.Delete.Name = "Delete";
-         this.Delete.Size = new System.Drawing.Size(75, 23);
-         this.Delete.TabIndex = 62;
-         this.Delete.Text = "Delete";
-         this.Delete.UseVisualStyleBackColor = true;
+         this.btnDelete.Location = new System.Drawing.Point(589, 359);
+         this.btnDelete.Name = "btnDelete";
+         this.btnDelete.Size = new System.Drawing.Size(75, 23);
+         this.btnDelete.TabIndex = 62;
+         this.btnDelete.Text = "Delete";
+         this.btnDelete.UseVisualStyleBackColor = true;
+         this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
          // 
          // btnUpdate
          // 
@@ -236,6 +239,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnUpdate.TabIndex = 61;
          this.btnUpdate.Text = "Update";
          this.btnUpdate.UseVisualStyleBackColor = true;
+         this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
          // 
          // btnSave
          // 
@@ -245,6 +249,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnSave.TabIndex = 60;
          this.btnSave.Text = "Save";
          this.btnSave.UseVisualStyleBackColor = true;
+         this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
          // 
          // cmbRole
          // 
@@ -469,6 +474,7 @@ namespace TestQua_Project__APP_.Admin
          this.viewAccounts.Name = "viewAccounts";
          this.viewAccounts.Size = new System.Drawing.Size(913, 450);
          this.viewAccounts.TabIndex = 0;
+         this.viewAccounts.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.viewAccounts_CellMouseClick);
          // 
          // button1
          // 
@@ -485,27 +491,37 @@ namespace TestQua_Project__APP_.Admin
          this.button1.Text = "Home";
          this.button1.UseVisualStyleBackColor = false;
          // 
-         // AdminProfile
+         // txtRoleId
+         // 
+         this.txtRoleId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+         this.txtRoleId.Enabled = false;
+         this.txtRoleId.Location = new System.Drawing.Point(498, 266);
+         this.txtRoleId.Name = "txtRoleId";
+         this.txtRoleId.Size = new System.Drawing.Size(125, 13);
+         this.txtRoleId.TabIndex = 63;
+         this.txtRoleId.Visible = false;
+         // 
+         // AdminAccounts
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
          this.Controls.Add(this.button1);
-         this.Controls.Add(this.tabcontrolAccounts);
+         this.Controls.Add(this.tabcontrolAdminAccounts);
          this.Controls.Add(this.btnLogout);
          this.Controls.Add(this.btnReports);
          this.Controls.Add(this.btnAccounts);
          this.Controls.Add(this.btnProducts);
          this.Controls.Add(this.panel1);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-         this.Name = "AdminProfile";
+         this.Name = "AdminAccounts";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "AdminDashboard";
          this.Load += new System.EventHandler(this.AdminAccounts_Load);
          this.panel1.ResumeLayout(false);
          this.panel1.PerformLayout();
-         this.tabcontrolAccounts.ResumeLayout(false);
+         this.tabcontrolAdminAccounts.ResumeLayout(false);
          this.tabPage1.ResumeLayout(false);
          this.tabPage1.PerformLayout();
          this.tabPage2.ResumeLayout(false);
@@ -522,9 +538,9 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.Button btnProducts;
       private System.Windows.Forms.Button btnReports;
       private System.Windows.Forms.Button btnLogout;
-      private System.Windows.Forms.TabControl tabcontrolAccounts;
+      private System.Windows.Forms.TabControl tabcontrolAdminAccounts;
       private System.Windows.Forms.TabPage tabPage1;
-      private System.Windows.Forms.Button Delete;
+      private System.Windows.Forms.Button btnDelete;
       private System.Windows.Forms.Button btnUpdate;
       private System.Windows.Forms.Button btnSave;
       private System.Windows.Forms.ComboBox cmbRole;
@@ -553,5 +569,6 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.TabPage tabPage2;
       private System.Windows.Forms.DataGridView viewAccounts;
       private System.Windows.Forms.Button button1;
+      private System.Windows.Forms.TextBox txtRoleId;
    }
 }

@@ -35,5 +35,12 @@ namespace TestQua_Project__APP_.Admin
          homepage.Show();
          Close();
       }
+
+      private void btnProducts_Click(object sender, EventArgs e)
+      {
+         var addproduct = new Admin.AddProduct();
+         addproduct.Show();
+         Close();
+      }
    }
 }
