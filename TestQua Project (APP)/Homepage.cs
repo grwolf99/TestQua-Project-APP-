@@ -50,5 +50,12 @@ namespace TestQua_Project__APP_
         {
 
         }
-    }
+
+      private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+      {
+         var guesthome = new Guest.GuestHome();
+         guesthome.Show();
+         Close();
+      }
+   }
 }

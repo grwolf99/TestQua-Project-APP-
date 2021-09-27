@@ -89,6 +89,12 @@
     <Compile Include="Customer\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guest\GuestHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest\GuestHome.Designer.cs">
+      <DependentUpon>GuestHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     <EmbeddedResource Include="Customer\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Guest\GuestHome.resx">
+      <DependentUpon>GuestHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,7 +200,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Guest\" />
     <Folder Include="Pictures\" />
   </ItemGroup>
   <ItemGroup>

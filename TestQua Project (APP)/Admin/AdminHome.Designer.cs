@@ -30,7 +30,6 @@ namespace TestQua_Project__APP_.Admin
       private void InitializeComponent()
       {
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHome));
-         this.btnHome = new System.Windows.Forms.Button();
          this.btnLogout = new System.Windows.Forms.Button();
          this.label3 = new System.Windows.Forms.Label();
          this.btnOrder = new System.Windows.Forms.Button();
@@ -41,28 +40,15 @@ namespace TestQua_Project__APP_.Admin
          this.pictureBox1 = new System.Windows.Forms.PictureBox();
          this.pictureBox3 = new System.Windows.Forms.PictureBox();
          this.panel1 = new System.Windows.Forms.Panel();
-         this.label4 = new System.Windows.Forms.Label();
+         this.label1 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
+         this.label4 = new System.Windows.Forms.Label();
+         this.btnHome = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
          this.panel1.SuspendLayout();
          this.SuspendLayout();
-         // 
-         // btnHome
-         // 
-         this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnHome.FlatAppearance.BorderSize = 0;
-         this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.btnHome.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
-         this.btnHome.ForeColor = System.Drawing.Color.White;
-         this.btnHome.Location = new System.Drawing.Point(12, 133);
-         this.btnHome.Name = "btnHome";
-         this.btnHome.Size = new System.Drawing.Size(167, 64);
-         this.btnHome.TabIndex = 39;
-         this.btnHome.Text = "Home";
-         this.btnHome.UseVisualStyleBackColor = false;
          // 
          // btnLogout
          // 
@@ -185,17 +171,17 @@ namespace TestQua_Project__APP_.Admin
          this.panel1.Size = new System.Drawing.Size(1167, 73);
          this.panel1.TabIndex = 31;
          // 
-         // label4
+         // label1
          // 
-         this.label4.AutoSize = true;
-         this.label4.BackColor = System.Drawing.Color.Transparent;
-         this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
-         this.label4.Location = new System.Drawing.Point(56, 47);
-         this.label4.Name = "label4";
-         this.label4.Size = new System.Drawing.Size(212, 18);
-         this.label4.TabIndex = 9;
-         this.label4.Text = "A Group of TEAM POWER";
+         this.label1.AutoSize = true;
+         this.label1.BackColor = System.Drawing.Color.Transparent;
+         this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
+         this.label1.Location = new System.Drawing.Point(56, 47);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(212, 18);
+         this.label1.TabIndex = 9;
+         this.label1.Text = "A Group of TEAM POWER";
          // 
          // label2
          // 
@@ -208,6 +194,33 @@ namespace TestQua_Project__APP_.Admin
          this.label2.Size = new System.Drawing.Size(251, 51);
          this.label2.TabIndex = 0;
          this.label2.Text = "Bloom and Puff";
+         // 
+         // label4
+         // 
+         this.label4.AutoSize = true;
+         this.label4.BackColor = System.Drawing.Color.Transparent;
+         this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
+         this.label4.Location = new System.Drawing.Point(56, 47);
+         this.label4.Name = "label4";
+         this.label4.Size = new System.Drawing.Size(212, 18);
+         this.label4.TabIndex = 9;
+         this.label4.Text = "A Group of TEAM POWER";
+         // 
+         // btnHome
+         // 
+         this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnHome.FlatAppearance.BorderSize = 0;
+         this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.btnHome.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
+         this.btnHome.ForeColor = System.Drawing.Color.White;
+         this.btnHome.Location = new System.Drawing.Point(12, 133);
+         this.btnHome.Name = "btnHome";
+         this.btnHome.Size = new System.Drawing.Size(167, 64);
+         this.btnHome.TabIndex = 39;
+         this.btnHome.Text = "Home";
+         this.btnHome.UseVisualStyleBackColor = false;
          // 
          // AdminHome
          // 
@@ -243,7 +256,6 @@ namespace TestQua_Project__APP_.Admin
 
       #endregion
 
-      private System.Windows.Forms.Button btnHome;
       private System.Windows.Forms.Button btnLogout;
       private System.Windows.Forms.Label label3;
       private System.Windows.Forms.Button btnOrder;
@@ -256,5 +268,7 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.Panel panel1;
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.Label label2;
+      private System.Windows.Forms.Label label1;
+      private System.Windows.Forms.Button btnHome;
    }
 }
