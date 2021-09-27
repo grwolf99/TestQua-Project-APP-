@@ -29,8 +29,11 @@ namespace TestQua_Project__APP_
         /// </summary>
         private void InitializeComponent()
         {
+         this.components = new System.ComponentModel.Container();
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splashscreen));
          this.button1 = new System.Windows.Forms.Button();
+         this.timer1 = new System.Windows.Forms.Timer(this.components);
+         this.progressBar1 = new System.Windows.Forms.ProgressBar();
          this.SuspendLayout();
          // 
          // button1
@@ -42,13 +45,28 @@ namespace TestQua_Project__APP_
          this.button1.Size = new System.Drawing.Size(872, 754);
          this.button1.TabIndex = 0;
          this.button1.UseVisualStyleBackColor = true;
-         this.button1.Click += new System.EventHandler(this.button1_Click);
+         // 
+         // timer1
+         // 
+         this.timer1.Enabled = true;
+         this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+         // 
+         // progressBar1
+         // 
+         this.progressBar1.BackColor = System.Drawing.Color.White;
+         this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.progressBar1.Location = new System.Drawing.Point(288, 584);
+         this.progressBar1.Name = "progressBar1";
+         this.progressBar1.Size = new System.Drawing.Size(245, 23);
+         this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+         this.progressBar1.TabIndex = 0;
          // 
          // Splashscreen
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(800, 660);
+         this.Controls.Add(this.progressBar1);
          this.Controls.Add(this.button1);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "Splashscreen";
@@ -61,5 +79,7 @@ namespace TestQua_Project__APP_
         #endregion
 
         private System.Windows.Forms.Button button1;
-    }
+      private System.Windows.Forms.Timer timer1;
+      private System.Windows.Forms.ProgressBar progressBar1;
+   }
 }
