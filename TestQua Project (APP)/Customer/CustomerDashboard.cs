@@ -14,6 +14,8 @@ namespace TestQua_Project__APP_.Customer
 {
    public partial class CustomerDashboard : Form
    {
+      string imageLocation = "";
+
       public CustomerDashboard()
       {
          InitializeComponent();
@@ -32,7 +34,6 @@ namespace TestQua_Project__APP_.Customer
          txtAge.Enabled = status;
          txtContacno.Enabled = status;
          txtEmail.Enabled = status;
-         txtUsername.Enabled = status;
          txtConfirmPassword.Enabled = status;
          txtPassword.Enabled = status;
          cmbGender.Enabled = status;
@@ -42,9 +43,9 @@ namespace TestQua_Project__APP_.Customer
 
       private void CustomerDashboard_Load(object sender, EventArgs e)
       {
+         txtUserid.Text = Login.userid.ToString();
          getFields();
          fieldUpdate(false);
-         txtUserid.Text = Login.userid.ToString();
       }
 
       private void getFields()
@@ -69,17 +70,18 @@ namespace TestQua_Project__APP_.Customer
                txtPassword.Text = Function.reader["password"].ToString();
                txtConfirmPassword.Text = Function.reader["password"].ToString();
                cmbGender.Text = Function.reader["Gender"].ToString();
-               /*byte[] img = (byte[])(Function.reader["ProfilePicture"]);
 
-               if (img == null)
+               if (Function.reader["Profilepicture"] == null)
                {
-                  pbProfilePicture.Image = null;
+                  MessageBox.Show("WALAY SULOD");
+                  /*byte[] img = (byte[])(Function.reader["ProfilePicture"]);
+                  MemoryStream ms = new MemoryStream(img);
+                  pbProfilePicture.Image = Image.FromStream(ms);*/
                }
                else
                {
-                  MemoryStream ms = new MemoryStream(img);
-                  pbProfilePicture.Image = Image.FromStream(ms);
-               } */
+                  MessageBox.Show("NAAY SULOD");
+               }
             }
 
             Connection.con.Close();
@@ -97,6 +99,51 @@ namespace TestQua_Project__APP_.Customer
          var homepage = new Homepage();
          homepage.Show();
          Hide();
+      }
+
+      private void btnBrowsePicture_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|PNG Files (*.png)|*.png| All Files (*.*)|*.*";
+            dlg.Title = "Select Product Picture";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+               imageLocation = dlg.FileName.ToString();
+               pbProfilePicture.ImageLocation = imageLocation;
+            }
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
+
+      private void btnSave_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            byte[] img = null;
+            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+
+            Connection.DB();
+            Function.gen = "UPDATE Userinformation Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', Profilepicture = '"+ img +"'  ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.ExecuteNonQuery();
+            MessageBox.Show("Profile Saved");
+            Connection.con.Close();
+            fieldUpdate(false);
+            getFields();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
       }
    }
 }

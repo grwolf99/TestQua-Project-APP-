@@ -234,6 +234,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnSave.TabIndex = 86;
          this.btnSave.Text = "Save";
          this.btnSave.UseVisualStyleBackColor = true;
+         this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
          // 
          // txtUserid
          // 
@@ -429,6 +430,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnBrowsePicture.TabIndex = 90;
          this.btnBrowsePicture.Text = "Browse";
          this.btnBrowsePicture.UseVisualStyleBackColor = true;
+         this.btnBrowsePicture.Click += new System.EventHandler(this.btnBrowsePicture_Click);
          // 
          // CustomerDashboard
          // 
