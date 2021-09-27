@@ -52,11 +52,17 @@
     <Compile Include="Admin\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\AdminDashboard.cs">
+    <Compile Include="Admin\AdminHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\AdminDashboard.Designer.cs">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    <Compile Include="Admin\AdminHome.Designer.cs">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAccounts.Designer.cs">
+      <DependentUpon>AdminAccounts.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\ViewProduct.cs">
       <SubType>Form</SubType>
@@ -65,17 +71,29 @@
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
-    <Compile Include="Customer\CustomerDashboard.cs">
+    <Compile Include="Customer\CustomerProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\CustomerDashboard.Designer.cs">
-      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    <Compile Include="Customer\CustomerProfile.Designer.cs">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerHome.Designer.cs">
+      <DependentUpon>CustomerHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\ViewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\GuestHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest\GuestHome.Designer.cs">
+      <DependentUpon>GuestHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
@@ -104,20 +122,41 @@
     <Compile Include="Splashscreen.Designer.cs">
       <DependentUpon>Splashscreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Supplier\SupplierHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierHome.Designer.cs">
+      <DependentUpon>SupplierHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\SupplierProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierProfile.Designer.cs">
+      <DependentUpon>SupplierProfile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\AdminDashboard.resx">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\AdminHome.resx">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminAccounts.resx">
+      <DependentUpon>AdminAccounts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerDashboard.resx">
-      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Customer\CustomerProfile.resx">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerHome.resx">
+      <DependentUpon>CustomerHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest\GuestHome.resx">
+      <DependentUpon>GuestHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
@@ -141,6 +180,12 @@
     <EmbeddedResource Include="Splashscreen.resx">
       <DependentUpon>Splashscreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\SupplierHome.resx">
+      <DependentUpon>SupplierHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\SupplierProfile.resx">
+      <DependentUpon>SupplierProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -155,9 +200,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Guest\" />
     <Folder Include="Pictures\" />
-    <Folder Include="Supplier\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\8-83080_64-images-about-flower-png-on-we-heart.png" />
