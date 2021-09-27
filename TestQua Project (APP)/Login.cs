@@ -44,8 +44,8 @@ namespace TestQua_Project__APP_
                   lastname = Function.reader["Lastname"].ToString();
                   userid = Convert.ToInt32(Function.reader["UserId"]);
                   roleid = Convert.ToInt32(Function.reader["RoleId"]);
-                  var adminDashboard = new Admin.AdminDashboard();
-                  adminDashboard.Show();
+                  var adminhome = new Admin.AdminHome();
+                  adminhome.Show();
                   Hide();
                }
                else if(roleid == 2){  //Customer
@@ -56,8 +56,8 @@ namespace TestQua_Project__APP_
                   lastname = Function.reader["Lastname"].ToString();
                   userid = Convert.ToInt32(Function.reader["UserId"]);
                   roleid = Convert.ToInt32(Function.reader["RoleId"]);
-                  var customerDashboard = new Customer.CustomerDashboard();
-                  customerDashboard.Show();
+                  var customerhome = new Customer.CustomerHome();
+                  customerhome.Show();
                   Hide();
                }
                else if(roleid == 3){ //Supplier

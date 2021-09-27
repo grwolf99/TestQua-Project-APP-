@@ -19,7 +19,6 @@ D:\Programming\TestQua Project (APP)\TestQua Project (APP)\bin\Debug\TestQua Pro
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\bin\Debug\TestQua Project (APP).pdb
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csprojAssemblyReference.cache
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Admin.AddProduct.resources
-D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Admin.AdminDashboard.resources
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Admin.ViewProduct.resources
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.ViewProduct.resources
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Homepage.resources
@@ -31,7 +30,6 @@ D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Pro
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csproj.CoreCompileInputs.cache
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).exe
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).pdb
-D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerDashboard.resources
 C:\Users\Administrator\Documents\TestQua-Project-APP--master\TestQua Project (APP)\bin\Debug\TestQua Project (APP).exe.config
 C:\Users\Administrator\Documents\TestQua-Project-APP--master\TestQua Project (APP)\bin\Debug\TestQua Project (APP).exe
 C:\Users\Administrator\Documents\TestQua-Project-APP--master\TestQua Project (APP)\bin\Debug\TestQua Project (APP).pdb
@@ -50,3 +48,7 @@ C:\Users\Administrator\Documents\TestQua-Project-APP--master\TestQua Project (AP
 C:\Users\Administrator\Documents\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).exe
 C:\Users\Administrator\Documents\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).pdb
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerHome.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerProfile.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Admin.AdminHome.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Admin.AdminAccounts.resources

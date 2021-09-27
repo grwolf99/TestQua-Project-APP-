@@ -43,5 +43,12 @@ namespace TestQua_Project__APP_
       {
 
       }
+
+      private void btnBack_Click(object sender, EventArgs e)
+      {
+         var homepage = new Homepage();
+         homepage.Show();
+         Close();
+      }
    }
 }
