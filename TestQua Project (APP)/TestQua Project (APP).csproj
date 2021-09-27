@@ -133,6 +133,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
@@ -157,6 +158,18 @@
     <Folder Include="Guest\" />
     <Folder Include="Pictures\" />
     <Folder Include="Supplier\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8-83080_64-images-about-flower-png-on-we-heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\243083014_227935809392463_6199428534275415365_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

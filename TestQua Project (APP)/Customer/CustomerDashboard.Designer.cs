@@ -38,9 +38,6 @@ namespace TestQua_Project__APP_.Customer
          this.btnProfile = new System.Windows.Forms.Button();
          this.btnProducts = new System.Windows.Forms.Button();
          this.panel2 = new System.Windows.Forms.Panel();
-         this.label13 = new System.Windows.Forms.Label();
-         this.pbProfilePicture = new System.Windows.Forms.PictureBox();
-         this.btnUpdate = new System.Windows.Forms.Button();
          this.btnSave = new System.Windows.Forms.Button();
          this.txtUserid = new System.Windows.Forms.TextBox();
          this.label3 = new System.Windows.Forms.Label();
@@ -63,7 +60,9 @@ namespace TestQua_Project__APP_.Customer
          this.txtContacno = new System.Windows.Forms.TextBox();
          this.txtEmail = new System.Windows.Forms.TextBox();
          this.label1 = new System.Windows.Forms.Label();
-         this.btnBrowsePicture = new System.Windows.Forms.Button();
+         this.btnUpdate = new System.Windows.Forms.Button();
+         this.pbProfilePicture = new System.Windows.Forms.PictureBox();
+         this.label13 = new System.Windows.Forms.Label();
          this.panel1.SuspendLayout();
          this.panel2.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
@@ -118,7 +117,6 @@ namespace TestQua_Project__APP_.Customer
          this.btnLogout.TabIndex = 21;
          this.btnLogout.Text = "Logout";
          this.btnLogout.UseVisualStyleBackColor = false;
-         this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
          // 
          // btnOrder
          // 
@@ -168,7 +166,6 @@ namespace TestQua_Project__APP_.Customer
          // panel2
          // 
          this.panel2.BackColor = System.Drawing.Color.Gray;
-         this.panel2.Controls.Add(this.btnBrowsePicture);
          this.panel2.Controls.Add(this.label13);
          this.panel2.Controls.Add(this.pbProfilePicture);
          this.panel2.Controls.Add(this.btnUpdate);
@@ -199,33 +196,6 @@ namespace TestQua_Project__APP_.Customer
          this.panel2.Size = new System.Drawing.Size(899, 519);
          this.panel2.TabIndex = 22;
          // 
-         // label13
-         // 
-         this.label13.AutoSize = true;
-         this.label13.Location = new System.Drawing.Point(126, 86);
-         this.label13.Name = "label13";
-         this.label13.Size = new System.Drawing.Size(71, 13);
-         this.label13.TabIndex = 89;
-         this.label13.Text = "Profile picture";
-         // 
-         // pbProfilePicture
-         // 
-         this.pbProfilePicture.Location = new System.Drawing.Point(225, 42);
-         this.pbProfilePicture.Name = "pbProfilePicture";
-         this.pbProfilePicture.Size = new System.Drawing.Size(178, 145);
-         this.pbProfilePicture.TabIndex = 88;
-         this.pbProfilePicture.TabStop = false;
-         // 
-         // btnUpdate
-         // 
-         this.btnUpdate.Location = new System.Drawing.Point(706, 446);
-         this.btnUpdate.Name = "btnUpdate";
-         this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-         this.btnUpdate.TabIndex = 87;
-         this.btnUpdate.Text = "Update";
-         this.btnUpdate.UseVisualStyleBackColor = true;
-         this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-         // 
          // btnSave
          // 
          this.btnSave.Location = new System.Drawing.Point(625, 445);
@@ -234,17 +204,14 @@ namespace TestQua_Project__APP_.Customer
          this.btnSave.TabIndex = 86;
          this.btnSave.Text = "Save";
          this.btnSave.UseVisualStyleBackColor = true;
-         this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
          // 
          // txtUserid
          // 
          this.txtUserid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-         this.txtUserid.Enabled = false;
          this.txtUserid.Location = new System.Drawing.Point(607, 404);
          this.txtUserid.Name = "txtUserid";
          this.txtUserid.Size = new System.Drawing.Size(125, 13);
          this.txtUserid.TabIndex = 83;
-         this.txtUserid.Visible = false;
          // 
          // label3
          // 
@@ -323,7 +290,7 @@ namespace TestQua_Project__APP_.Customer
          // label9
          // 
          this.label9.AutoSize = true;
-         this.label9.Location = new System.Drawing.Point(142, 299);
+         this.label9.Location = new System.Drawing.Point(136, 263);
          this.label9.Name = "label9";
          this.label9.Size = new System.Drawing.Size(56, 13);
          this.label9.TabIndex = 74;
@@ -341,7 +308,7 @@ namespace TestQua_Project__APP_.Customer
          // label7
          // 
          this.label7.AutoSize = true;
-         this.label7.Location = new System.Drawing.Point(142, 405);
+         this.label7.Location = new System.Drawing.Point(136, 369);
          this.label7.Name = "label7";
          this.label7.Size = new System.Drawing.Size(26, 13);
          this.label7.TabIndex = 72;
@@ -350,7 +317,7 @@ namespace TestQua_Project__APP_.Customer
          // label6
          // 
          this.label6.AutoSize = true;
-         this.label6.Location = new System.Drawing.Point(142, 354);
+         this.label6.Location = new System.Drawing.Point(136, 318);
          this.label6.Name = "label6";
          this.label6.Size = new System.Drawing.Size(45, 13);
          this.label6.TabIndex = 71;
@@ -368,7 +335,7 @@ namespace TestQua_Project__APP_.Customer
          // txtAge
          // 
          this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-         this.txtAge.Location = new System.Drawing.Point(266, 398);
+         this.txtAge.Location = new System.Drawing.Point(260, 362);
          this.txtAge.Name = "txtAge";
          this.txtAge.Size = new System.Drawing.Size(121, 13);
          this.txtAge.TabIndex = 69;
@@ -376,7 +343,7 @@ namespace TestQua_Project__APP_.Customer
          // txtAddress
          // 
          this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-         this.txtAddress.Location = new System.Drawing.Point(266, 347);
+         this.txtAddress.Location = new System.Drawing.Point(260, 311);
          this.txtAddress.Name = "txtAddress";
          this.txtAddress.Size = new System.Drawing.Size(121, 13);
          this.txtAddress.TabIndex = 68;
@@ -384,7 +351,7 @@ namespace TestQua_Project__APP_.Customer
          // txtLastname
          // 
          this.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-         this.txtLastname.Location = new System.Drawing.Point(266, 292);
+         this.txtLastname.Location = new System.Drawing.Point(260, 256);
          this.txtLastname.Name = "txtLastname";
          this.txtLastname.Size = new System.Drawing.Size(121, 13);
          this.txtLastname.TabIndex = 67;
@@ -392,7 +359,7 @@ namespace TestQua_Project__APP_.Customer
          // txtFirstname
          // 
          this.txtFirstname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-         this.txtFirstname.Location = new System.Drawing.Point(266, 256);
+         this.txtFirstname.Location = new System.Drawing.Point(260, 220);
          this.txtFirstname.Name = "txtFirstname";
          this.txtFirstname.Size = new System.Drawing.Size(121, 13);
          this.txtFirstname.TabIndex = 66;
@@ -416,21 +383,37 @@ namespace TestQua_Project__APP_.Customer
          // label1
          // 
          this.label1.AutoSize = true;
-         this.label1.Location = new System.Drawing.Point(142, 256);
+         this.label1.Location = new System.Drawing.Point(136, 220);
          this.label1.Name = "label1";
          this.label1.Size = new System.Drawing.Size(55, 13);
          this.label1.TabIndex = 63;
          this.label1.Text = "First name";
          // 
-         // btnBrowsePicture
+         // btnUpdate
          // 
-         this.btnBrowsePicture.Location = new System.Drawing.Point(312, 206);
-         this.btnBrowsePicture.Name = "btnBrowsePicture";
-         this.btnBrowsePicture.Size = new System.Drawing.Size(75, 23);
-         this.btnBrowsePicture.TabIndex = 90;
-         this.btnBrowsePicture.Text = "Browse";
-         this.btnBrowsePicture.UseVisualStyleBackColor = true;
-         this.btnBrowsePicture.Click += new System.EventHandler(this.btnBrowsePicture_Click);
+         this.btnUpdate.Location = new System.Drawing.Point(706, 446);
+         this.btnUpdate.Name = "btnUpdate";
+         this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+         this.btnUpdate.TabIndex = 87;
+         this.btnUpdate.Text = "Update";
+         this.btnUpdate.UseVisualStyleBackColor = true;
+         // 
+         // pbProfilePicture
+         // 
+         this.pbProfilePicture.Location = new System.Drawing.Point(225, 42);
+         this.pbProfilePicture.Name = "pbProfilePicture";
+         this.pbProfilePicture.Size = new System.Drawing.Size(178, 145);
+         this.pbProfilePicture.TabIndex = 88;
+         this.pbProfilePicture.TabStop = false;
+         // 
+         // label13
+         // 
+         this.label13.AutoSize = true;
+         this.label13.Location = new System.Drawing.Point(126, 86);
+         this.label13.Name = "label13";
+         this.label13.Size = new System.Drawing.Size(71, 13);
+         this.label13.TabIndex = 89;
+         this.label13.Text = "Profile picture";
          // 
          // CustomerDashboard
          // 
@@ -448,7 +431,6 @@ namespace TestQua_Project__APP_.Customer
          this.Name = "CustomerDashboard";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "CustomerDashboard";
-         this.Load += new System.EventHandler(this.CustomerDashboard_Load);
          this.panel1.ResumeLayout(false);
          this.panel1.PerformLayout();
          this.panel2.ResumeLayout(false);
@@ -492,6 +474,5 @@ namespace TestQua_Project__APP_.Customer
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.Label label13;
       private System.Windows.Forms.PictureBox pbProfilePicture;
-      private System.Windows.Forms.Button btnBrowsePicture;
    }
 }
