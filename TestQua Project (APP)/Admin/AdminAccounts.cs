@@ -82,6 +82,7 @@ namespace TestQua_Project__APP_.Admin
 
             updateButtons(true);
             btnSave.Enabled = false;
+            tabcontrolAdminAccounts.SelectedIndex = 0;
          }
 
          catch (Exception ex)
@@ -92,9 +93,13 @@ namespace TestQua_Project__APP_.Admin
 
       private void updateButtons(bool status)
       {
-         btnSave.Enabled = status;
          btnUpdate.Enabled = status;
          btnDelete.Enabled = status;
+
+         if (status == false)
+            btnSave.Enabled = true;
+         else
+            btnSave.Enabled = false;
       }
 
       private void btnSave_Click(object sender, EventArgs e)
@@ -122,6 +127,10 @@ namespace TestQua_Project__APP_.Admin
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Registration success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Connection.con.Close();
+
+            dataviewAccounts();
+            resetFields();
+            updateButtons(false);
          }
 
          catch (Exception ex)
@@ -135,13 +144,14 @@ namespace TestQua_Project__APP_.Admin
          try
          {
             Connection.DB();
-            Function.gen = "UPDATE Userinformation Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "' WHERE Userid = '"+ txtUserid.Text +"' ";
+            Function.gen = "UPDATE Userinformation SET Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "' WHERE Userid = '"+ txtUserid.Text +"' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Connection.con.Close();
             updateButtons(false);
             resetFields();
+            dataviewAccounts();
          }
 
          catch (Exception ex)
@@ -165,6 +175,7 @@ namespace TestQua_Project__APP_.Admin
                Connection.con.Close();
                updateButtons(false);
                resetFields();
+               dataviewAccounts();
             }
          }
 
