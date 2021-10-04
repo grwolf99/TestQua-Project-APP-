@@ -32,7 +32,6 @@ namespace TestQua_Project__APP_.Guest
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuestHome));
          this.btnLogout = new System.Windows.Forms.Button();
          this.label3 = new System.Windows.Forms.Label();
-         this.btnOrder = new System.Windows.Forms.Button();
          this.panel4 = new System.Windows.Forms.Panel();
          this.btnProducts = new System.Windows.Forms.Button();
          this.label1 = new System.Windows.Forms.Label();
@@ -43,7 +42,6 @@ namespace TestQua_Project__APP_.Guest
          this.panel1 = new System.Windows.Forms.Panel();
          this.label4 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
-         this.btnAccounts = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -77,21 +75,6 @@ namespace TestQua_Project__APP_.Guest
          this.label3.TabIndex = 41;
          this.label3.Text = "Follow Us";
          // 
-         // btnOrder
-         // 
-         this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnOrder.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnOrder.FlatAppearance.BorderSize = 0;
-         this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.btnOrder.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
-         this.btnOrder.ForeColor = System.Drawing.Color.White;
-         this.btnOrder.Location = new System.Drawing.Point(12, 399);
-         this.btnOrder.Name = "btnOrder";
-         this.btnOrder.Size = new System.Drawing.Size(167, 64);
-         this.btnOrder.TabIndex = 49;
-         this.btnOrder.Text = "Order";
-         this.btnOrder.UseVisualStyleBackColor = false;
-         // 
          // panel4
          // 
          this.panel4.BackColor = System.Drawing.Color.White;
@@ -108,7 +91,7 @@ namespace TestQua_Project__APP_.Guest
          this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnProducts.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
          this.btnProducts.ForeColor = System.Drawing.Color.White;
-         this.btnProducts.Location = new System.Drawing.Point(12, 315);
+         this.btnProducts.Location = new System.Drawing.Point(12, 389);
          this.btnProducts.Name = "btnProducts";
          this.btnProducts.Size = new System.Drawing.Size(167, 64);
          this.btnProducts.TabIndex = 48;
@@ -135,7 +118,7 @@ namespace TestQua_Project__APP_.Guest
          this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnHome.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
          this.btnHome.ForeColor = System.Drawing.Color.White;
-         this.btnHome.Location = new System.Drawing.Point(12, 136);
+         this.btnHome.Location = new System.Drawing.Point(12, 296);
          this.btnHome.Name = "btnHome";
          this.btnHome.Size = new System.Drawing.Size(167, 64);
          this.btnHome.TabIndex = 51;
@@ -205,21 +188,6 @@ namespace TestQua_Project__APP_.Guest
          this.label2.TabIndex = 0;
          this.label2.Text = "Bloom and Puff";
          // 
-         // btnAccounts
-         // 
-         this.btnAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnAccounts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnAccounts.FlatAppearance.BorderSize = 0;
-         this.btnAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.btnAccounts.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
-         this.btnAccounts.ForeColor = System.Drawing.Color.White;
-         this.btnAccounts.Location = new System.Drawing.Point(12, 227);
-         this.btnAccounts.Name = "btnAccounts";
-         this.btnAccounts.Size = new System.Drawing.Size(167, 64);
-         this.btnAccounts.TabIndex = 47;
-         this.btnAccounts.Text = "Accounts";
-         this.btnAccounts.UseVisualStyleBackColor = false;
-         // 
          // GuestHome
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,9 +196,7 @@ namespace TestQua_Project__APP_.Guest
          this.ClientSize = new System.Drawing.Size(1087, 664);
          this.Controls.Add(this.btnLogout);
          this.Controls.Add(this.label3);
-         this.Controls.Add(this.btnOrder);
          this.Controls.Add(this.pictureBox2);
-         this.Controls.Add(this.btnAccounts);
          this.Controls.Add(this.panel4);
          this.Controls.Add(this.btnProducts);
          this.Controls.Add(this.pictureBox1);
@@ -257,7 +223,6 @@ namespace TestQua_Project__APP_.Guest
 
       private System.Windows.Forms.Button btnLogout;
       private System.Windows.Forms.Label label3;
-      private System.Windows.Forms.Button btnOrder;
       private System.Windows.Forms.PictureBox pictureBox2;
       private System.Windows.Forms.Panel panel4;
       private System.Windows.Forms.Button btnProducts;
@@ -268,6 +233,5 @@ namespace TestQua_Project__APP_.Guest
       private System.Windows.Forms.Label label2;
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.Button btnHome;
-      private System.Windows.Forms.Button btnAccounts;
    }
 }
