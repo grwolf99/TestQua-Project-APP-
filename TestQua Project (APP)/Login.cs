@@ -61,7 +61,16 @@ namespace TestQua_Project__APP_
                   Hide();
                }
                else if(roleid == 3){ //Supplier
-               
+                  txtUsername.Text = Function.reader["Username"].ToString();
+                  txtPassword.Text = Function.reader["Password"].ToString();
+
+                  firstname = Function.reader["Firstname"].ToString();
+                  lastname = Function.reader["Lastname"].ToString();
+                  userid = Convert.ToInt32(Function.reader["UserId"]);
+                  roleid = Convert.ToInt32(Function.reader["RoleId"]);
+                  var supplierhome = new Supplier.SupplierHome();
+                  supplierhome.Show();
+                  Close();
                }
             }
          }

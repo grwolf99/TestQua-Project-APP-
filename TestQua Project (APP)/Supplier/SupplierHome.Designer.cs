@@ -226,6 +226,7 @@
          this.Controls.Add(this.panel1);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "SupplierHome";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "SupplierHome";
          this.Load += new System.EventHandler(this.SupplierHome_Load);
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

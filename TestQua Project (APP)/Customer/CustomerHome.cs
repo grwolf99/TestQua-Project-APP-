@@ -28,5 +28,12 @@ namespace TestQua_Project__APP_.Customer
          customerprofile.Show();
          Hide();
       }
+
+      private void btnLogout_Click(object sender, EventArgs e)
+      {
+         var home = new Homepage();
+         home.Show();
+         Close();
+      }
    }
 }

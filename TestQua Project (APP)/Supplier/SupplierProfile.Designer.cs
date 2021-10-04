@@ -460,6 +460,7 @@ namespace TestQua_Project__APP_.Supplier
          this.Controls.Add(this.panel1);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "SupplierProfile";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "SupplierProfile";
          this.Load += new System.EventHandler(this.SupplierProfile_Load);
          this.panel1.ResumeLayout(false);

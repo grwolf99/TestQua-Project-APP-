@@ -97,6 +97,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnLogout.TabIndex = 27;
          this.btnLogout.Text = "Logout";
          this.btnLogout.UseVisualStyleBackColor = false;
+         this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
          // 
          // btnOrder
          // 

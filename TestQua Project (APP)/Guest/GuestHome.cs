@@ -21,5 +21,12 @@ namespace TestQua_Project__APP_.Guest
       {
 
       }
+
+      private void btnLogout_Click(object sender, EventArgs e)
+      {
+         var home = new Homepage();
+         home.Show();
+         Close();
+      }
    }
 }
