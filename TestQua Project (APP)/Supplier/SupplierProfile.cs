@@ -100,5 +100,35 @@ namespace TestQua_Project__APP_.Supplier
          supplierhome.Show();
          Close();
       }
+
+      private void btnSave_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            /*byte[] img = null;
+            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);*/
+
+            Connection.DB();
+            Function.gen = "UPDATE Userinformation SET Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "' WHERE Userid = '" + txtUserid.Text + "' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.ExecuteNonQuery();
+            MessageBox.Show("Profile Saved");
+            Connection.con.Close();
+            fieldUpdate(false);
+            getFields();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
+
+      private void btnUpdate_Click(object sender, EventArgs e)
+      {
+         fieldUpdate(true);
+      }
    }
 }

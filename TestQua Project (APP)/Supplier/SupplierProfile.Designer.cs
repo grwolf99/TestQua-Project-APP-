@@ -250,6 +250,7 @@ namespace TestQua_Project__APP_.Supplier
          this.btnUpdate.TabIndex = 87;
          this.btnUpdate.Text = "Update";
          this.btnUpdate.UseVisualStyleBackColor = true;
+         this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
          // 
          // btnSave
          // 
@@ -259,6 +260,7 @@ namespace TestQua_Project__APP_.Supplier
          this.btnSave.TabIndex = 86;
          this.btnSave.Text = "Save";
          this.btnSave.UseVisualStyleBackColor = true;
+         this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
          // 
          // txtUserid
          // 
