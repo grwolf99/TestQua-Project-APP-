@@ -39,6 +39,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnLogout = new System.Windows.Forms.Button();
          this.tabcontrolAdminAccounts = new System.Windows.Forms.TabControl();
          this.tabPage1 = new System.Windows.Forms.TabPage();
+         this.txtRoleId = new System.Windows.Forms.TextBox();
          this.btnDelete = new System.Windows.Forms.Button();
          this.btnUpdate = new System.Windows.Forms.Button();
          this.btnSave = new System.Windows.Forms.Button();
@@ -68,7 +69,7 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage2 = new System.Windows.Forms.TabPage();
          this.viewAccounts = new System.Windows.Forms.DataGridView();
          this.button1 = new System.Windows.Forms.Button();
-         this.txtRoleId = new System.Windows.Forms.TextBox();
+         this.txtSearch = new System.Windows.Forms.TextBox();
          this.panel1.SuspendLayout();
          this.tabcontrolAdminAccounts.SuspendLayout();
          this.tabPage1.SuspendLayout();
@@ -220,6 +221,16 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage1.Size = new System.Drawing.Size(891, 493);
          this.tabPage1.TabIndex = 0;
          this.tabPage1.Text = "Manage Account";
+         // 
+         // txtRoleId
+         // 
+         this.txtRoleId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+         this.txtRoleId.Enabled = false;
+         this.txtRoleId.Location = new System.Drawing.Point(498, 266);
+         this.txtRoleId.Name = "txtRoleId";
+         this.txtRoleId.Size = new System.Drawing.Size(125, 13);
+         this.txtRoleId.TabIndex = 63;
+         this.txtRoleId.Visible = false;
          // 
          // btnDelete
          // 
@@ -458,6 +469,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // tabPage2
          // 
+         this.tabPage2.Controls.Add(this.txtSearch);
          this.tabPage2.Controls.Add(this.viewAccounts);
          this.tabPage2.Location = new System.Drawing.Point(4, 22);
          this.tabPage2.Name = "tabPage2";
@@ -491,15 +503,13 @@ namespace TestQua_Project__APP_.Admin
          this.button1.Text = "Home";
          this.button1.UseVisualStyleBackColor = false;
          // 
-         // txtRoleId
+         // txtSearch
          // 
-         this.txtRoleId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-         this.txtRoleId.Enabled = false;
-         this.txtRoleId.Location = new System.Drawing.Point(498, 266);
-         this.txtRoleId.Name = "txtRoleId";
-         this.txtRoleId.Size = new System.Drawing.Size(125, 13);
-         this.txtRoleId.TabIndex = 63;
-         this.txtRoleId.Visible = false;
+         this.txtSearch.Location = new System.Drawing.Point(184, 7);
+         this.txtSearch.Name = "txtSearch";
+         this.txtSearch.Size = new System.Drawing.Size(100, 20);
+         this.txtSearch.TabIndex = 65;
+         this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
          // 
          // AdminAccounts
          // 
@@ -525,6 +535,7 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage1.ResumeLayout(false);
          this.tabPage1.PerformLayout();
          this.tabPage2.ResumeLayout(false);
+         this.tabPage2.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.viewAccounts)).EndInit();
          this.ResumeLayout(false);
 
@@ -570,5 +581,6 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.DataGridView viewAccounts;
       private System.Windows.Forms.Button button1;
       private System.Windows.Forms.TextBox txtRoleId;
+      private System.Windows.Forms.TextBox txtSearch;
    }
 }

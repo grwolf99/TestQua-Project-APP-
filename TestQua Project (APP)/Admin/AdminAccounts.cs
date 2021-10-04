@@ -201,5 +201,19 @@ namespace TestQua_Project__APP_.Admin
          txtConfirmPassword.Clear();
 
       }
+
+      private void txtSearch_TextChanged(object sender, EventArgs e)
+      {
+         try
+         {
+            Function.gen = "SELECT * FROM UserInformation WHERE UserId LIKE '" + txtSearch.Text + "%' OR FirstName LIKE '" + txtSearch.Text + "%' OR LastName LIKE '" + txtSearch.Text + "%' OR Username LIKE '" + txtSearch.Text + "%' OR Email LIKE '" + txtSearch.Text + "%' OR RoleId LIKE '" + txtSearch.Text + "%' ";
+            Function.fill(Function.gen, viewAccounts);
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
    }
 }

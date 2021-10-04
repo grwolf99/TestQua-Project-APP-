@@ -93,14 +93,14 @@ namespace TestQua_Project__APP_.Customer
       {
          try
          {
-            OpenFileDialog dlg = new OpenFileDialog();
+            /*OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|PNG Files (*.png)|*.png| All Files (*.*)|*.*";
             dlg.Title = "Select Product Picture";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                imageLocation = dlg.FileName.ToString();
                pbProfilePicture.ImageLocation = imageLocation;
-            }
+            }*/
          }
 
          catch (Exception ex)
@@ -133,13 +133,13 @@ namespace TestQua_Project__APP_.Customer
       {
          try
          {
-            byte[] img = null;
+            /*byte[] img = null;
             FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fs);
-            img = br.ReadBytes((int)fs.Length);
+            img = br.ReadBytes((int)fs.Length);*/
 
             Connection.DB();
-            Function.gen = "UPDATE Userinformation Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', Profilepicture = '" + img + "' WHERE Userid = '"+ txtUserid.Text +"' ";
+            Function.gen = "UPDATE Userinformation SET Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "' WHERE Userid = '"+ txtUserid.Text +"' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Profile Saved");
