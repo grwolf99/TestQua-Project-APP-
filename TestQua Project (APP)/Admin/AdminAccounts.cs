@@ -61,7 +61,7 @@ namespace TestQua_Project__APP_.Admin
             txtLastname.Text = viewAccounts[3, e.RowIndex].Value.ToString();
             txtAge.Text = viewAccounts[4, e.RowIndex].Value.ToString();
             txtAddress.Text = viewAccounts[5, e.RowIndex].Value.ToString();
-            cmbGender.Text = viewAccounts[6, e.RowIndex].Value.ToString();
+            cmbGender.Text = viewAccounts[6, e.RowIndex].Value.ToString(); //NOT WORKING
             txtEmail.Text = viewAccounts[7, e.RowIndex].Value.ToString();
             txtUsername.Text = viewAccounts[9, e.RowIndex].Value.ToString();
             txtPassword.Text = viewAccounts[10, e.RowIndex].Value.ToString();
@@ -144,7 +144,7 @@ namespace TestQua_Project__APP_.Admin
          try
          {
             Connection.DB();
-            Function.gen = "UPDATE Userinformation SET Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "' WHERE Userid = '"+ txtUserid.Text +"' ";
+            Function.gen = "UPDATE Userinformation SET Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', contactno = '"+ txtContacno.Text +"' WHERE Userid = '"+ txtUserid.Text +"' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -193,7 +193,6 @@ namespace TestQua_Project__APP_.Admin
          txtLastname.Clear();
          txtAddress.Clear();
          txtAge.Clear();
-         cmbGender.Items.Clear();
          txtContacno.Clear();
          txtEmail.Clear();
          txtUsername.Clear();
@@ -214,6 +213,13 @@ namespace TestQua_Project__APP_.Admin
          {
             MessageBox.Show(ex.Message);
          }
+      }
+
+      private void btnHome_Click(object sender, EventArgs e)
+      {
+         var adminhome = new AdminHome();
+         adminhome.Show();
+         Close();
       }
    }
 }

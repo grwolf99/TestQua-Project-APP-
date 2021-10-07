@@ -67,9 +67,9 @@ namespace TestQua_Project__APP_.Admin
          this.txtEmail = new System.Windows.Forms.TextBox();
          this.label1 = new System.Windows.Forms.Label();
          this.tabPage2 = new System.Windows.Forms.TabPage();
-         this.viewAccounts = new System.Windows.Forms.DataGridView();
-         this.button1 = new System.Windows.Forms.Button();
          this.txtSearch = new System.Windows.Forms.TextBox();
+         this.viewAccounts = new System.Windows.Forms.DataGridView();
+         this.btnHome = new System.Windows.Forms.Button();
          this.panel1.SuspendLayout();
          this.tabcontrolAdminAccounts.SuspendLayout();
          this.tabPage1.SuspendLayout();
@@ -291,6 +291,7 @@ namespace TestQua_Project__APP_.Admin
          this.txtUserid.Name = "txtUserid";
          this.txtUserid.Size = new System.Drawing.Size(125, 13);
          this.txtUserid.TabIndex = 53;
+         this.txtUserid.Visible = false;
          // 
          // label3
          // 
@@ -479,6 +480,14 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage2.Text = "View Accounts";
          this.tabPage2.UseVisualStyleBackColor = true;
          // 
+         // txtSearch
+         // 
+         this.txtSearch.Location = new System.Drawing.Point(184, 7);
+         this.txtSearch.Name = "txtSearch";
+         this.txtSearch.Size = new System.Drawing.Size(100, 20);
+         this.txtSearch.TabIndex = 65;
+         this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+         // 
          // viewAccounts
          // 
          this.viewAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -488,28 +497,21 @@ namespace TestQua_Project__APP_.Admin
          this.viewAccounts.TabIndex = 0;
          this.viewAccounts.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.viewAccounts_CellMouseClick);
          // 
-         // button1
+         // btnHome
          // 
-         this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.button1.FlatAppearance.BorderSize = 0;
-         this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.button1.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
-         this.button1.ForeColor = System.Drawing.Color.White;
-         this.button1.Location = new System.Drawing.Point(12, 133);
-         this.button1.Name = "button1";
-         this.button1.Size = new System.Drawing.Size(167, 64);
-         this.button1.TabIndex = 40;
-         this.button1.Text = "Home";
-         this.button1.UseVisualStyleBackColor = false;
-         // 
-         // txtSearch
-         // 
-         this.txtSearch.Location = new System.Drawing.Point(184, 7);
-         this.txtSearch.Name = "txtSearch";
-         this.txtSearch.Size = new System.Drawing.Size(100, 20);
-         this.txtSearch.TabIndex = 65;
-         this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+         this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnHome.FlatAppearance.BorderSize = 0;
+         this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.btnHome.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
+         this.btnHome.ForeColor = System.Drawing.Color.White;
+         this.btnHome.Location = new System.Drawing.Point(12, 133);
+         this.btnHome.Name = "btnHome";
+         this.btnHome.Size = new System.Drawing.Size(167, 64);
+         this.btnHome.TabIndex = 40;
+         this.btnHome.Text = "Home";
+         this.btnHome.UseVisualStyleBackColor = false;
+         this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
          // 
          // AdminAccounts
          // 
@@ -517,7 +519,7 @@ namespace TestQua_Project__APP_.Admin
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
-         this.Controls.Add(this.button1);
+         this.Controls.Add(this.btnHome);
          this.Controls.Add(this.tabcontrolAdminAccounts);
          this.Controls.Add(this.btnLogout);
          this.Controls.Add(this.btnReports);
@@ -579,7 +581,7 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.TabPage tabPage2;
       private System.Windows.Forms.DataGridView viewAccounts;
-      private System.Windows.Forms.Button button1;
+      private System.Windows.Forms.Button btnHome;
       private System.Windows.Forms.TextBox txtRoleId;
       private System.Windows.Forms.TextBox txtSearch;
    }

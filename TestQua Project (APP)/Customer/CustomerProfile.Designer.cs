@@ -406,7 +406,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnHome.ForeColor = System.Drawing.Color.White;
          this.btnHome.Location = new System.Drawing.Point(12, 133);
          this.btnHome.Name = "btnHome";
-         this.btnHome.Size = new System.Drawing.Size(167, 64);
+         this.btnHome.Size = new System.Drawing.Size(158, 64);
          this.btnHome.TabIndex = 23;
          this.btnHome.Text = "Home";
          this.btnHome.UseVisualStyleBackColor = false;
