@@ -160,5 +160,17 @@ namespace TestQua_Project__APP_.Customer
          customerhome.Show();
          Hide();
       }
+
+      private void btnProducts_Click(object sender, EventArgs e)
+      {
+         var customerproduct = new CustomerProduct();
+         customerproduct.Show();
+         Close();
+      }
+
+      private void panelProfile_Paint(object sender, PaintEventArgs e)
+      {
+
+      }
    }
 }

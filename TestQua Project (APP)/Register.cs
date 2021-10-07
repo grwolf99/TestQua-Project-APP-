@@ -48,5 +48,10 @@ namespace TestQua_Project__APP_
          homepage.Show();
          Close();
       }
+
+      private void Register_Load(object sender, EventArgs e)
+      {
+
+      }
    }
 }

@@ -47,6 +47,8 @@ namespace TestQua_Project__APP_
          this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(73)))), ((int)(((byte)(116)))));
          this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
          this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+         this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
          this.btnLogin.Location = new System.Drawing.Point(378, 272);
          this.btnLogin.Name = "btnLogin";
          this.btnLogin.Size = new System.Drawing.Size(132, 41);

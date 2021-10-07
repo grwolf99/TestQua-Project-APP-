@@ -48,7 +48,9 @@ namespace TestQua_Project__APP_.Admin
 
       private void btnProducts_Click(object sender, EventArgs e)
       {
-         
+         var viewproduct = new Customer.CustomerProductView();
+         viewproduct.Show();
+         Close();
       }
 
       private void viewAccounts_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

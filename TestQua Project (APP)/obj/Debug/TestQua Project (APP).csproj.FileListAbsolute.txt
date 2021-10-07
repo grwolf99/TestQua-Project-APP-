@@ -55,3 +55,5 @@ D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Pro
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).pdb
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csproj.AssemblyReference.cache
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Guest.GuestHome.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerProduct.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerProductView.resources

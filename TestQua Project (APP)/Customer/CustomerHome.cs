@@ -35,5 +35,12 @@ namespace TestQua_Project__APP_.Customer
          home.Show();
          Close();
       }
+
+      private void btnProducts_Click(object sender, EventArgs e)
+      {
+         var customerproduct = new CustomerProduct();
+         customerproduct.Show();
+         Close();
+      }
    }
 }

@@ -292,11 +292,11 @@ namespace TestQua_Project__APP_
          this.linkLabel1.AutoSize = true;
          this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
          this.linkLabel1.DisabledLinkColor = System.Drawing.Color.Purple;
-         this.linkLabel1.Font = new System.Drawing.Font("Forte", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.linkLabel1.Font = new System.Drawing.Font("Forte", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
          this.linkLabel1.Location = new System.Drawing.Point(420, 23);
          this.linkLabel1.Name = "linkLabel1";
-         this.linkLabel1.Size = new System.Drawing.Size(119, 17);
+         this.linkLabel1.Size = new System.Drawing.Size(142, 21);
          this.linkLabel1.TabIndex = 0;
          this.linkLabel1.TabStop = true;
          this.linkLabel1.Text = "Login as a Guest";
@@ -305,9 +305,10 @@ namespace TestQua_Project__APP_
          // btnRegister
          // 
          this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+         this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnRegister.Location = new System.Drawing.Point(670, 17);
          this.btnRegister.Name = "btnRegister";
-         this.btnRegister.Size = new System.Drawing.Size(75, 23);
+         this.btnRegister.Size = new System.Drawing.Size(90, 43);
          this.btnRegister.TabIndex = 0;
          this.btnRegister.Text = "Register";
          this.btnRegister.UseVisualStyleBackColor = true;
@@ -316,9 +317,10 @@ namespace TestQua_Project__APP_
          // btnLogin
          // 
          this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+         this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnLogin.Location = new System.Drawing.Point(573, 17);
          this.btnLogin.Name = "btnLogin";
-         this.btnLogin.Size = new System.Drawing.Size(75, 23);
+         this.btnLogin.Size = new System.Drawing.Size(90, 43);
          this.btnLogin.TabIndex = 1;
          this.btnLogin.Text = "Login";
          this.btnLogin.UseVisualStyleBackColor = true;
