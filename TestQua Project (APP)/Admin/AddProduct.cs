@@ -104,5 +104,90 @@ namespace TestQua_Project__APP_.Admin
          var viewproduct = new ViewProduct();
          viewproduct.Show();
       }
+
+      private void viewDataProduct()
+      {
+         Connection.DB();
+         Function.gen = "SELECT * from ProductInformation";
+         Function.fill(Function.gen, dataGridView1);
+      }
+
+      private void AddProduct_Load(object sender, EventArgs e)
+      {
+         viewDataProduct();
+      }
+
+      private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+      {
+         txtbProductId.Text = dataGridView1[0, e.RowIndex].Value.ToString();
+         txtbProductName.Text = dataGridView1[1, e.RowIndex].Value.ToString();
+         txtbProductDescription.Text = dataGridView1[2, e.RowIndex].Value.ToString();
+         txtbProductPrice.Text = dataGridView1[3, e.RowIndex].Value.ToString();
+         byte[] img = (byte[])(dataGridView1[4, e.RowIndex].Value);
+
+         if (img == null)
+         {
+            pictureBox.Image = null;
+         }
+         else
+         {
+            MemoryStream ms = new MemoryStream(img);
+            pictureBox.Image = Image.FromStream(ms);
+         }
+      }
+
+      private void btnUpdate_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            Connection.DB();
+            Function.gen = "UPDATE ProductInformation SET productname = '"+ txtbProductName.Text +"', productdescrip = '"+ txtbProductDescription.Text +"', productprice = '"+ txtbProductPrice.Text +"' WHERE productid = '"+ txtbProductId.Text +"' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.ExecuteNonQuery();
+            MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Connection.con.Close();
+            viewDataProduct();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
+
+      private void btnUpdatePic_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|PNG Files (*.png)|*.png| All Files (*.*)|*.*";
+            dlg.Title = "Select Product Picture";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+               imageLocation = dlg.FileName.ToString();
+               pictureBox.ImageLocation = imageLocation;
+            }
+
+            byte[] img = null;
+            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+
+            Connection.DB();
+            Function.gen = "UPDATE ProductInformation SET productimage = @img WHERE productid = '" + txtbProductId.Text + "' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.Parameters.Add(new SqlParameter("@img", img));
+            Function.command.ExecuteNonQuery();
+            MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Connection.con.Close();
+            viewDataProduct();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
    }
 }

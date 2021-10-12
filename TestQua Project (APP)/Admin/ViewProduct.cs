@@ -60,6 +60,12 @@ namespace TestQua_Project__APP_.Admin
 
          Connection.con.Close();
       }
+
+      private void btnProduct_Click(object sender, EventArgs e)
+      {
+         var product = new AddProduct();
+         product.Show();
+      }
    }
 }
 

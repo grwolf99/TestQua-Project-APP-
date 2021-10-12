@@ -57,3 +57,5 @@ D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Pro
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Guest.GuestHome.resources
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerProduct.resources
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerProductView.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerOrder.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Admin.AdminProduct.resources

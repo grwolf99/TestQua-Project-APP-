@@ -41,10 +41,13 @@ namespace TestQua_Project__APP_.Admin
          this.btnShow = new System.Windows.Forms.Button();
          this.txtbProductId = new System.Windows.Forms.TextBox();
          this.btnViewProduct = new System.Windows.Forms.Button();
-         this.txtTEST = new System.Windows.Forms.TextBox();
-         this.txtGender = new System.Windows.Forms.TextBox();
-         this.label5 = new System.Windows.Forms.Label();
+         this.lblTesting = new System.Windows.Forms.Label();
+         this.lblTesting2 = new System.Windows.Forms.Label();
+         this.dataGridView1 = new System.Windows.Forms.DataGridView();
+         this.btnUpdate = new System.Windows.Forms.Button();
+         this.btnUpdatePic = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
          this.SuspendLayout();
          // 
          // txtbProductName
@@ -151,38 +154,64 @@ namespace TestQua_Project__APP_.Admin
          this.btnViewProduct.UseVisualStyleBackColor = true;
          this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
          // 
-         // txtTEST
+         // lblTesting
          // 
-         this.txtTEST.Location = new System.Drawing.Point(506, 134);
-         this.txtTEST.Name = "txtTEST";
-         this.txtTEST.Size = new System.Drawing.Size(100, 20);
-         this.txtTEST.TabIndex = 13;
+         this.lblTesting.AutoSize = true;
+         this.lblTesting.Location = new System.Drawing.Point(242, 19);
+         this.lblTesting.Name = "lblTesting";
+         this.lblTesting.Size = new System.Drawing.Size(35, 13);
+         this.lblTesting.TabIndex = 18;
+         this.lblTesting.Text = "label4";
          // 
-         // txtGender
+         // lblTesting2
          // 
-         this.txtGender.Location = new System.Drawing.Point(498, 243);
-         this.txtGender.Name = "txtGender";
-         this.txtGender.Size = new System.Drawing.Size(100, 20);
-         this.txtGender.TabIndex = 15;
+         this.lblTesting2.AutoSize = true;
+         this.lblTesting2.Location = new System.Drawing.Point(311, 19);
+         this.lblTesting2.Name = "lblTesting2";
+         this.lblTesting2.Size = new System.Drawing.Size(35, 13);
+         this.lblTesting2.TabIndex = 19;
+         this.lblTesting2.Text = "label4";
          // 
-         // label5
+         // dataGridView1
          // 
-         this.label5.AutoSize = true;
-         this.label5.Location = new System.Drawing.Point(503, 219);
-         this.label5.Name = "label5";
-         this.label5.Size = new System.Drawing.Size(42, 13);
-         this.label5.TabIndex = 17;
-         this.label5.Text = "Gender";
+         this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.dataGridView1.Location = new System.Drawing.Point(448, 12);
+         this.dataGridView1.Name = "dataGridView1";
+         this.dataGridView1.Size = new System.Drawing.Size(340, 376);
+         this.dataGridView1.TabIndex = 0;
+         this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+         // 
+         // btnUpdate
+         // 
+         this.btnUpdate.Location = new System.Drawing.Point(338, 240);
+         this.btnUpdate.Name = "btnUpdate";
+         this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+         this.btnUpdate.TabIndex = 20;
+         this.btnUpdate.Text = "Update";
+         this.btnUpdate.UseVisualStyleBackColor = true;
+         this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+         // 
+         // btnUpdatePic
+         // 
+         this.btnUpdatePic.Location = new System.Drawing.Point(367, 96);
+         this.btnUpdatePic.Name = "btnUpdatePic";
+         this.btnUpdatePic.Size = new System.Drawing.Size(75, 23);
+         this.btnUpdatePic.TabIndex = 21;
+         this.btnUpdatePic.Text = "Update Pic";
+         this.btnUpdatePic.UseVisualStyleBackColor = true;
+         this.btnUpdatePic.Click += new System.EventHandler(this.btnUpdatePic_Click);
          // 
          // AddProduct
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(800, 450);
-         this.Controls.Add(this.label5);
-         this.Controls.Add(this.txtGender);
-         this.Controls.Add(this.txtTEST);
+         this.Controls.Add(this.btnUpdatePic);
+         this.Controls.Add(this.btnUpdate);
+         this.Controls.Add(this.lblTesting2);
+         this.Controls.Add(this.lblTesting);
          this.Controls.Add(this.btnViewProduct);
+         this.Controls.Add(this.dataGridView1);
          this.Controls.Add(this.txtbProductId);
          this.Controls.Add(this.btnShow);
          this.Controls.Add(this.label3);
@@ -196,7 +225,9 @@ namespace TestQua_Project__APP_.Admin
          this.Controls.Add(this.txtbProductName);
          this.Name = "AddProduct";
          this.Text = "AddProduct";
+         this.Load += new System.EventHandler(this.AddProduct_Load);
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -216,8 +247,10 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.Button btnShow;
       private System.Windows.Forms.TextBox txtbProductId;
       private System.Windows.Forms.Button btnViewProduct;
-      private System.Windows.Forms.TextBox txtTEST;
-      private System.Windows.Forms.TextBox txtGender;
-      private System.Windows.Forms.Label label5;
+      private System.Windows.Forms.Label lblTesting;
+      private System.Windows.Forms.Label lblTesting2;
+      private System.Windows.Forms.DataGridView dataGridView1;
+      private System.Windows.Forms.Button btnUpdate;
+      private System.Windows.Forms.Button btnUpdatePic;
    }
 }

@@ -40,9 +40,9 @@ namespace TestQua_Project__APP_.Admin
          this.pictureBox1 = new System.Windows.Forms.PictureBox();
          this.pictureBox3 = new System.Windows.Forms.PictureBox();
          this.panel1 = new System.Windows.Forms.Panel();
-         this.label1 = new System.Windows.Forms.Label();
-         this.label2 = new System.Windows.Forms.Label();
          this.label4 = new System.Windows.Forms.Label();
+         this.label2 = new System.Windows.Forms.Label();
+         this.label1 = new System.Windows.Forms.Label();
          this.btnHome = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,7 +89,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnOrder.Name = "btnOrder";
          this.btnOrder.Size = new System.Drawing.Size(167, 64);
          this.btnOrder.TabIndex = 37;
-         this.btnOrder.Text = "Order";
+         this.btnOrder.Text = "Reports";
          this.btnOrder.UseVisualStyleBackColor = false;
          // 
          // pictureBox2
@@ -171,17 +171,17 @@ namespace TestQua_Project__APP_.Admin
          this.panel1.Size = new System.Drawing.Size(1167, 73);
          this.panel1.TabIndex = 31;
          // 
-         // label1
+         // label4
          // 
-         this.label1.AutoSize = true;
-         this.label1.BackColor = System.Drawing.Color.Transparent;
-         this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
-         this.label1.Location = new System.Drawing.Point(56, 47);
-         this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(212, 18);
-         this.label1.TabIndex = 9;
-         this.label1.Text = "A Group of TEAM POWER";
+         this.label4.AutoSize = true;
+         this.label4.BackColor = System.Drawing.Color.Transparent;
+         this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
+         this.label4.Location = new System.Drawing.Point(56, 47);
+         this.label4.Name = "label4";
+         this.label4.Size = new System.Drawing.Size(212, 18);
+         this.label4.TabIndex = 9;
+         this.label4.Text = "A Group of TEAM POWER";
          // 
          // label2
          // 
@@ -195,17 +195,17 @@ namespace TestQua_Project__APP_.Admin
          this.label2.TabIndex = 0;
          this.label2.Text = "Bloom and Puff";
          // 
-         // label4
+         // label1
          // 
-         this.label4.AutoSize = true;
-         this.label4.BackColor = System.Drawing.Color.Transparent;
-         this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
-         this.label4.Location = new System.Drawing.Point(56, 47);
-         this.label4.Name = "label4";
-         this.label4.Size = new System.Drawing.Size(212, 18);
-         this.label4.TabIndex = 9;
-         this.label4.Text = "A Group of TEAM POWER";
+         this.label1.AutoSize = true;
+         this.label1.BackColor = System.Drawing.Color.Transparent;
+         this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
+         this.label1.Location = new System.Drawing.Point(56, 47);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(212, 18);
+         this.label1.TabIndex = 9;
+         this.label1.Text = "A Group of TEAM POWER";
          // 
          // btnHome
          // 
