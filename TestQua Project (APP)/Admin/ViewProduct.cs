@@ -19,8 +19,9 @@ namespace TestQua_Project__APP_.Admin
       private Label name;
       private Label description;
       private Label quantity;
-      private Button button;
-      double totalprice = 0;
+      private double totalprice = 0;
+      private int productid = 0;
+      private int qty = 0;
 
       public ViewProduct()
       {
@@ -55,7 +56,7 @@ namespace TestQua_Project__APP_.Admin
             byte[] array = new byte[Convert.ToInt32(len + 1)];
             Function.reader.GetBytes(4, 0, array, 0, Convert.ToInt32(len));
             pic = new PictureBox();
-            pic.Width = 300;
+            pic.Width = 400;
             pic.Height = 300;
             pic.BackgroundImageLayout = ImageLayout.Stretch;
             pic.Tag = Function.reader["productid"].ToString();
@@ -67,12 +68,14 @@ namespace TestQua_Project__APP_.Admin
             name.Text = Function.reader["productname"].ToString();
             name.BackColor = Color.FromArgb(46, 134, 222);
             name.TextAlign = ContentAlignment.MiddleCenter;
-            name.Dock = DockStyle.Top;
+            name.Dock = DockStyle.Right;
+            name.Width = 70;
             name.Tag = Function.reader["productname"].ToString();
 
-            price.Text = Function.reader["productprice"].ToString();
+            price.Text = "P" + Function.reader["productprice"].ToString();
             price.BackColor = Color.FromArgb(46, 134, 222);
-            price.Dock = DockStyle.Bottom;
+            price.Dock = DockStyle.Right;
+            price.Width = 70;
             price.Tag = Function.reader["productprice"].ToString();
 
             MemoryStream ms = new MemoryStream(array);
@@ -83,19 +86,7 @@ namespace TestQua_Project__APP_.Admin
             flowLayoutPanel1.Controls.Add(pic);
 
             pic.Click += new EventHandler(OnClick);
-            //pic.Click += (sender, e) => OnClick(this, e, pic.Tag.ToString());
-            //name.Click += (sender, e) => OnClick(this, e, pic.Tag.ToString());
-            //price.Click += (sender, e) => OnClick(this, e, pic.Tag.ToString());
          }
-
-         /*for (int i = 1; i < 15; i++)
-         {
-            button = new Button();
-            button.Width = 274;
-            button.Height = 50;
-            button.Text = "Table " + i;
-            button.BackgroundImageLayout = ImageLayout.Stretch;
-         }*/
 
          flowLayoutPanel1.AutoScroll = true;
          Connection.con.Close();
@@ -103,25 +94,62 @@ namespace TestQua_Project__APP_.Admin
 
       public void OnClick(object sender, EventArgs e)
       {
-         int productid =  Convert.ToInt32(((PictureBox)sender).Tag);
-         //string productid =  ((PictureBox)sender).Tag.ToString();
-         //MessageBox.Show(productid.ToString());
-         
-         Connection.DB();
-         Function.gen = "SELECT * FROM ProductInformation WHERE productid = '"+ productid +"' ";
-         Function.command = new SqlCommand(Function.gen, Connection.con);
-         Function.reader = Function.command.ExecuteReader();
-
-         if (Function.reader.HasRows)
+         try
          {
-            //1400
-            //MessageBox.Show("IM HERE");
-            Function.reader.Read();
-            datagridViewcart.Rows.Add(datagridViewcart.Rows.Count - 1 + 1, Function.reader["productid"].ToString(), Function.reader["productname"].ToString(), double.Parse(Function.reader["productprice"].ToString()).ToString("#, ##0.00"));
-            totalprice += double.Parse(Function.reader["productprice"].ToString());
-            lblTotalPrice.Text = totalprice.ToString("#, ##0.00");
+            int productid = Convert.ToInt32(((PictureBox)sender).Tag);
+
+            Connection.DB();
+            Function.gen = "SELECT * FROM ProductInformation WHERE productid = '" + productid + "' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.reader = Function.command.ExecuteReader();
+
+            if (Function.reader.HasRows)
+            {
+               Function.reader.Read();
+               datagridViewcart.Rows.Add(datagridViewcart.Rows.Count - 1 + 1, Function.reader["productid"].ToString(), Function.reader["productname"].ToString(), double.Parse(Function.reader["productprice"].ToString()).ToString("#, ###.00"));
+               totalprice += double.Parse(Function.reader["productprice"].ToString());
+               lblTotalPrice.Text = "P" + totalprice.ToString("#, ###.00");
+               productid = Convert.ToInt32(Function.reader["productid"]);
+               qty = Convert.ToInt32(Function.reader["quantity"]);
+            }
          }
 
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+         
+      }
+
+      public void setCartdb()
+      {
+         try
+         {
+            Connection.DB();
+            Function.gen = "SELECT * FROM CartDb WHERE productid = '" + productid + "' AND UserId = '" + Login.userid + "' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.reader = Function.command.ExecuteReader();
+
+            if (Function.reader.HasRows) //TRUE, update product quantity
+            {
+               Function.gen = "UPDATE CartDb SET Quantity = '"+ (qty + 1) +"' WHERE = productid = '"+ productid +"' AND userid = '"+ Login.userid+"' ";
+               Function.command = new SqlCommand(Function.gen, Connection.con);
+               Function.command.ExecuteNonQuery();
+            }
+            else //false, insert to cartdb
+            {
+               Function.gen = "INSERT INTO CartDb(userid, productid, quantity, checker) VALUES()";
+               Function.command = new SqlCommand(Function.gen, Connection.con);
+               Function.command.ExecuteNonQuery();
+            }
+
+            Connection.con.Close();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
       }
 
       private void btnProduct_Click(object sender, EventArgs e)

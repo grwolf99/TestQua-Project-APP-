@@ -44,6 +44,8 @@ namespace TestQua_Project__APP_.Admin
          this.dataGridView1 = new System.Windows.Forms.DataGridView();
          this.btnUpdate = new System.Windows.Forms.Button();
          this.btnUpdatePic = new System.Windows.Forms.Button();
+         this.label4 = new System.Windows.Forms.Label();
+         this.txtQuantity = new System.Windows.Forms.TextBox();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
          this.SuspendLayout();
@@ -66,7 +68,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // pictureBox
          // 
-         this.pictureBox.Location = new System.Drawing.Point(15, 200);
+         this.pictureBox.Location = new System.Drawing.Point(15, 269);
          this.pictureBox.Name = "pictureBox";
          this.pictureBox.Size = new System.Drawing.Size(141, 120);
          this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -75,7 +77,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnBrowse
          // 
-         this.btnBrowse.Location = new System.Drawing.Point(6, 326);
+         this.btnBrowse.Location = new System.Drawing.Point(6, 395);
          this.btnBrowse.Name = "btnBrowse";
          this.btnBrowse.Size = new System.Drawing.Size(75, 23);
          this.btnBrowse.TabIndex = 3;
@@ -85,7 +87,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnSave
          // 
-         this.btnSave.Location = new System.Drawing.Point(6, 368);
+         this.btnSave.Location = new System.Drawing.Point(6, 437);
          this.btnSave.Name = "btnSave";
          this.btnSave.Size = new System.Drawing.Size(75, 23);
          this.btnSave.TabIndex = 4;
@@ -127,7 +129,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnShow
          // 
-         this.btnShow.Location = new System.Drawing.Point(12, 443);
+         this.btnShow.Location = new System.Drawing.Point(12, 512);
          this.btnShow.Name = "btnShow";
          this.btnShow.Size = new System.Drawing.Size(75, 23);
          this.btnShow.TabIndex = 10;
@@ -166,7 +168,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnUpdate
          // 
-         this.btnUpdate.Location = new System.Drawing.Point(87, 368);
+         this.btnUpdate.Location = new System.Drawing.Point(87, 437);
          this.btnUpdate.Name = "btnUpdate";
          this.btnUpdate.Size = new System.Drawing.Size(75, 23);
          this.btnUpdate.TabIndex = 20;
@@ -176,7 +178,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnUpdatePic
          // 
-         this.btnUpdatePic.Location = new System.Drawing.Point(81, 326);
+         this.btnUpdatePic.Location = new System.Drawing.Point(81, 395);
          this.btnUpdatePic.Name = "btnUpdatePic";
          this.btnUpdatePic.Size = new System.Drawing.Size(75, 23);
          this.btnUpdatePic.TabIndex = 21;
@@ -184,11 +186,29 @@ namespace TestQua_Project__APP_.Admin
          this.btnUpdatePic.UseVisualStyleBackColor = true;
          this.btnUpdatePic.Click += new System.EventHandler(this.btnUpdatePic_Click);
          // 
+         // label4
+         // 
+         this.label4.AutoSize = true;
+         this.label4.Location = new System.Drawing.Point(22, 199);
+         this.label4.Name = "label4";
+         this.label4.Size = new System.Drawing.Size(46, 13);
+         this.label4.TabIndex = 23;
+         this.label4.Text = "Quantity";
+         // 
+         // txtQuantity
+         // 
+         this.txtQuantity.Location = new System.Drawing.Point(12, 215);
+         this.txtQuantity.Name = "txtQuantity";
+         this.txtQuantity.Size = new System.Drawing.Size(100, 20);
+         this.txtQuantity.TabIndex = 22;
+         // 
          // AddProduct
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(1071, 625);
+         this.Controls.Add(this.label4);
+         this.Controls.Add(this.txtQuantity);
          this.Controls.Add(this.btnUpdatePic);
          this.Controls.Add(this.btnUpdate);
          this.Controls.Add(this.btnViewProduct);
@@ -231,5 +251,7 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.DataGridView dataGridView1;
       private System.Windows.Forms.Button btnUpdate;
       private System.Windows.Forms.Button btnUpdatePic;
+      private System.Windows.Forms.Label label4;
+      private System.Windows.Forms.TextBox txtQuantity;
    }
 }
