@@ -30,27 +30,24 @@ namespace TestQua_Project__APP_.Admin
       private void InitializeComponent()
       {
          this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-         this.pictureBox1 = new System.Windows.Forms.PictureBox();
          this.btnProduct = new System.Windows.Forms.Button();
          this.datagridViewProduct = new System.Windows.Forms.DataGridView();
-         ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+         this.datagridViewcart = new System.Windows.Forms.DataGridView();
+         this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.lblTotalPrice = new System.Windows.Forms.Label();
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewProduct)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewcart)).BeginInit();
          this.SuspendLayout();
          // 
          // flowLayoutPanel1
          // 
-         this.flowLayoutPanel1.Location = new System.Drawing.Point(398, 29);
+         this.flowLayoutPanel1.Location = new System.Drawing.Point(189, 165);
          this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-         this.flowLayoutPanel1.Size = new System.Drawing.Size(380, 376);
+         this.flowLayoutPanel1.Size = new System.Drawing.Size(891, 493);
          this.flowLayoutPanel1.TabIndex = 1;
-         // 
-         // pictureBox1
-         // 
-         this.pictureBox1.Location = new System.Drawing.Point(337, 411);
-         this.pictureBox1.Name = "pictureBox1";
-         this.pictureBox1.Size = new System.Drawing.Size(65, 27);
-         this.pictureBox1.TabIndex = 2;
-         this.pictureBox1.TabStop = false;
          // 
          // btnProduct
          // 
@@ -65,33 +62,85 @@ namespace TestQua_Project__APP_.Admin
          // datagridViewProduct
          // 
          this.datagridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-         this.datagridViewProduct.Location = new System.Drawing.Point(26, 29);
+         this.datagridViewProduct.Location = new System.Drawing.Point(12, 46);
          this.datagridViewProduct.Name = "datagridViewProduct";
-         this.datagridViewProduct.Size = new System.Drawing.Size(340, 376);
+         this.datagridViewProduct.Size = new System.Drawing.Size(158, 376);
          this.datagridViewProduct.TabIndex = 0;
+         // 
+         // datagridViewcart
+         // 
+         this.datagridViewcart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.datagridViewcart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column4,
+            this.Column2,
+            this.Column3});
+         this.datagridViewcart.Location = new System.Drawing.Point(198, 12);
+         this.datagridViewcart.Name = "datagridViewcart";
+         this.datagridViewcart.Size = new System.Drawing.Size(361, 147);
+         this.datagridViewcart.TabIndex = 4;
+         // 
+         // Column1
+         // 
+         this.Column1.HeaderText = "#";
+         this.Column1.Name = "Column1";
+         // 
+         // Column4
+         // 
+         this.Column4.HeaderText = "ProductID";
+         this.Column4.Name = "Column4";
+         this.Column4.Visible = false;
+         // 
+         // Column2
+         // 
+         this.Column2.HeaderText = "Name";
+         this.Column2.Name = "Column2";
+         // 
+         // Column3
+         // 
+         this.Column3.HeaderText = "Price";
+         this.Column3.Name = "Column3";
+         // 
+         // lblTotalPrice
+         // 
+         this.lblTotalPrice.AutoSize = true;
+         this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.lblTotalPrice.Location = new System.Drawing.Point(649, 24);
+         this.lblTotalPrice.Name = "lblTotalPrice";
+         this.lblTotalPrice.Size = new System.Drawing.Size(126, 46);
+         this.lblTotalPrice.TabIndex = 5;
+         this.lblTotalPrice.Text = "label1";
          // 
          // ViewProduct
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(800, 450);
+         this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.lblTotalPrice);
+         this.Controls.Add(this.datagridViewcart);
          this.Controls.Add(this.btnProduct);
-         this.Controls.Add(this.pictureBox1);
          this.Controls.Add(this.flowLayoutPanel1);
          this.Controls.Add(this.datagridViewProduct);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "ViewProduct";
          this.Text = "ViewProduct";
          this.Load += new System.EventHandler(this.ViewProduct_Load);
-         ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewProduct)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewcart)).EndInit();
          this.ResumeLayout(false);
+         this.PerformLayout();
 
       }
 
       #endregion
       private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-      private System.Windows.Forms.PictureBox pictureBox1;
       private System.Windows.Forms.Button btnProduct;
       private System.Windows.Forms.DataGridView datagridViewProduct;
+      private System.Windows.Forms.DataGridView datagridViewcart;
+      private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+      private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+      private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+      private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+      private System.Windows.Forms.Label lblTotalPrice;
    }
 }

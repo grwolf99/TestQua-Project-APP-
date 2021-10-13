@@ -41,8 +41,6 @@ namespace TestQua_Project__APP_.Admin
          this.btnShow = new System.Windows.Forms.Button();
          this.txtbProductId = new System.Windows.Forms.TextBox();
          this.btnViewProduct = new System.Windows.Forms.Button();
-         this.lblTesting = new System.Windows.Forms.Label();
-         this.lblTesting2 = new System.Windows.Forms.Label();
          this.dataGridView1 = new System.Windows.Forms.DataGridView();
          this.btnUpdate = new System.Windows.Forms.Button();
          this.btnUpdatePic = new System.Windows.Forms.Button();
@@ -52,7 +50,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // txtbProductName
          // 
-         this.txtbProductName.Location = new System.Drawing.Point(110, 93);
+         this.txtbProductName.Location = new System.Drawing.Point(15, 64);
          this.txtbProductName.Name = "txtbProductName";
          this.txtbProductName.Size = new System.Drawing.Size(100, 20);
          this.txtbProductName.TabIndex = 0;
@@ -60,7 +58,7 @@ namespace TestQua_Project__APP_.Admin
          // label1
          // 
          this.label1.AutoSize = true;
-         this.label1.Location = new System.Drawing.Point(25, 96);
+         this.label1.Location = new System.Drawing.Point(18, 44);
          this.label1.Name = "label1";
          this.label1.Size = new System.Drawing.Size(75, 13);
          this.label1.TabIndex = 1;
@@ -68,7 +66,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // pictureBox
          // 
-         this.pictureBox.Location = new System.Drawing.Point(216, 96);
+         this.pictureBox.Location = new System.Drawing.Point(15, 200);
          this.pictureBox.Name = "pictureBox";
          this.pictureBox.Size = new System.Drawing.Size(141, 120);
          this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,7 +75,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnBrowse
          // 
-         this.btnBrowse.Location = new System.Drawing.Point(238, 240);
+         this.btnBrowse.Location = new System.Drawing.Point(6, 326);
          this.btnBrowse.Name = "btnBrowse";
          this.btnBrowse.Size = new System.Drawing.Size(75, 23);
          this.btnBrowse.TabIndex = 3;
@@ -87,7 +85,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnSave
          // 
-         this.btnSave.Location = new System.Drawing.Point(135, 240);
+         this.btnSave.Location = new System.Drawing.Point(6, 368);
          this.btnSave.Name = "btnSave";
          this.btnSave.Size = new System.Drawing.Size(75, 23);
          this.btnSave.TabIndex = 4;
@@ -97,14 +95,14 @@ namespace TestQua_Project__APP_.Admin
          // 
          // txtbProductDescription
          // 
-         this.txtbProductDescription.Location = new System.Drawing.Point(110, 134);
+         this.txtbProductDescription.Location = new System.Drawing.Point(15, 123);
          this.txtbProductDescription.Name = "txtbProductDescription";
          this.txtbProductDescription.Size = new System.Drawing.Size(100, 20);
          this.txtbProductDescription.TabIndex = 5;
          // 
          // txtbProductPrice
          // 
-         this.txtbProductPrice.Location = new System.Drawing.Point(110, 174);
+         this.txtbProductPrice.Location = new System.Drawing.Point(12, 162);
          this.txtbProductPrice.Name = "txtbProductPrice";
          this.txtbProductPrice.Size = new System.Drawing.Size(100, 20);
          this.txtbProductPrice.TabIndex = 6;
@@ -112,7 +110,7 @@ namespace TestQua_Project__APP_.Admin
          // label2
          // 
          this.label2.AutoSize = true;
-         this.label2.Location = new System.Drawing.Point(4, 141);
+         this.label2.Location = new System.Drawing.Point(12, 98);
          this.label2.Name = "label2";
          this.label2.Size = new System.Drawing.Size(100, 13);
          this.label2.TabIndex = 8;
@@ -121,7 +119,7 @@ namespace TestQua_Project__APP_.Admin
          // label3
          // 
          this.label3.AutoSize = true;
-         this.label3.Location = new System.Drawing.Point(25, 181);
+         this.label3.Location = new System.Drawing.Point(22, 146);
          this.label3.Name = "label3";
          this.label3.Size = new System.Drawing.Size(71, 13);
          this.label3.TabIndex = 9;
@@ -129,7 +127,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnShow
          // 
-         this.btnShow.Location = new System.Drawing.Point(202, 304);
+         this.btnShow.Location = new System.Drawing.Point(12, 443);
          this.btnShow.Name = "btnShow";
          this.btnShow.Size = new System.Drawing.Size(75, 23);
          this.btnShow.TabIndex = 10;
@@ -139,14 +137,14 @@ namespace TestQua_Project__APP_.Admin
          // 
          // txtbProductId
          // 
-         this.txtbProductId.Location = new System.Drawing.Point(110, 19);
+         this.txtbProductId.Location = new System.Drawing.Point(15, 12);
          this.txtbProductId.Name = "txtbProductId";
          this.txtbProductId.Size = new System.Drawing.Size(100, 20);
          this.txtbProductId.TabIndex = 11;
          // 
          // btnViewProduct
          // 
-         this.btnViewProduct.Location = new System.Drawing.Point(59, 324);
+         this.btnViewProduct.Location = new System.Drawing.Point(-3, 590);
          this.btnViewProduct.Name = "btnViewProduct";
          this.btnViewProduct.Size = new System.Drawing.Size(75, 23);
          this.btnViewProduct.TabIndex = 12;
@@ -154,36 +152,21 @@ namespace TestQua_Project__APP_.Admin
          this.btnViewProduct.UseVisualStyleBackColor = true;
          this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
          // 
-         // lblTesting
-         // 
-         this.lblTesting.AutoSize = true;
-         this.lblTesting.Location = new System.Drawing.Point(242, 19);
-         this.lblTesting.Name = "lblTesting";
-         this.lblTesting.Size = new System.Drawing.Size(35, 13);
-         this.lblTesting.TabIndex = 18;
-         this.lblTesting.Text = "label4";
-         // 
-         // lblTesting2
-         // 
-         this.lblTesting2.AutoSize = true;
-         this.lblTesting2.Location = new System.Drawing.Point(311, 19);
-         this.lblTesting2.Name = "lblTesting2";
-         this.lblTesting2.Size = new System.Drawing.Size(35, 13);
-         this.lblTesting2.TabIndex = 19;
-         this.lblTesting2.Text = "label4";
-         // 
          // dataGridView1
          // 
+         this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
          this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-         this.dataGridView1.Location = new System.Drawing.Point(448, 12);
+         this.dataGridView1.Location = new System.Drawing.Point(168, 64);
          this.dataGridView1.Name = "dataGridView1";
-         this.dataGridView1.Size = new System.Drawing.Size(340, 376);
+         this.dataGridView1.RowHeadersWidth = 150;
+         this.dataGridView1.RowTemplate.Height = 400;
+         this.dataGridView1.Size = new System.Drawing.Size(891, 493);
          this.dataGridView1.TabIndex = 0;
          this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
          // 
          // btnUpdate
          // 
-         this.btnUpdate.Location = new System.Drawing.Point(338, 240);
+         this.btnUpdate.Location = new System.Drawing.Point(87, 368);
          this.btnUpdate.Name = "btnUpdate";
          this.btnUpdate.Size = new System.Drawing.Size(75, 23);
          this.btnUpdate.TabIndex = 20;
@@ -193,7 +176,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // btnUpdatePic
          // 
-         this.btnUpdatePic.Location = new System.Drawing.Point(367, 96);
+         this.btnUpdatePic.Location = new System.Drawing.Point(81, 326);
          this.btnUpdatePic.Name = "btnUpdatePic";
          this.btnUpdatePic.Size = new System.Drawing.Size(75, 23);
          this.btnUpdatePic.TabIndex = 21;
@@ -205,11 +188,9 @@ namespace TestQua_Project__APP_.Admin
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(800, 450);
+         this.ClientSize = new System.Drawing.Size(1071, 625);
          this.Controls.Add(this.btnUpdatePic);
          this.Controls.Add(this.btnUpdate);
-         this.Controls.Add(this.lblTesting2);
-         this.Controls.Add(this.lblTesting);
          this.Controls.Add(this.btnViewProduct);
          this.Controls.Add(this.dataGridView1);
          this.Controls.Add(this.txtbProductId);
@@ -247,8 +228,6 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.Button btnShow;
       private System.Windows.Forms.TextBox txtbProductId;
       private System.Windows.Forms.Button btnViewProduct;
-      private System.Windows.Forms.Label lblTesting;
-      private System.Windows.Forms.Label lblTesting2;
       private System.Windows.Forms.DataGridView dataGridView1;
       private System.Windows.Forms.Button btnUpdate;
       private System.Windows.Forms.Button btnUpdatePic;

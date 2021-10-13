@@ -115,6 +115,7 @@ namespace TestQua_Project__APP_.Admin
       private void AddProduct_Load(object sender, EventArgs e)
       {
          viewDataProduct();
+         //dataGridView1.RowTemplate.Height = 60;
       }
 
       private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
