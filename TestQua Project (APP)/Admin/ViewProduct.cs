@@ -42,8 +42,10 @@ namespace TestQua_Project__APP_.Admin
 
       private void flowlayoutViewProdcut()
       {
+         flowLayoutPanel1.Controls.Clear();
+
          Connection.DB();
-         Function.gen = "SELECT * FROM ProductInformation";
+         Function.gen = "SELECT * FROM ProductInformation WHERE productname LIKE '" + txtSearchProduct.Text + "%' ";
          Function.command = new SqlCommand(Function.gen, Connection.con);
          Function.reader = Function.command.ExecuteReader();
 
@@ -126,6 +128,11 @@ namespace TestQua_Project__APP_.Admin
       {
          var product = new AddProduct();
          product.Show();
+      }
+
+      private void txtSearchProduct_TextChanged(object sender, EventArgs e)
+      {
+         flowlayoutViewProdcut();
       }
    }
 }

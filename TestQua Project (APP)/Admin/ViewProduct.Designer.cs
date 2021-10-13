@@ -38,6 +38,7 @@ namespace TestQua_Project__APP_.Admin
          this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.lblTotalPrice = new System.Windows.Forms.Label();
+         this.txtSearchProduct = new System.Windows.Forms.TextBox();
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewProduct)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewcart)).BeginInit();
          this.SuspendLayout();
@@ -111,11 +112,20 @@ namespace TestQua_Project__APP_.Admin
          this.lblTotalPrice.TabIndex = 5;
          this.lblTotalPrice.Text = "label1";
          // 
+         // txtSearchProduct
+         // 
+         this.txtSearchProduct.Location = new System.Drawing.Point(634, 87);
+         this.txtSearchProduct.Name = "txtSearchProduct";
+         this.txtSearchProduct.Size = new System.Drawing.Size(100, 20);
+         this.txtSearchProduct.TabIndex = 6;
+         this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
+         // 
          // ViewProduct
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.txtSearchProduct);
          this.Controls.Add(this.lblTotalPrice);
          this.Controls.Add(this.datagridViewcart);
          this.Controls.Add(this.btnProduct);
@@ -142,5 +152,6 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
       private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
       private System.Windows.Forms.Label lblTotalPrice;
+      private System.Windows.Forms.TextBox txtSearchProduct;
    }
 }
