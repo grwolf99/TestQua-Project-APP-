@@ -43,6 +43,7 @@ namespace TestQua_Project__APP_.Customer
       {
          btnProducts.FlatStyle = FlatStyle.Standard;
          ViewProducts();
+         viewCountCart();
       }
 
       private void viewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -138,10 +139,38 @@ namespace TestQua_Project__APP_.Customer
          ViewProducts();
       }
 
+      private void viewCountCart()
+      {
+         try
+         {
+            Connection.DB();
+            Function.gen = "SELECT COUNT(*) AS total FROM CartDb WHERE UserId = '"+ Login.userid +"' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.reader = Function.command.ExecuteReader();
+
+            if (Function.reader.HasRows)
+            {
+               Function.reader.Read();
+               lblCountCart.Text = (Function.reader["total"].ToString());
+            }
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
+
       private void button1_Click(object sender, EventArgs e)
       {
          var viewproduct = new ViewProduct();
          viewproduct.Show();
+      }
+
+      private void btnViewCart_Click(object sender, EventArgs e)
+      {
+         var viewcart = new ViewCart();
+         viewcart.Show();
       }
    }
 }

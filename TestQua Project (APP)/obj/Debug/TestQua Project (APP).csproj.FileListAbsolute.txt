@@ -88,3 +88,4 @@ D:\Programming\TestQua Project (APP)\TestQua Project (APP)\bin\Debug\IKVM.OpenJD
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\bin\Debug\IKVM.Runtime.dll
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\bin\Debug\IKVM.Runtime.JNI.dll
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csproj.CopyComplete
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.ViewCart.resources

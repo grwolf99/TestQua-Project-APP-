@@ -38,10 +38,11 @@ namespace TestQua_Project__APP_.Customer
          this.btnOrder = new System.Windows.Forms.Button();
          this.btnLogout = new System.Windows.Forms.Button();
          this.btnHome = new System.Windows.Forms.Button();
-         this.label2 = new System.Windows.Forms.Label();
-         this.label4 = new System.Windows.Forms.Label();
-         this.panel1 = new System.Windows.Forms.Panel();
          this.txtSearchProduct = new System.Windows.Forms.TextBox();
+         this.panel1 = new System.Windows.Forms.Panel();
+         this.label4 = new System.Windows.Forms.Label();
+         this.label2 = new System.Windows.Forms.Label();
+         this.btnViewCart = new System.Windows.Forms.Button();
          this.panel1.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -153,17 +154,24 @@ namespace TestQua_Project__APP_.Customer
          this.btnHome.UseVisualStyleBackColor = false;
          this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
          // 
-         // label2
+         // txtSearchProduct
          // 
-         this.label2.AutoSize = true;
-         this.label2.BackColor = System.Drawing.Color.Transparent;
-         this.label2.Font = new System.Drawing.Font("Segoe Print", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
-         this.label2.Location = new System.Drawing.Point(50, 9);
-         this.label2.Name = "label2";
-         this.label2.Size = new System.Drawing.Size(251, 51);
-         this.label2.TabIndex = 0;
-         this.label2.Text = "Bloom and Puff";
+         this.txtSearchProduct.Location = new System.Drawing.Point(422, 93);
+         this.txtSearchProduct.Name = "txtSearchProduct";
+         this.txtSearchProduct.Size = new System.Drawing.Size(100, 20);
+         this.txtSearchProduct.TabIndex = 33;
+         this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
+         // 
+         // panel1
+         // 
+         this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+         this.panel1.Controls.Add(this.label4);
+         this.panel1.Controls.Add(this.label2);
+         this.panel1.Location = new System.Drawing.Point(0, 0);
+         this.panel1.Name = "panel1";
+         this.panel1.Size = new System.Drawing.Size(1089, 73);
+         this.panel1.TabIndex = 24;
          // 
          // label4
          // 
@@ -177,24 +185,27 @@ namespace TestQua_Project__APP_.Customer
          this.label4.TabIndex = 9;
          this.label4.Text = "A Group of TEAM POWER";
          // 
-         // panel1
+         // label2
          // 
-         this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-         this.panel1.Controls.Add(this.label4);
-         this.panel1.Controls.Add(this.label2);
-         this.panel1.Location = new System.Drawing.Point(0, 0);
-         this.panel1.Name = "panel1";
-         this.panel1.Size = new System.Drawing.Size(1089, 73);
-         this.panel1.TabIndex = 24;
+         this.label2.AutoSize = true;
+         this.label2.BackColor = System.Drawing.Color.Transparent;
+         this.label2.Font = new System.Drawing.Font("Segoe Print", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
+         this.label2.Location = new System.Drawing.Point(50, 9);
+         this.label2.Name = "label2";
+         this.label2.Size = new System.Drawing.Size(251, 51);
+         this.label2.TabIndex = 0;
+         this.label2.Text = "Bloom and Puff";
          // 
-         // txtSearchProduct
+         // btnViewCart
          // 
-         this.txtSearchProduct.Location = new System.Drawing.Point(422, 93);
-         this.txtSearchProduct.Name = "txtSearchProduct";
-         this.txtSearchProduct.Size = new System.Drawing.Size(100, 20);
-         this.txtSearchProduct.TabIndex = 33;
-         this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
+         this.btnViewCart.Location = new System.Drawing.Point(873, 67);
+         this.btnViewCart.Name = "btnViewCart";
+         this.btnViewCart.Size = new System.Drawing.Size(132, 23);
+         this.btnViewCart.TabIndex = 36;
+         this.btnViewCart.Text = "Temporary View Cart";
+         this.btnViewCart.UseVisualStyleBackColor = true;
+         this.btnViewCart.Click += new System.EventHandler(this.btnViewCart_Click);
          // 
          // CustomerProduct
          // 
@@ -202,6 +213,7 @@ namespace TestQua_Project__APP_.Customer
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.btnViewCart);
          this.Controls.Add(this.button1);
          this.Controls.Add(this.lblCountCart);
          this.Controls.Add(this.txtSearchProduct);
@@ -237,5 +249,6 @@ namespace TestQua_Project__APP_.Customer
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.Panel panel1;
       private System.Windows.Forms.TextBox txtSearchProduct;
+      private System.Windows.Forms.Button btnViewCart;
    }
 }

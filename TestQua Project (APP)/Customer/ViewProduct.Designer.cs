@@ -38,9 +38,10 @@ namespace TestQua_Project__APP_.Customer
          this.lblPrice = new System.Windows.Forms.Label();
          this.lblDescription = new System.Windows.Forms.Label();
          this.lblQuantity = new System.Windows.Forms.Label();
-         this.comboBox1 = new System.Windows.Forms.ComboBox();
+         this.numericUpandDown_Quantity = new System.Windows.Forms.NumericUpDown();
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).BeginInit();
          this.panel2.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.numericUpandDown_Quantity)).BeginInit();
          this.SuspendLayout();
          // 
          // btnClose
@@ -135,19 +136,12 @@ namespace TestQua_Project__APP_.Customer
          this.lblQuantity.TabIndex = 65;
          this.lblQuantity.Text = "Quantity";
          // 
-         // comboBox1
+         // numericUpandDown_Quantity
          // 
-         this.comboBox1.FormattingEnabled = true;
-         this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-         this.comboBox1.Location = new System.Drawing.Point(169, 492);
-         this.comboBox1.Name = "comboBox1";
-         this.comboBox1.Size = new System.Drawing.Size(121, 21);
-         this.comboBox1.TabIndex = 63;
+         this.numericUpandDown_Quantity.Location = new System.Drawing.Point(195, 499);
+         this.numericUpandDown_Quantity.Name = "numericUpandDown_Quantity";
+         this.numericUpandDown_Quantity.Size = new System.Drawing.Size(120, 20);
+         this.numericUpandDown_Quantity.TabIndex = 65;
          // 
          // ViewProduct
          // 
@@ -155,7 +149,7 @@ namespace TestQua_Project__APP_.Customer
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(689, 561);
-         this.Controls.Add(this.comboBox1);
+         this.Controls.Add(this.numericUpandDown_Quantity);
          this.Controls.Add(this.panel2);
          this.Controls.Add(this.btnAddtoCart);
          this.Controls.Add(this.button2);
@@ -169,6 +163,7 @@ namespace TestQua_Project__APP_.Customer
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).EndInit();
          this.panel2.ResumeLayout(false);
          this.panel2.PerformLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.numericUpandDown_Quantity)).EndInit();
          this.ResumeLayout(false);
 
       }
@@ -183,6 +178,6 @@ namespace TestQua_Project__APP_.Customer
       private System.Windows.Forms.Label lblDescription;
       private System.Windows.Forms.Label lblPrice;
       private System.Windows.Forms.Label lblName;
-      private System.Windows.Forms.ComboBox comboBox1;
+      private System.Windows.Forms.NumericUpDown numericUpandDown_Quantity;
    }
 }
