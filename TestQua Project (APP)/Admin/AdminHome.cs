@@ -38,8 +38,8 @@ namespace TestQua_Project__APP_.Admin
 
       private void btnProducts_Click(object sender, EventArgs e)
       {
-         var customerproduct = new Customer.CustomerProduct();
-         customerproduct.Show();
+         var adminproduct = new AdminProduct();
+         adminproduct.Show();
          Close();
       }
    }

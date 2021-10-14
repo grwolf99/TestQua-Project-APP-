@@ -39,8 +39,10 @@ namespace TestQua_Project__APP_.Admin
          this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.lblTotalPrice = new System.Windows.Forms.Label();
          this.txtSearchProduct = new System.Windows.Forms.TextBox();
+         this.dataGridView1 = new System.Windows.Forms.DataGridView();
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewProduct)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewcart)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
          this.SuspendLayout();
          // 
          // flowLayoutPanel1
@@ -106,7 +108,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          this.lblTotalPrice.AutoSize = true;
          this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.lblTotalPrice.Location = new System.Drawing.Point(649, 24);
+         this.lblTotalPrice.Location = new System.Drawing.Point(27, 455);
          this.lblTotalPrice.Name = "lblTotalPrice";
          this.lblTotalPrice.Size = new System.Drawing.Size(126, 46);
          this.lblTotalPrice.TabIndex = 5;
@@ -114,17 +116,26 @@ namespace TestQua_Project__APP_.Admin
          // 
          // txtSearchProduct
          // 
-         this.txtSearchProduct.Location = new System.Drawing.Point(634, 87);
+         this.txtSearchProduct.Location = new System.Drawing.Point(35, 504);
          this.txtSearchProduct.Name = "txtSearchProduct";
          this.txtSearchProduct.Size = new System.Drawing.Size(100, 20);
          this.txtSearchProduct.TabIndex = 6;
          this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
+         // 
+         // dataGridView1
+         // 
+         this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.dataGridView1.Location = new System.Drawing.Point(584, 13);
+         this.dataGridView1.Name = "dataGridView1";
+         this.dataGridView1.Size = new System.Drawing.Size(480, 135);
+         this.dataGridView1.TabIndex = 7;
          // 
          // ViewProduct
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.dataGridView1);
          this.Controls.Add(this.txtSearchProduct);
          this.Controls.Add(this.lblTotalPrice);
          this.Controls.Add(this.datagridViewcart);
@@ -137,6 +148,7 @@ namespace TestQua_Project__APP_.Admin
          this.Load += new System.EventHandler(this.ViewProduct_Load);
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewProduct)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewcart)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -153,5 +165,6 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
       private System.Windows.Forms.Label lblTotalPrice;
       private System.Windows.Forms.TextBox txtSearchProduct;
+      private System.Windows.Forms.DataGridView dataGridView1;
    }
 }

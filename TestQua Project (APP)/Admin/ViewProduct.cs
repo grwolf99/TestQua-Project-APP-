@@ -109,7 +109,7 @@ namespace TestQua_Project__APP_.Admin
                datagridViewcart.Rows.Add(datagridViewcart.Rows.Count - 1 + 1, Function.reader["productid"].ToString(), Function.reader["productname"].ToString(), double.Parse(Function.reader["productprice"].ToString()).ToString("#, ###.00"));
                totalprice += double.Parse(Function.reader["productprice"].ToString());
                lblTotalPrice.Text = "P" + totalprice.ToString("#, ###.00");
-               productid = Convert.ToInt32(Function.reader["productid"]);
+               this.productid = Convert.ToInt32(Function.reader["productid"]);
                qty = Convert.ToInt32(Function.reader["quantity"]);
             }
          }
