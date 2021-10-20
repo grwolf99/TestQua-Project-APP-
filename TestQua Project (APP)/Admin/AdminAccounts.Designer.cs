@@ -158,6 +158,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnReports.TabIndex = 16;
          this.btnReports.Text = "Reports";
          this.btnReports.UseVisualStyleBackColor = false;
+         this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
          // 
          // btnLogout
          // 

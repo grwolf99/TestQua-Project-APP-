@@ -172,5 +172,52 @@ namespace TestQua_Project__APP_.Customer
       {
 
       }
+
+      private void btnProfile_Click(object sender, EventArgs e)
+      {
+
+      }
+
+      private void btnOrder_Click(object sender, EventArgs e)
+      {
+         var customerorder = new CustomerOrder();
+         customerorder.Show();
+         Close();
+      }
+
+      private void btnBrowsePicture_Click_1(object sender, EventArgs e)
+      {
+         try
+         {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|PNG Files (*.png)|*.png| All Files (*.*)|*.*";
+            dlg.Title = "Select Product Picture";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+               imageLocation = dlg.FileName.ToString();
+               pbProfilePicture.ImageLocation = imageLocation;
+            }
+
+            byte[] img = null;
+            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+
+            Connection.DB();
+            Function.gen = "UPDATE ProductInformation SET productimage = @img WHERE productid = '" + txtUserid.Text + "' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.Parameters.Add(new SqlParameter("@img", img));
+            Function.command.ExecuteNonQuery();
+            MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Connection.con.Close();
+            pbProfilePicture.Dispose();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
    }
 }

@@ -82,6 +82,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnHome.TabIndex = 28;
          this.btnHome.Text = "Home";
          this.btnHome.UseVisualStyleBackColor = false;
+         this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
          // 
          // btnLogout
          // 
@@ -113,6 +114,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnOrder.TabIndex = 26;
          this.btnOrder.Text = "Order";
          this.btnOrder.UseVisualStyleBackColor = false;
+         this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
          // 
          // btnProfile
          // 

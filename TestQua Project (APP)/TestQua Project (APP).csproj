@@ -154,6 +154,12 @@
     <Compile Include="Admin\AdminProduct.Designer.cs">
       <DependentUpon>AdminProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminReport.Designer.cs">
+      <DependentUpon>AdminReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ViewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminProduct.resx">
       <DependentUpon>AdminProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminReport.resx">
+      <DependentUpon>AdminReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>

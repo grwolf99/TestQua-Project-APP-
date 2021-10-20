@@ -48,9 +48,9 @@ namespace TestQua_Project__APP_.Admin
 
       private void btnProducts_Click(object sender, EventArgs e)
       {
-         var viewproduct = new Customer.CustomerProductView();
-         viewproduct.Show();
-         Close();
+         var adminproduct = new AdminProduct();
+         adminproduct.Show();
+         Hide();
       }
 
       private void viewAccounts_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -63,7 +63,7 @@ namespace TestQua_Project__APP_.Admin
             txtLastname.Text = viewAccounts[3, e.RowIndex].Value.ToString();
             txtAge.Text = viewAccounts[4, e.RowIndex].Value.ToString();
             txtAddress.Text = viewAccounts[5, e.RowIndex].Value.ToString();
-            cmbGender.Text = viewAccounts[6, e.RowIndex].Value.ToString(); //NOT WORKING
+            cmbGender.Text = viewAccounts[6, e.RowIndex].Value.ToString(); 
             txtEmail.Text = viewAccounts[7, e.RowIndex].Value.ToString();
             txtUsername.Text = viewAccounts[9, e.RowIndex].Value.ToString();
             txtPassword.Text = viewAccounts[10, e.RowIndex].Value.ToString();
@@ -222,6 +222,13 @@ namespace TestQua_Project__APP_.Admin
          var adminhome = new AdminHome();
          adminhome.Show();
          Close();
+      }
+
+      private void btnReports_Click(object sender, EventArgs e)
+      {
+         /*var adminreport = new AdminReports();
+         adminreport.Show();
+         Close();*/
       }
    }
 }

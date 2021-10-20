@@ -121,6 +121,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnOrder.TabIndex = 27;
          this.btnOrder.Text = "Order";
          this.btnOrder.UseVisualStyleBackColor = false;
+         this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
          // 
          // btnLogout
          // 

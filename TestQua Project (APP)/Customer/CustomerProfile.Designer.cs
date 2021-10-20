@@ -37,6 +37,7 @@ namespace TestQua_Project__APP_.Customer
          this.panelProfile = new System.Windows.Forms.Panel();
          this.btnBrowsePicture = new System.Windows.Forms.Button();
          this.label13 = new System.Windows.Forms.Label();
+         this.pbProfilePicture = new System.Windows.Forms.PictureBox();
          this.btnUpdate = new System.Windows.Forms.Button();
          this.btnSave = new System.Windows.Forms.Button();
          this.txtUserid = new System.Windows.Forms.TextBox();
@@ -61,7 +62,6 @@ namespace TestQua_Project__APP_.Customer
          this.txtEmail = new System.Windows.Forms.TextBox();
          this.label1 = new System.Windows.Forms.Label();
          this.btnHome = new System.Windows.Forms.Button();
-         this.pbProfilePicture = new System.Windows.Forms.PictureBox();
          this.panel1 = new System.Windows.Forms.Panel();
          this.label4 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
@@ -100,6 +100,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnOrder.TabIndex = 20;
          this.btnOrder.Text = "Order";
          this.btnOrder.UseVisualStyleBackColor = false;
+         this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
          // 
          // btnProfile
          // 
@@ -115,6 +116,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnProfile.TabIndex = 18;
          this.btnProfile.Text = "Profile";
          this.btnProfile.UseVisualStyleBackColor = false;
+         this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
          // 
          // btnProducts
          // 
@@ -169,12 +171,13 @@ namespace TestQua_Project__APP_.Customer
          // 
          // btnBrowsePicture
          // 
-         this.btnBrowsePicture.Location = new System.Drawing.Point(338, 191);
+         this.btnBrowsePicture.Location = new System.Drawing.Point(245, 191);
          this.btnBrowsePicture.Name = "btnBrowsePicture";
          this.btnBrowsePicture.Size = new System.Drawing.Size(75, 23);
          this.btnBrowsePicture.TabIndex = 90;
          this.btnBrowsePicture.Text = "Browse";
          this.btnBrowsePicture.UseVisualStyleBackColor = true;
+         this.btnBrowsePicture.Click += new System.EventHandler(this.btnBrowsePicture_Click_1);
          // 
          // label13
          // 
@@ -185,6 +188,14 @@ namespace TestQua_Project__APP_.Customer
          this.label13.Size = new System.Drawing.Size(124, 24);
          this.label13.TabIndex = 89;
          this.label13.Text = "Profile picture";
+         // 
+         // pbProfilePicture
+         // 
+         this.pbProfilePicture.Location = new System.Drawing.Point(225, 42);
+         this.pbProfilePicture.Name = "pbProfilePicture";
+         this.pbProfilePicture.Size = new System.Drawing.Size(178, 145);
+         this.pbProfilePicture.TabIndex = 88;
+         this.pbProfilePicture.TabStop = false;
          // 
          // btnUpdate
          // 
@@ -304,7 +315,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label9.AutoSize = true;
          this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label9.Location = new System.Drawing.Point(136, 263);
+         this.label9.Location = new System.Drawing.Point(136, 292);
          this.label9.Name = "label9";
          this.label9.Size = new System.Drawing.Size(96, 24);
          this.label9.TabIndex = 74;
@@ -324,7 +335,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label7.AutoSize = true;
          this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label7.Location = new System.Drawing.Point(136, 361);
+         this.label7.Location = new System.Drawing.Point(136, 386);
          this.label7.Name = "label7";
          this.label7.Size = new System.Drawing.Size(45, 24);
          this.label7.TabIndex = 72;
@@ -334,7 +345,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label6.AutoSize = true;
          this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label6.Location = new System.Drawing.Point(136, 318);
+         this.label6.Location = new System.Drawing.Point(136, 343);
          this.label6.Name = "label6";
          this.label6.Size = new System.Drawing.Size(80, 24);
          this.label6.TabIndex = 71;
@@ -354,7 +365,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtAge.Location = new System.Drawing.Point(260, 362);
+         this.txtAge.Location = new System.Drawing.Point(260, 387);
          this.txtAge.Name = "txtAge";
          this.txtAge.Size = new System.Drawing.Size(121, 26);
          this.txtAge.TabIndex = 69;
@@ -363,7 +374,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtAddress.Location = new System.Drawing.Point(260, 311);
+         this.txtAddress.Location = new System.Drawing.Point(260, 336);
          this.txtAddress.Name = "txtAddress";
          this.txtAddress.Size = new System.Drawing.Size(121, 26);
          this.txtAddress.TabIndex = 68;
@@ -372,7 +383,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtLastname.Location = new System.Drawing.Point(260, 256);
+         this.txtLastname.Location = new System.Drawing.Point(260, 285);
          this.txtLastname.Name = "txtLastname";
          this.txtLastname.Size = new System.Drawing.Size(121, 26);
          this.txtLastname.TabIndex = 67;
@@ -381,7 +392,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.txtFirstname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtFirstname.Location = new System.Drawing.Point(260, 220);
+         this.txtFirstname.Location = new System.Drawing.Point(260, 245);
          this.txtFirstname.Name = "txtFirstname";
          this.txtFirstname.Size = new System.Drawing.Size(121, 26);
          this.txtFirstname.TabIndex = 66;
@@ -408,7 +419,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label1.AutoSize = true;
          this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label1.Location = new System.Drawing.Point(136, 220);
+         this.label1.Location = new System.Drawing.Point(136, 245);
          this.label1.Name = "label1";
          this.label1.Size = new System.Drawing.Size(98, 24);
          this.label1.TabIndex = 63;
@@ -429,14 +440,6 @@ namespace TestQua_Project__APP_.Customer
          this.btnHome.Text = "Home";
          this.btnHome.UseVisualStyleBackColor = false;
          this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-         // 
-         // pbProfilePicture
-         // 
-         this.pbProfilePicture.Location = new System.Drawing.Point(225, 42);
-         this.pbProfilePicture.Name = "pbProfilePicture";
-         this.pbProfilePicture.Size = new System.Drawing.Size(178, 145);
-         this.pbProfilePicture.TabIndex = 88;
-         this.pbProfilePicture.TabStop = false;
          // 
          // panel1
          // 

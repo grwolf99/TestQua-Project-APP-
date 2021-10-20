@@ -42,5 +42,17 @@ namespace TestQua_Project__APP_.Customer
          customerproduct.Show();
          Close();
       }
+
+      private void btnHome_Click(object sender, EventArgs e)
+      {
+
+      }
+
+      private void btnOrder_Click(object sender, EventArgs e)
+      {
+         var customerorder = new CustomerOrder();
+         customerorder.Show();
+         Close();
+      }
    }
 }

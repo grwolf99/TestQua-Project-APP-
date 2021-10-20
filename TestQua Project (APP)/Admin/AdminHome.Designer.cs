@@ -31,7 +31,6 @@ namespace TestQua_Project__APP_.Admin
       {
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHome));
          this.btnLogout = new System.Windows.Forms.Button();
-         this.label3 = new System.Windows.Forms.Label();
          this.btnOrder = new System.Windows.Forms.Button();
          this.pictureBox2 = new System.Windows.Forms.PictureBox();
          this.btnAccounts = new System.Windows.Forms.Button();
@@ -66,17 +65,6 @@ namespace TestQua_Project__APP_.Admin
          this.btnLogout.UseVisualStyleBackColor = false;
          this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
          // 
-         // label3
-         // 
-         this.label3.AutoSize = true;
-         this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
-         this.label3.Location = new System.Drawing.Point(56, 622);
-         this.label3.Name = "label3";
-         this.label3.Size = new System.Drawing.Size(87, 18);
-         this.label3.TabIndex = 29;
-         this.label3.Text = "Follow Us";
-         // 
          // btnOrder
          // 
          this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
@@ -91,6 +79,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnOrder.TabIndex = 37;
          this.btnOrder.Text = "Reports";
          this.btnOrder.UseVisualStyleBackColor = false;
+         this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
          // 
          // pictureBox2
          // 
@@ -221,6 +210,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnHome.TabIndex = 39;
          this.btnHome.Text = "Home";
          this.btnHome.UseVisualStyleBackColor = false;
+         this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
          // 
          // AdminHome
          // 
@@ -230,7 +220,6 @@ namespace TestQua_Project__APP_.Admin
          this.ClientSize = new System.Drawing.Size(1087, 664);
          this.Controls.Add(this.btnHome);
          this.Controls.Add(this.btnLogout);
-         this.Controls.Add(this.label3);
          this.Controls.Add(this.btnOrder);
          this.Controls.Add(this.pictureBox2);
          this.Controls.Add(this.btnAccounts);
@@ -250,14 +239,12 @@ namespace TestQua_Project__APP_.Admin
          this.panel1.ResumeLayout(false);
          this.panel1.PerformLayout();
          this.ResumeLayout(false);
-         this.PerformLayout();
 
       }
 
       #endregion
 
       private System.Windows.Forms.Button btnLogout;
-      private System.Windows.Forms.Label label3;
       private System.Windows.Forms.Button btnOrder;
       private System.Windows.Forms.PictureBox pictureBox2;
       private System.Windows.Forms.Button btnAccounts;

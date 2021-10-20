@@ -32,11 +32,10 @@
          this.btnHome = new System.Windows.Forms.Button();
          this.btnLogout = new System.Windows.Forms.Button();
          this.label3 = new System.Windows.Forms.Label();
-         this.btnOrder = new System.Windows.Forms.Button();
          this.pictureBox2 = new System.Windows.Forms.PictureBox();
          this.btnProfile = new System.Windows.Forms.Button();
          this.panel4 = new System.Windows.Forms.Panel();
-         this.btnProducts = new System.Windows.Forms.Button();
+         this.btnTransactions = new System.Windows.Forms.Button();
          this.pictureBox1 = new System.Windows.Forms.PictureBox();
          this.pictureBox3 = new System.Windows.Forms.PictureBox();
          this.panel1 = new System.Windows.Forms.Panel();
@@ -90,21 +89,6 @@
          this.label3.TabIndex = 29;
          this.label3.Text = "Follow Us";
          // 
-         // btnOrder
-         // 
-         this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnOrder.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnOrder.FlatAppearance.BorderSize = 0;
-         this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.btnOrder.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
-         this.btnOrder.ForeColor = System.Drawing.Color.White;
-         this.btnOrder.Location = new System.Drawing.Point(12, 396);
-         this.btnOrder.Name = "btnOrder";
-         this.btnOrder.Size = new System.Drawing.Size(167, 64);
-         this.btnOrder.TabIndex = 37;
-         this.btnOrder.Text = "Order";
-         this.btnOrder.UseVisualStyleBackColor = false;
-         // 
          // pictureBox2
          // 
          this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(9)))), ((int)(((byte)(21)))));
@@ -139,20 +123,20 @@
          this.panel4.Size = new System.Drawing.Size(854, 310);
          this.panel4.TabIndex = 34;
          // 
-         // btnProducts
+         // btnTransactions
          // 
-         this.btnProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnProducts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnProducts.FlatAppearance.BorderSize = 0;
-         this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.btnProducts.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
-         this.btnProducts.ForeColor = System.Drawing.Color.White;
-         this.btnProducts.Location = new System.Drawing.Point(12, 312);
-         this.btnProducts.Name = "btnProducts";
-         this.btnProducts.Size = new System.Drawing.Size(167, 64);
-         this.btnProducts.TabIndex = 36;
-         this.btnProducts.Text = "Products";
-         this.btnProducts.UseVisualStyleBackColor = false;
+         this.btnTransactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnTransactions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnTransactions.FlatAppearance.BorderSize = 0;
+         this.btnTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.btnTransactions.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
+         this.btnTransactions.ForeColor = System.Drawing.Color.White;
+         this.btnTransactions.Location = new System.Drawing.Point(12, 312);
+         this.btnTransactions.Name = "btnTransactions";
+         this.btnTransactions.Size = new System.Drawing.Size(203, 64);
+         this.btnTransactions.TabIndex = 36;
+         this.btnTransactions.Text = "Transactions";
+         this.btnTransactions.UseVisualStyleBackColor = false;
          // 
          // pictureBox1
          // 
@@ -216,11 +200,10 @@
          this.Controls.Add(this.btnHome);
          this.Controls.Add(this.btnLogout);
          this.Controls.Add(this.label3);
-         this.Controls.Add(this.btnOrder);
          this.Controls.Add(this.pictureBox2);
          this.Controls.Add(this.btnProfile);
          this.Controls.Add(this.panel4);
-         this.Controls.Add(this.btnProducts);
+         this.Controls.Add(this.btnTransactions);
          this.Controls.Add(this.pictureBox1);
          this.Controls.Add(this.pictureBox3);
          this.Controls.Add(this.panel1);
@@ -244,11 +227,10 @@
       private System.Windows.Forms.Button btnHome;
       private System.Windows.Forms.Button btnLogout;
       private System.Windows.Forms.Label label3;
-      private System.Windows.Forms.Button btnOrder;
       private System.Windows.Forms.PictureBox pictureBox2;
       private System.Windows.Forms.Button btnProfile;
       private System.Windows.Forms.Panel panel4;
-      private System.Windows.Forms.Button btnProducts;
+      private System.Windows.Forms.Button btnTransactions;
       private System.Windows.Forms.PictureBox pictureBox1;
       private System.Windows.Forms.PictureBox pictureBox3;
       private System.Windows.Forms.Panel panel1;

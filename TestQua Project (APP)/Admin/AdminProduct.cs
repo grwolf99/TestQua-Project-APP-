@@ -214,5 +214,12 @@ namespace TestQua_Project__APP_.Admin
          txtQuantity.Clear();
          pictureboxProductPic.Dispose();
       }
+
+      private void btnProducts_Click(object sender, EventArgs e)
+      {
+         var adminproduct = new AdminProduct();
+         adminproduct.Show();
+         Close();
+      }
    }
 }

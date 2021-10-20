@@ -1,14 +1,7 @@
-﻿using javax.swing;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TestQua_Project__APP_.Customer
@@ -103,7 +96,7 @@ namespace TestQua_Project__APP_.Customer
             price.Width = 70;
             price.Height = 40;
             price.Tag = Function.reader["productprice"].ToString();
-            
+
             MemoryStream ms = new MemoryStream(array);
             Bitmap bitmap = new Bitmap(ms);
             pic.BackgroundImage = bitmap;
@@ -144,7 +137,7 @@ namespace TestQua_Project__APP_.Customer
          try
          {
             Connection.DB();
-            Function.gen = "SELECT COUNT(*) AS total FROM CartDb WHERE UserId = '"+ Login.userid +"' ";
+            Function.gen = "SELECT COUNT(*) AS total FROM CartDb WHERE UserId = '" + Login.userid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
@@ -171,6 +164,13 @@ namespace TestQua_Project__APP_.Customer
       {
          var viewcart = new ViewCart();
          viewcart.Show();
+      }
+
+      private void btnOrder_Click(object sender, EventArgs e)
+      {
+         var customerorder = new CustomerOrder();
+         customerorder.Show();
+         Close();
       }
    }
 }
