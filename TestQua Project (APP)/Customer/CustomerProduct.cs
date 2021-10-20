@@ -164,6 +164,7 @@ namespace TestQua_Project__APP_.Customer
       {
          var viewcart = new ViewCart();
          viewcart.Show();
+         Close();
       }
 
       private void btnOrder_Click(object sender, EventArgs e)

@@ -31,7 +31,7 @@ namespace TestQua_Project__APP_.Admin
       {
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHome));
          this.btnLogout = new System.Windows.Forms.Button();
-         this.btnOrder = new System.Windows.Forms.Button();
+         this.btnReport = new System.Windows.Forms.Button();
          this.pictureBox2 = new System.Windows.Forms.PictureBox();
          this.btnAccounts = new System.Windows.Forms.Button();
          this.panel4 = new System.Windows.Forms.Panel();
@@ -65,21 +65,21 @@ namespace TestQua_Project__APP_.Admin
          this.btnLogout.UseVisualStyleBackColor = false;
          this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
          // 
-         // btnOrder
+         // btnReport
          // 
-         this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnOrder.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnOrder.FlatAppearance.BorderSize = 0;
-         this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.btnOrder.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
-         this.btnOrder.ForeColor = System.Drawing.Color.White;
-         this.btnOrder.Location = new System.Drawing.Point(12, 396);
-         this.btnOrder.Name = "btnOrder";
-         this.btnOrder.Size = new System.Drawing.Size(167, 64);
-         this.btnOrder.TabIndex = 37;
-         this.btnOrder.Text = "Reports";
-         this.btnOrder.UseVisualStyleBackColor = false;
-         this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+         this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnReport.FlatAppearance.BorderSize = 0;
+         this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.btnReport.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
+         this.btnReport.ForeColor = System.Drawing.Color.White;
+         this.btnReport.Location = new System.Drawing.Point(12, 396);
+         this.btnReport.Name = "btnReport";
+         this.btnReport.Size = new System.Drawing.Size(167, 64);
+         this.btnReport.TabIndex = 37;
+         this.btnReport.Text = "Reports";
+         this.btnReport.UseVisualStyleBackColor = false;
+         this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
          // 
          // pictureBox2
          // 
@@ -220,7 +220,7 @@ namespace TestQua_Project__APP_.Admin
          this.ClientSize = new System.Drawing.Size(1087, 664);
          this.Controls.Add(this.btnHome);
          this.Controls.Add(this.btnLogout);
-         this.Controls.Add(this.btnOrder);
+         this.Controls.Add(this.btnReport);
          this.Controls.Add(this.pictureBox2);
          this.Controls.Add(this.btnAccounts);
          this.Controls.Add(this.panel4);
@@ -245,7 +245,7 @@ namespace TestQua_Project__APP_.Admin
       #endregion
 
       private System.Windows.Forms.Button btnLogout;
-      private System.Windows.Forms.Button btnOrder;
+      private System.Windows.Forms.Button btnReport;
       private System.Windows.Forms.PictureBox pictureBox2;
       private System.Windows.Forms.Button btnAccounts;
       private System.Windows.Forms.Panel panel4;

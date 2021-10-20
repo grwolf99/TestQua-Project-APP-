@@ -63,18 +63,6 @@ namespace TestQua_Project__APP_.Supplier
                txtPassword.Text = Function.reader["password"].ToString();
                txtConfirmPassword.Text = Function.reader["password"].ToString();
                cmbGender.Text = Function.reader["Gender"].ToString();
-
-               /*if (Function.reader["Profilepicture"] == null)
-               {
-                  MessageBox.Show("WALAY SULOD");
-                  byte[] img = (byte[])(Function.reader["ProfilePicture"]);
-                  MemoryStream ms = new MemoryStream(img);
-                  pbProfilePicture.Image = Image.FromStream(ms);
-               }
-               else
-               {
-                  MessageBox.Show("NAAY SULOD");
-               }*/
             }
 
             Connection.con.Close();
@@ -105,11 +93,6 @@ namespace TestQua_Project__APP_.Supplier
       {
          try
          {
-            /*byte[] img = null;
-            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            img = br.ReadBytes((int)fs.Length);*/
-
             Connection.DB();
             Function.gen = "UPDATE Userinformation SET Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', contactno = '" + txtContacno.Text + "' WHERE Userid = '" + txtUserid.Text + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
@@ -129,6 +112,11 @@ namespace TestQua_Project__APP_.Supplier
       private void btnUpdate_Click(object sender, EventArgs e)
       {
          fieldUpdate(true);
+      }
+
+      private void btnTransactions_Click(object sender, EventArgs e)
+      {
+
       }
    }
 }

@@ -195,7 +195,9 @@ namespace TestQua_Project__APP_.Admin
 
       private void btnReports_Click(object sender, EventArgs e)
       {
-
+         var report = new AdminReport();
+         report.Show();
+         Close();
       }
 
       private void btnLogout_Click(object sender, EventArgs e)

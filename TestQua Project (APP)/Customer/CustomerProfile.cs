@@ -58,18 +58,6 @@ namespace TestQua_Project__APP_.Customer
                txtPassword.Text = Function.reader["password"].ToString();
                txtConfirmPassword.Text = Function.reader["password"].ToString();
                cmbGender.Text = Function.reader["Gender"].ToString();
-
-               /*if (Function.reader["Profilepicture"] == null)
-               {
-                  MessageBox.Show("WALAY SULOD");
-                  byte[] img = (byte[])(Function.reader["ProfilePicture"]);
-                  MemoryStream ms = new MemoryStream(img);
-                  pbProfilePicture.Image = Image.FromStream(ms);
-               }
-               else
-               {
-                  MessageBox.Show("NAAY SULOD");
-               }*/
             }
 
             Connection.con.Close();
@@ -87,26 +75,6 @@ namespace TestQua_Project__APP_.Customer
          var homepage = new Homepage();
          homepage.Show();
          Hide();
-      }
-
-      private void btnBrowsePicture_Click(object sender, EventArgs e)
-      {
-         try
-         {
-            /*OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|PNG Files (*.png)|*.png| All Files (*.*)|*.*";
-            dlg.Title = "Select Product Picture";
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-               imageLocation = dlg.FileName.ToString();
-               pbProfilePicture.ImageLocation = imageLocation;
-            }*/
-         }
-
-         catch (Exception ex)
-         {
-            MessageBox.Show(ex.Message);
-         }
       }
 
       private void CustomerDashboard_Load(object sender, EventArgs e)
@@ -133,11 +101,6 @@ namespace TestQua_Project__APP_.Customer
       {
          try
          {
-            /*byte[] img = null;
-            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            img = br.ReadBytes((int)fs.Length);*/
-
             Connection.DB();
             Function.gen = "UPDATE Userinformation SET Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', contactno = '" + txtContacno.Text + "' WHERE Userid = '" + txtUserid.Text +"' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
@@ -166,16 +129,6 @@ namespace TestQua_Project__APP_.Customer
          var customerproduct = new CustomerProduct();
          customerproduct.Show();
          Close();
-      }
-
-      private void panelProfile_Paint(object sender, PaintEventArgs e)
-      {
-
-      }
-
-      private void btnProfile_Click(object sender, EventArgs e)
-      {
-
       }
 
       private void btnOrder_Click(object sender, EventArgs e)

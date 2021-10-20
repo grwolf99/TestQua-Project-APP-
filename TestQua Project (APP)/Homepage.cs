@@ -12,6 +12,7 @@ namespace TestQua_Project__APP_
 {
    public partial class Homepage : Form
    {
+      public static int roleid = 0;
       public Homepage()
       {
          InitializeComponent();
@@ -53,6 +54,7 @@ namespace TestQua_Project__APP_
 
       private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
       {
+         roleid = 3;
          var guesthome = new Guest.GuestHome();
          guesthome.Show();
          Close();

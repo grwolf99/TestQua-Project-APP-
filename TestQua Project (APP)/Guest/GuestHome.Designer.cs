@@ -97,6 +97,7 @@ namespace TestQua_Project__APP_.Guest
          this.btnProducts.TabIndex = 48;
          this.btnProducts.Text = "Products";
          this.btnProducts.UseVisualStyleBackColor = false;
+         this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
          // 
          // label1
          // 

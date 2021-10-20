@@ -1,11 +1,10 @@
-Admin
- -Need new Form for report and fix the link after
-
 Customer
+ -Customer Order(Billing Transactions)---
  -Need new form CustomerCheckout, and checkout db for reports
 
 Guest
- -Fix Product
+ -Traps
+ -Restrictions
 
 Supplier
  -

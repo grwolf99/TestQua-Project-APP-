@@ -116,7 +116,6 @@ namespace TestQua_Project__APP_.Customer
          this.btnProfile.TabIndex = 18;
          this.btnProfile.Text = "Profile";
          this.btnProfile.UseVisualStyleBackColor = false;
-         this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
          // 
          // btnProducts
          // 
@@ -167,7 +166,6 @@ namespace TestQua_Project__APP_.Customer
          this.panelProfile.Name = "panelProfile";
          this.panelProfile.Size = new System.Drawing.Size(899, 519);
          this.panelProfile.TabIndex = 22;
-         this.panelProfile.Paint += new System.Windows.Forms.PaintEventHandler(this.panelProfile_Paint);
          // 
          // btnBrowsePicture
          // 

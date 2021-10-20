@@ -32,9 +32,7 @@ namespace TestQua_Project__APP_.Supplier
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierProfile));
          this.btnHome = new System.Windows.Forms.Button();
          this.btnLogout = new System.Windows.Forms.Button();
-         this.btnOrder = new System.Windows.Forms.Button();
          this.btnProfile = new System.Windows.Forms.Button();
-         this.btnProducts = new System.Windows.Forms.Button();
          this.panel1 = new System.Windows.Forms.Panel();
          this.label4 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
@@ -65,6 +63,7 @@ namespace TestQua_Project__APP_.Supplier
          this.txtContacno = new System.Windows.Forms.TextBox();
          this.txtEmail = new System.Windows.Forms.TextBox();
          this.label14 = new System.Windows.Forms.Label();
+         this.btnTransactions = new System.Windows.Forms.Button();
          this.panel1.SuspendLayout();
          this.panelProfile.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
@@ -102,21 +101,6 @@ namespace TestQua_Project__APP_.Supplier
          this.btnLogout.UseVisualStyleBackColor = false;
          this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
          // 
-         // btnOrder
-         // 
-         this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnOrder.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnOrder.FlatAppearance.BorderSize = 0;
-         this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.btnOrder.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
-         this.btnOrder.ForeColor = System.Drawing.Color.White;
-         this.btnOrder.Location = new System.Drawing.Point(12, 396);
-         this.btnOrder.Name = "btnOrder";
-         this.btnOrder.Size = new System.Drawing.Size(167, 64);
-         this.btnOrder.TabIndex = 37;
-         this.btnOrder.Text = "Order";
-         this.btnOrder.UseVisualStyleBackColor = false;
-         // 
          // btnProfile
          // 
          this.btnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
@@ -131,21 +115,6 @@ namespace TestQua_Project__APP_.Supplier
          this.btnProfile.TabIndex = 35;
          this.btnProfile.Text = "Profile";
          this.btnProfile.UseVisualStyleBackColor = false;
-         // 
-         // btnProducts
-         // 
-         this.btnProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnProducts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.btnProducts.FlatAppearance.BorderSize = 0;
-         this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.btnProducts.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
-         this.btnProducts.ForeColor = System.Drawing.Color.White;
-         this.btnProducts.Location = new System.Drawing.Point(12, 312);
-         this.btnProducts.Name = "btnProducts";
-         this.btnProducts.Size = new System.Drawing.Size(167, 64);
-         this.btnProducts.TabIndex = 36;
-         this.btnProducts.Text = "Products";
-         this.btnProducts.UseVisualStyleBackColor = false;
          // 
          // panel1
          // 
@@ -229,7 +198,7 @@ namespace TestQua_Project__APP_.Supplier
          // 
          this.label13.AutoSize = true;
          this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label13.Location = new System.Drawing.Point(126, 86);
+         this.label13.Location = new System.Drawing.Point(80, 91);
          this.label13.Name = "label13";
          this.label13.Size = new System.Drawing.Size(124, 24);
          this.label13.TabIndex = 89;
@@ -471,18 +440,33 @@ namespace TestQua_Project__APP_.Supplier
          this.label14.TabIndex = 63;
          this.label14.Text = "First name";
          // 
+         // btnTransactions
+         // 
+         this.btnTransactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnTransactions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnTransactions.FlatAppearance.BorderSize = 0;
+         this.btnTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.btnTransactions.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold);
+         this.btnTransactions.ForeColor = System.Drawing.Color.White;
+         this.btnTransactions.Location = new System.Drawing.Point(0, 303);
+         this.btnTransactions.Name = "btnTransactions";
+         this.btnTransactions.Size = new System.Drawing.Size(170, 64);
+         this.btnTransactions.TabIndex = 91;
+         this.btnTransactions.Text = "Transactions";
+         this.btnTransactions.UseVisualStyleBackColor = false;
+         this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
+         // 
          // SupplierProfile
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.btnTransactions);
          this.Controls.Add(this.panelProfile);
          this.Controls.Add(this.btnHome);
          this.Controls.Add(this.btnLogout);
-         this.Controls.Add(this.btnOrder);
          this.Controls.Add(this.btnProfile);
-         this.Controls.Add(this.btnProducts);
          this.Controls.Add(this.panel1);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "SupplierProfile";
@@ -502,9 +486,7 @@ namespace TestQua_Project__APP_.Supplier
 
       private System.Windows.Forms.Button btnHome;
       private System.Windows.Forms.Button btnLogout;
-      private System.Windows.Forms.Button btnOrder;
       private System.Windows.Forms.Button btnProfile;
-      private System.Windows.Forms.Button btnProducts;
       private System.Windows.Forms.Panel panel1;
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.Label label2;
@@ -535,5 +517,6 @@ namespace TestQua_Project__APP_.Supplier
       private System.Windows.Forms.TextBox txtContacno;
       private System.Windows.Forms.TextBox txtEmail;
       private System.Windows.Forms.Label label14;
+      private System.Windows.Forms.Button btnTransactions;
    }
 }

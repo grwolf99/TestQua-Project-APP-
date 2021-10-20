@@ -31,7 +31,6 @@ namespace TestQua_Project__APP_.Customer
       {
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrder));
          this.btnLogout = new System.Windows.Forms.Button();
-         this.label3 = new System.Windows.Forms.Label();
          this.btnOrder = new System.Windows.Forms.Button();
          this.btnAccounts = new System.Windows.Forms.Button();
          this.btnProducts = new System.Windows.Forms.Button();
@@ -60,17 +59,6 @@ namespace TestQua_Project__APP_.Customer
          this.btnLogout.Text = "Logout";
          this.btnLogout.UseVisualStyleBackColor = false;
          this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-         // 
-         // label3
-         // 
-         this.label3.AutoSize = true;
-         this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
-         this.label3.Location = new System.Drawing.Point(56, 624);
-         this.label3.Name = "label3";
-         this.label3.Size = new System.Drawing.Size(87, 18);
-         this.label3.TabIndex = 41;
-         this.label3.Text = "Follow Us";
          // 
          // btnOrder
          // 
@@ -198,7 +186,6 @@ namespace TestQua_Project__APP_.Customer
          this.ClientSize = new System.Drawing.Size(1087, 664);
          this.Controls.Add(this.dataGridView1);
          this.Controls.Add(this.btnLogout);
-         this.Controls.Add(this.label3);
          this.Controls.Add(this.btnOrder);
          this.Controls.Add(this.btnAccounts);
          this.Controls.Add(this.btnProducts);
@@ -220,7 +207,6 @@ namespace TestQua_Project__APP_.Customer
       #endregion
 
       private System.Windows.Forms.Button btnLogout;
-      private System.Windows.Forms.Label label3;
       private System.Windows.Forms.Button btnOrder;
       private System.Windows.Forms.Button btnAccounts;
       private System.Windows.Forms.Button btnProducts;

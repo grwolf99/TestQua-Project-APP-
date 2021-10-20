@@ -28,5 +28,19 @@ namespace TestQua_Project__APP_.Customer
          Function.gen = "SELECT * from CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE userid = '"+ Login.userid +"' ";
          Function.fill(Function.gen, datagridViewCart);
       }
+
+      private void button1_Click(object sender, EventArgs e)
+      {
+         var customerproduct = new CustomerProduct();
+         customerproduct.Show();
+         Close();
+      }
+
+      private void button2_Click(object sender, EventArgs e)
+      {
+         var customercheckout = new CustomerCheckout();
+         customercheckout.Show();
+         Close();
+      }
    }
 }

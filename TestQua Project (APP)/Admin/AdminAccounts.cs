@@ -226,9 +226,9 @@ namespace TestQua_Project__APP_.Admin
 
       private void btnReports_Click(object sender, EventArgs e)
       {
-         /*var adminreport = new AdminReports();
+         var adminreport = new AdminReport();
          adminreport.Show();
-         Close();*/
+         Close();
       }
    }
 }

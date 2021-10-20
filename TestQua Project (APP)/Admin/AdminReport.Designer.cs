@@ -38,11 +38,11 @@ namespace TestQua_Project__APP_.Admin
          this.btnLogout = new System.Windows.Forms.Button();
          this.btnReports = new System.Windows.Forms.Button();
          this.btnAccounts = new System.Windows.Forms.Button();
-         this.dataGridView1 = new System.Windows.Forms.DataGridView();
+         this.ViewReports = new System.Windows.Forms.DataGridView();
          this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
          this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
          this.panel1.SuspendLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.ViewReports)).BeginInit();
          this.SuspendLayout();
          // 
          // btnHome
@@ -59,6 +59,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnHome.TabIndex = 47;
          this.btnHome.Text = "Home";
          this.btnHome.UseVisualStyleBackColor = false;
+         this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
          // 
          // panel1
          // 
@@ -109,6 +110,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnProducts.TabIndex = 43;
          this.btnProducts.Text = "Products";
          this.btnProducts.UseVisualStyleBackColor = false;
+         this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
          // 
          // btnLogout
          // 
@@ -124,6 +126,7 @@ namespace TestQua_Project__APP_.Admin
          this.btnLogout.TabIndex = 45;
          this.btnLogout.Text = "Logout";
          this.btnLogout.UseVisualStyleBackColor = false;
+         this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
          // 
          // btnReports
          // 
@@ -154,14 +157,15 @@ namespace TestQua_Project__APP_.Admin
          this.btnAccounts.TabIndex = 42;
          this.btnAccounts.Text = "Accounts";
          this.btnAccounts.UseVisualStyleBackColor = false;
+         this.btnAccounts.Click += new System.EventHandler(this.btnAccounts_Click);
          // 
-         // dataGridView1
+         // ViewReports
          // 
-         this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-         this.dataGridView1.Location = new System.Drawing.Point(359, 219);
-         this.dataGridView1.Name = "dataGridView1";
-         this.dataGridView1.Size = new System.Drawing.Size(891, 493);
-         this.dataGridView1.TabIndex = 48;
+         this.ViewReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.ViewReports.Location = new System.Drawing.Point(176, 133);
+         this.ViewReports.Name = "ViewReports";
+         this.ViewReports.Size = new System.Drawing.Size(891, 493);
+         this.ViewReports.TabIndex = 48;
          // 
          // AdminReport
          // 
@@ -169,7 +173,7 @@ namespace TestQua_Project__APP_.Admin
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
-         this.Controls.Add(this.dataGridView1);
+         this.Controls.Add(this.ViewReports);
          this.Controls.Add(this.btnHome);
          this.Controls.Add(this.panel1);
          this.Controls.Add(this.btnProducts);
@@ -178,10 +182,12 @@ namespace TestQua_Project__APP_.Admin
          this.Controls.Add(this.btnAccounts);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "AdminReport";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "AdminReport";
+         this.Load += new System.EventHandler(this.AdminReport_Load);
          this.panel1.ResumeLayout(false);
          this.panel1.PerformLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.ViewReports)).EndInit();
          this.ResumeLayout(false);
 
       }
@@ -196,7 +202,7 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.Button btnLogout;
       private System.Windows.Forms.Button btnReports;
       private System.Windows.Forms.Button btnAccounts;
-      private System.Windows.Forms.DataGridView dataGridView1;
+      private System.Windows.Forms.DataGridView ViewReports;
       private System.ComponentModel.BackgroundWorker backgroundWorker1;
       private System.ComponentModel.BackgroundWorker backgroundWorker2;
    }
