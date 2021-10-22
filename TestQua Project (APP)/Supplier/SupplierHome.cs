@@ -35,5 +35,12 @@ namespace TestQua_Project__APP_.Supplier
          supplierprofile.Show();
          Close();
       }
+
+      private void btnTransactions_Click(object sender, EventArgs e)
+      {
+         var transac = new SupplierTransactions();
+         transac.Show();
+         Close();
+      }
    }
 }

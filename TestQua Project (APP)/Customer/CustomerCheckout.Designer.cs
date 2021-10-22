@@ -64,6 +64,7 @@ namespace TestQua_Project__APP_.Customer
          this.Name = "CustomerCheckout";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "CustomerCheckout";
+         this.Load += new System.EventHandler(this.CustomerCheckout_Load);
          ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
          this.ResumeLayout(false);
 

@@ -23,5 +23,10 @@ namespace TestQua_Project__APP_.Customer
          cart.Show();
          Close();
       }
+
+      private void CustomerCheckout_Load(object sender, EventArgs e)
+      {
+
+      }
    }
 }
