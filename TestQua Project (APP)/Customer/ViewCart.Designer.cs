@@ -98,6 +98,7 @@ namespace TestQua_Project__APP_.Customer
          this.btnUpdate.TabIndex = 4;
          this.btnUpdate.Text = "Update";
          this.btnUpdate.UseVisualStyleBackColor = true;
+         this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
          // 
          // lblProductName
          // 
@@ -120,6 +121,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          // txtTotalPrice
          // 
+         this.txtTotalPrice.Enabled = false;
          this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.txtTotalPrice.Location = new System.Drawing.Point(790, 601);
          this.txtTotalPrice.Name = "txtTotalPrice";
