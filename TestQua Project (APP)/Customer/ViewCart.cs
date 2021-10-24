@@ -13,6 +13,7 @@ namespace TestQua_Project__APP_.Customer
       private int setMax = 0;
       private int previousQuantity = 0;
       private int newQuantity = 0;
+      public static double TotalPrice = 0;
       public ViewCart()
       {
          InitializeComponent();
@@ -139,6 +140,7 @@ namespace TestQua_Project__APP_.Customer
             {
                Function.reader.Read();
                lblTotal.Text = Function.reader["TOTAL"].ToString();
+               TotalPrice = Convert.ToDouble(Function.reader["TOTAL"]);
             }
          }
 

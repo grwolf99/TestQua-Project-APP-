@@ -40,6 +40,8 @@ namespace TestQua_Project__APP_.Customer
          this.label1 = new System.Windows.Forms.Label();
          this.btnHome = new System.Windows.Forms.Button();
          this.dataGridView1 = new System.Windows.Forms.DataGridView();
+         this.lblTesting = new System.Windows.Forms.Label();
+         this.button1 = new System.Windows.Forms.Button();
          this.panel1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
          this.SuspendLayout();
@@ -173,10 +175,32 @@ namespace TestQua_Project__APP_.Customer
          // dataGridView1
          // 
          this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-         this.dataGridView1.Location = new System.Drawing.Point(176, 133);
+         this.dataGridView1.Location = new System.Drawing.Point(185, 133);
          this.dataGridView1.Name = "dataGridView1";
-         this.dataGridView1.Size = new System.Drawing.Size(899, 519);
+         this.dataGridView1.Size = new System.Drawing.Size(890, 217);
          this.dataGridView1.TabIndex = 52;
+         this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+         // 
+         // lblTesting
+         // 
+         this.lblTesting.AutoSize = true;
+         this.lblTesting.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.lblTesting.ForeColor = System.Drawing.Color.White;
+         this.lblTesting.Location = new System.Drawing.Point(299, 398);
+         this.lblTesting.Name = "lblTesting";
+         this.lblTesting.Size = new System.Drawing.Size(95, 36);
+         this.lblTesting.TabIndex = 53;
+         this.lblTesting.Text = "label3";
+         // 
+         // button1
+         // 
+         this.button1.Location = new System.Drawing.Point(352, 500);
+         this.button1.Name = "button1";
+         this.button1.Size = new System.Drawing.Size(75, 23);
+         this.button1.TabIndex = 54;
+         this.button1.Text = "button1";
+         this.button1.UseVisualStyleBackColor = true;
+         this.button1.Click += new System.EventHandler(this.button1_Click);
          // 
          // CustomerOrder
          // 
@@ -184,6 +208,8 @@ namespace TestQua_Project__APP_.Customer
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.button1);
+         this.Controls.Add(this.lblTesting);
          this.Controls.Add(this.dataGridView1);
          this.Controls.Add(this.btnLogout);
          this.Controls.Add(this.btnOrder);
@@ -196,6 +222,7 @@ namespace TestQua_Project__APP_.Customer
          this.Name = "CustomerOrder";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "CustomerOrder";
+         this.Load += new System.EventHandler(this.CustomerOrder_Load);
          this.panel1.ResumeLayout(false);
          this.panel1.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -216,5 +243,7 @@ namespace TestQua_Project__APP_.Customer
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.Button btnHome;
       private System.Windows.Forms.DataGridView dataGridView1;
+      private System.Windows.Forms.Label lblTesting;
+      private System.Windows.Forms.Button button1;
    }
 }

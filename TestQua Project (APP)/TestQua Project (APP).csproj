@@ -215,6 +215,12 @@
     <Compile Include="Customer\ViewCart.Designer.cs">
       <DependentUpon>ViewCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\ViewOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\ViewOrders.Designer.cs">
+      <DependentUpon>ViewOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\ViewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\ViewCart.resx">
       <DependentUpon>ViewCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ViewOrders.resx">
+      <DependentUpon>ViewOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>

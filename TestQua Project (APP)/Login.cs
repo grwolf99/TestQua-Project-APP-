@@ -17,26 +17,37 @@ namespace TestQua_Project__APP_
       public static int roleid = 0;
       public static string firstname = "";
       public static string lastname = "";
+      public static string contactnumber = "";
+      public static string address = "";
 
       public Login()
       {
          InitializeComponent();
       }
 
-      private void btnLogin_Click(object sender, EventArgs e)
+      private void linklblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+      {
+         var register = new Register();
+         register.Show();
+         Hide();
+      }
+
+      private void btnLogin_Click_1(object sender, EventArgs e)
       {
          try
          {
             Connection.DB();
-            Function.gen = "SELECT * FROM UserInformation WHERE Username = '"+ txtUsername.Text +"' AND Password = '"+ txtPassword.Text +"' ";
+            Function.gen = "SELECT * FROM UserInformation WHERE Username = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
-            if(Function.reader.HasRows){
+            if (Function.reader.HasRows)
+            {
                Function.reader.Read();
                roleid = Convert.ToInt32(Function.reader["RoleId"]);
 
-               if (roleid == 1){    //Admin
+               if (roleid == 1)
+               {    //Admin
                   txtUsername.Text = Function.reader["Username"].ToString();
                   txtPassword.Text = Function.reader["Password"].ToString();
 
@@ -48,7 +59,8 @@ namespace TestQua_Project__APP_
                   adminhome.Show();
                   Hide();
                }
-               else if(roleid == 2){  //Customer
+               else if (roleid == 2)
+               {  //Customer
                   txtUsername.Text = Function.reader["Username"].ToString();
                   txtPassword.Text = Function.reader["Password"].ToString();
 
@@ -56,11 +68,15 @@ namespace TestQua_Project__APP_
                   lastname = Function.reader["Lastname"].ToString();
                   userid = Convert.ToInt32(Function.reader["UserId"]);
                   roleid = Convert.ToInt32(Function.reader["RoleId"]);
+                  contactnumber = Function.reader["ContactNo"].ToString();
+                  address = Function.reader["address"].ToString();
+
                   var customerhome = new Customer.CustomerHome();
                   customerhome.Show();
                   Hide();
                }
-               else if(roleid == 3){ //Supplier
+               else if (roleid == 3)
+               { //Supplier
                   txtUsername.Text = Function.reader["Username"].ToString();
                   txtPassword.Text = Function.reader["Password"].ToString();
 
@@ -80,32 +96,5 @@ namespace TestQua_Project__APP_
             MessageBox.Show(ex.Message);
          }
       }
-
-      private void linklblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-      {
-         var register = new Register();
-         register.Show();
-         Hide();
-      }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLogin_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -95,3 +95,5 @@ D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Pro
 C:\Users\josep\Downloads\TestQua-Project-APP--master\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csproj.AssemblyReference.cache
 C:\Users\josep\Downloads\TestQua-Project-APP--master\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).exe
 C:\Users\josep\Downloads\TestQua-Project-APP--master\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).pdb
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerDeliveryDate.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.ViewOrders.resources
