@@ -92,3 +92,6 @@ D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Pro
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerCheckout.resources
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Guest.GuestViewProduct.resources
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Supplier.SupplierTransactions.resources
+C:\Users\josep\Downloads\TestQua-Project-APP--master\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csproj.AssemblyReference.cache
+C:\Users\josep\Downloads\TestQua-Project-APP--master\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).exe
+C:\Users\josep\Downloads\TestQua-Project-APP--master\TestQua-Project-APP--master\TestQua Project (APP)\obj\Debug\TestQua Project (APP).pdb

@@ -30,5 +30,10 @@ namespace TestQua_Project__APP_
             Hide();
          }
       }
-   }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
