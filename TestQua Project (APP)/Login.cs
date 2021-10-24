@@ -90,7 +90,7 @@ namespace TestQua_Project__APP_
 
         private void Login_Load(object sender, EventArgs e)
         {
-            //work please
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -99,6 +99,11 @@ namespace TestQua_Project__APP_
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
 
         }

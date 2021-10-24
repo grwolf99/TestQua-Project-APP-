@@ -53,5 +53,12 @@ namespace TestQua_Project__APP_
       {
 
       }
-   }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
+//https://app.involve.me/editor/flowers-order-form-d4d8
+// 1 column, spacing should be far in each field.
