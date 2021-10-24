@@ -1,0 +1,188 @@
+From 8a78d96ed23b9a93772533f63c0067a2e2157e20 Mon Sep 17 00:00:00 2001
+From: GRWolfy <67980159+GRWolfy@users.noreply.github.com>
+Date: Sat, 23 Oct 2021 19:15:23 +0800
+Subject: View Cart
+
+
+diff --git a/TestQua Project (APP)/Customer/ViewCart.Designer.cs b/TestQua Project (APP)/Customer/ViewCart.Designer.cs
+index d4a513f..f39223d 100644
+--- a/TestQua Project (APP)/Customer/ViewCart.Designer.cs	
++++ b/TestQua Project (APP)/Customer/ViewCart.Designer.cs	
+@@ -98,6 +98,7 @@ namespace TestQua_Project__APP_.Customer
+          this.btnUpdate.TabIndex = 4;
+          this.btnUpdate.Text = "Update";
+          this.btnUpdate.UseVisualStyleBackColor = true;
++         this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+          // 
+          // lblProductName
+          // 
+@@ -120,6 +121,7 @@ namespace TestQua_Project__APP_.Customer
+          // 
+          // txtTotalPrice
+          // 
++         this.txtTotalPrice.Enabled = false;
+          this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+          this.txtTotalPrice.Location = new System.Drawing.Point(790, 601);
+          this.txtTotalPrice.Name = "txtTotalPrice";
+diff --git a/TestQua Project (APP)/Customer/ViewCart.cs b/TestQua Project (APP)/Customer/ViewCart.cs
+index 5bba2de..e937c76 100644
+--- a/TestQua Project (APP)/Customer/ViewCart.cs	
++++ b/TestQua Project (APP)/Customer/ViewCart.cs	
+@@ -9,9 +9,10 @@ namespace TestQua_Project__APP_.Customer
+    public partial class ViewCart : Form
+    {
+       private double price = 0;
+-      private double totalprice = 0;
+       private int productid  = 0;
+       private int setMax = 0;
++      private int previousQuantity = 0;
++      private int newQuantity = 0;
+       public ViewCart()
+       {
+          InitializeComponent();
+@@ -21,6 +22,7 @@ namespace TestQua_Project__APP_.Customer
+       {
+          viewCart();
+          setTotalPrice();
++         fieldControl(false);
+       }
+ 
+       private void setNumericUpandDown()
+@@ -58,9 +60,9 @@ namespace TestQua_Project__APP_.Customer
+          txtTotalPrice.Text = (quantity * price).ToString();
+          productid = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["productid"].Value);
+          numericUpDown_Quantity.Value = Convert.ToDecimal(quantity);
++         previousQuantity = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["quantity"].Value);
+          setMax = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["quantity1"].Value);
+          byte[] img = (byte[])(datagridViewCart.Rows[e.RowIndex].Cells["productimage"].Value);
+-         setNumericUpandDown();
+ 
+          if (img == null)
+          {
+@@ -72,11 +74,15 @@ namespace TestQua_Project__APP_.Customer
+             pictureBox.Image = Image.FromStream(ms);
+             pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+          }
++
++         setNumericUpandDown();
++         fieldControl(true);
+       }
+ 
+       private void numericUpDown_Quantity_ValueChanged(object sender, EventArgs e)
+       {
+          txtTotalPrice.Text = (Convert.ToDouble(numericUpDown_Quantity.Value) * price).ToString();
++         newQuantity = Convert.ToInt32(numericUpDown_Quantity.Value);
+       }
+ 
+       private void clearFields()
+@@ -84,7 +90,16 @@ namespace TestQua_Project__APP_.Customer
+          pictureBox.Dispose();
+          txtName.Clear();
+          txtTotalPrice.Clear();
+-         numericUpDown_Quantity.Value = 0;
++      }
++
++      private void fieldControl(bool enable)
++      {
++         btnDelete.Enabled = enable;
++         btnUpdate.Enabled = enable;
++         txtTotalPrice.Enabled = enable;
++         numericUpDown_Quantity.Enabled = enable;
++         btnCheckout.Enabled = enable ? false : true;
++
+       }
+ 
+       private void btnDelete_Click(object sender, EventArgs e)
+@@ -101,6 +116,7 @@ namespace TestQua_Project__APP_.Customer
+                Function.command.ExecuteNonQuery();
+                Connection.con.Close();
+                clearFields();
++               fieldControl(false);
+             }
+          }
+ 
+@@ -115,15 +131,14 @@ namespace TestQua_Project__APP_.Customer
+          try
+          {
+             Connection.DB();
+-            Function.gen = "SELECT * FROM CartDB WHERE userid = '"+ Login.userid +"' ";
++            Function.gen = "SELECT SUM(ProductInformation.ProductPrice * CartDb.Quantity) as TOTAL FROM productinformation INNER JOIN CartDb ON cartdb.productid = ProductInformation.ProductId WHERE CartDb.UserId = '"+ Login.userid +"' ";
+             Function.command = new SqlCommand(Function.gen, Connection.con);
+             Function.reader = Function.command.ExecuteReader();
+ 
+             if (Function.reader.HasRows)
+             {
+                Function.reader.Read();
+-               totalprice += Convert.ToDouble(Function.reader["productprice"]) * Convert.ToDouble(Function.reader["quantity"]);
+-               lblTotal.Text = "P" + totalprice.ToString();
++               lblTotal.Text = Function.reader["TOTAL"].ToString();
+             }
+          }
+ 
+@@ -133,5 +148,51 @@ namespace TestQua_Project__APP_.Customer
+             MessageBox.Show(ex.Message);
+          }
+       }
++
++      private void btnUpdate_Click(object sender, EventArgs e)
++      {
++         int ProductQuantity = 0;
++
++         try
++         {
++            Connection.DB();
++            Function.gen = "SELECT * FROM ProductInformation WHERE productid = '" + productid + "' ";
++            Function.command = new SqlCommand(Function.gen, Connection.con);
++            Function.reader = Function.command.ExecuteReader();
++
++            if (Function.reader.HasRows)
++            {
++               Function.reader.Read();
++               ProductQuantity = Convert.ToInt32(Function.reader["Quantity"]);
++
++               if (newQuantity < previousQuantity)
++               {
++                  Connection.DB();
++                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE ProductInformation SET Quantity = '" + (ProductQuantity + (previousQuantity - newQuantity)) + "' WHERE productid = '" + productid + "'; ";
++                  Function.command = new SqlCommand(Function.gen, Connection.con);
++                  Function.command.ExecuteNonQuery();
++               }
++               else if (newQuantity > previousQuantity)
++               {
++                  Connection.DB();
++                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE ProductInformation SET Quantity = '" + (ProductQuantity - (newQuantity - previousQuantity)) + "' WHERE productid = '" + productid + "'; ";
++                  Function.command = new SqlCommand(Function.gen, Connection.con);
++                  Function.command.ExecuteNonQuery();
++               }
++            }
++
++            MessageBox.Show("Cart Updated");
++            Connection.con.Close();
++            viewCart();
++            setTotalPrice();
++            clearFields();
++            fieldControl(false);
++         }
++
++         catch (Exception ex)
++         {
++            MessageBox.Show(ex.Message);
++         }
++      }
+    }
+ }
+diff --git a/TestQua Project (APP)/bin/Debug/TestQua Project (APP).exe b/TestQua Project (APP)/bin/Debug/TestQua Project (APP).exe
+index 03fbbda..91a6b11 100644
+Binary files a/TestQua Project (APP)/bin/Debug/TestQua Project (APP).exe and b/TestQua Project (APP)/bin/Debug/TestQua Project (APP).exe differ
+diff --git a/TestQua Project (APP)/bin/Debug/TestQua Project (APP).pdb b/TestQua Project (APP)/bin/Debug/TestQua Project (APP).pdb
+index e309ee5..7616b0d 100644
+Binary files a/TestQua Project (APP)/bin/Debug/TestQua Project (APP).pdb and b/TestQua Project (APP)/bin/Debug/TestQua Project (APP).pdb differ
+diff --git a/TestQua Project (APP)/obj/Debug/TestQua Project (APP).csproj.GenerateResource.cache b/TestQua Project (APP)/obj/Debug/TestQua Project (APP).csproj.GenerateResource.cache
+index daae2be..5d622a7 100644
+Binary files a/TestQua Project (APP)/obj/Debug/TestQua Project (APP).csproj.GenerateResource.cache and b/TestQua Project (APP)/obj/Debug/TestQua Project (APP).csproj.GenerateResource.cache differ
+diff --git a/TestQua Project (APP)/obj/Debug/TestQua Project (APP).exe b/TestQua Project (APP)/obj/Debug/TestQua Project (APP).exe
+index 03fbbda..91a6b11 100644
+Binary files a/TestQua Project (APP)/obj/Debug/TestQua Project (APP).exe and b/TestQua Project (APP)/obj/Debug/TestQua Project (APP).exe differ
+diff --git a/TestQua Project (APP)/obj/Debug/TestQua Project (APP).pdb b/TestQua Project (APP)/obj/Debug/TestQua Project (APP).pdb
+index e309ee5..7616b0d 100644
+Binary files a/TestQua Project (APP)/obj/Debug/TestQua Project (APP).pdb and b/TestQua Project (APP)/obj/Debug/TestQua Project (APP).pdb differ
