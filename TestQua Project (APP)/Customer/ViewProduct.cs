@@ -102,8 +102,6 @@ namespace TestQua_Project__APP_.Customer
                Function.reader.Read();
                quantity = Convert.ToInt32(Function.reader["quantity"]);
                previousQuantity = quantity;
-               newQuantity = quantity + Convert.ToInt32(numericUpandDown_Quantity.Value);
-
                Connection.con.Close();
                Connection.DB();
                Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + userid + "' ";
@@ -136,6 +134,11 @@ namespace TestQua_Project__APP_.Customer
          {
             MessageBox.Show(ex.Message);
          }
+      }
+
+      private void numericUpandDown_Quantity_ValueChanged(object sender, EventArgs e)
+      {
+         newQuantity = Convert.ToInt32(numericUpandDown_Quantity.Value);
       }
    }
 }

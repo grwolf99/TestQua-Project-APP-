@@ -54,8 +54,10 @@ namespace TestQua_Project__APP_.Customer
       private void setViewCart()
       {
          Connection.DB();
-         Function.gen = "SELECT * from CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE userid = '" + Login.userid + "' ";
+         Function.gen = "SELECT cartdb.userid, cartdb.productid, productinformation.productname AS NAME, cartdb.quantity AS QUANTITY, (productinformation.productprice * cartdb.quantity) AS TOTAL from CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE userid = '" + Login.userid + "' ";
          Function.fill(Function.gen, dataGridView);
+         dataGridView.Columns["userid"].Visible = false;
+         dataGridView.Columns["productid"].Visible = false;
       }
 
       private void btnPlaceOrder_Click(object sender, EventArgs e)
@@ -85,6 +87,7 @@ namespace TestQua_Project__APP_.Customer
             }
 
             clearCart();
+            MessageBox.Show("Thank you for your order!");
             var cart = new ViewCart();
             cart.Show();
             Close();

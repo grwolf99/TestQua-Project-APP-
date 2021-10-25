@@ -34,16 +34,16 @@ namespace TestQua_Project__APP_.Customer
          this.button2 = new System.Windows.Forms.Button();
          this.btnAddtoCart = new System.Windows.Forms.Button();
          this.panel2 = new System.Windows.Forms.Panel();
+         this.label4 = new System.Windows.Forms.Label();
+         this.label3 = new System.Windows.Forms.Label();
+         this.label2 = new System.Windows.Forms.Label();
+         this.label1 = new System.Windows.Forms.Label();
          this.lblQuantity = new System.Windows.Forms.Label();
          this.lblDescription = new System.Windows.Forms.Label();
          this.lblPrice = new System.Windows.Forms.Label();
          this.lblName = new System.Windows.Forms.Label();
          this.numericUpandDown_Quantity = new System.Windows.Forms.NumericUpDown();
          this.pictureboxProductPic = new System.Windows.Forms.PictureBox();
-         this.label1 = new System.Windows.Forms.Label();
-         this.label2 = new System.Windows.Forms.Label();
-         this.label3 = new System.Windows.Forms.Label();
-         this.label4 = new System.Windows.Forms.Label();
          this.panel2.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.numericUpandDown_Quantity)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).BeginInit();
@@ -97,6 +97,50 @@ namespace TestQua_Project__APP_.Customer
          this.panel2.Size = new System.Drawing.Size(344, 397);
          this.panel2.TabIndex = 62;
          // 
+         // label4
+         // 
+         this.label4.AutoSize = true;
+         this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label4.ForeColor = System.Drawing.Color.White;
+         this.label4.Location = new System.Drawing.Point(21, 317);
+         this.label4.Name = "label4";
+         this.label4.Size = new System.Drawing.Size(116, 31);
+         this.label4.TabIndex = 69;
+         this.label4.Text = "Quantiy:";
+         // 
+         // label3
+         // 
+         this.label3.AutoSize = true;
+         this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label3.ForeColor = System.Drawing.Color.White;
+         this.label3.Location = new System.Drawing.Point(35, 271);
+         this.label3.Name = "label3";
+         this.label3.Size = new System.Drawing.Size(84, 31);
+         this.label3.TabIndex = 68;
+         this.label3.Text = "Price:";
+         // 
+         // label2
+         // 
+         this.label2.AutoSize = true;
+         this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label2.ForeColor = System.Drawing.Color.White;
+         this.label2.Location = new System.Drawing.Point(24, 116);
+         this.label2.Name = "label2";
+         this.label2.Size = new System.Drawing.Size(159, 31);
+         this.label2.TabIndex = 67;
+         this.label2.Text = "Description:";
+         // 
+         // label1
+         // 
+         this.label1.AutoSize = true;
+         this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label1.ForeColor = System.Drawing.Color.White;
+         this.label1.Location = new System.Drawing.Point(25, 20);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(195, 31);
+         this.label1.TabIndex = 66;
+         this.label1.Text = "Product Name:";
+         // 
          // lblQuantity
          // 
          this.lblQuantity.AutoSize = true;
@@ -147,6 +191,7 @@ namespace TestQua_Project__APP_.Customer
          this.numericUpandDown_Quantity.Name = "numericUpandDown_Quantity";
          this.numericUpandDown_Quantity.Size = new System.Drawing.Size(120, 20);
          this.numericUpandDown_Quantity.TabIndex = 65;
+         this.numericUpandDown_Quantity.ValueChanged += new System.EventHandler(this.numericUpandDown_Quantity_ValueChanged);
          // 
          // pictureboxProductPic
          // 
@@ -157,50 +202,6 @@ namespace TestQua_Project__APP_.Customer
          this.pictureboxProductPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.pictureboxProductPic.TabIndex = 86;
          this.pictureboxProductPic.TabStop = false;
-         // 
-         // label1
-         // 
-         this.label1.AutoSize = true;
-         this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label1.ForeColor = System.Drawing.Color.White;
-         this.label1.Location = new System.Drawing.Point(25, 20);
-         this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(195, 31);
-         this.label1.TabIndex = 66;
-         this.label1.Text = "Product Name:";
-         // 
-         // label2
-         // 
-         this.label2.AutoSize = true;
-         this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label2.ForeColor = System.Drawing.Color.White;
-         this.label2.Location = new System.Drawing.Point(24, 116);
-         this.label2.Name = "label2";
-         this.label2.Size = new System.Drawing.Size(159, 31);
-         this.label2.TabIndex = 67;
-         this.label2.Text = "Description:";
-         // 
-         // label3
-         // 
-         this.label3.AutoSize = true;
-         this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label3.ForeColor = System.Drawing.Color.White;
-         this.label3.Location = new System.Drawing.Point(35, 271);
-         this.label3.Name = "label3";
-         this.label3.Size = new System.Drawing.Size(84, 31);
-         this.label3.TabIndex = 68;
-         this.label3.Text = "Price:";
-         // 
-         // label4
-         // 
-         this.label4.AutoSize = true;
-         this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label4.ForeColor = System.Drawing.Color.White;
-         this.label4.Location = new System.Drawing.Point(21, 317);
-         this.label4.Name = "label4";
-         this.label4.Size = new System.Drawing.Size(116, 31);
-         this.label4.TabIndex = 69;
-         this.label4.Text = "Quantiy:";
          // 
          // ViewProduct
          // 
