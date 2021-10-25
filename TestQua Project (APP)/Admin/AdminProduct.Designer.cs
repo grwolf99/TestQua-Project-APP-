@@ -200,10 +200,10 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage1.Controls.Add(this.label5);
          this.tabPage1.Controls.Add(this.txtQuantity);
          this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.tabPage1.Location = new System.Drawing.Point(4, 22);
+         this.tabPage1.Location = new System.Drawing.Point(4, 38);
          this.tabPage1.Name = "tabPage1";
          this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-         this.tabPage1.Size = new System.Drawing.Size(891, 493);
+         this.tabPage1.Size = new System.Drawing.Size(891, 477);
          this.tabPage1.TabIndex = 0;
          this.tabPage1.Text = "Manage Product";
          // 
@@ -340,6 +340,7 @@ namespace TestQua_Project__APP_.Admin
          this.tabcontrolAdminProducts.Controls.Add(this.tabPage2);
          this.tabcontrolAdminProducts.Controls.Add(this.tabPage3);
          this.tabcontrolAdminProducts.Controls.Add(this.tabPage4);
+         this.tabcontrolAdminProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.tabcontrolAdminProducts.Location = new System.Drawing.Point(175, 135);
          this.tabcontrolAdminProducts.Name = "tabcontrolAdminProducts";
          this.tabcontrolAdminProducts.SelectedIndex = 0;

@@ -39,12 +39,6 @@ namespace TestQua_Project__APP_.Customer
          viewCountCart();
       }
 
-      private void viewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-      {
-         var viewproduct = new CustomerProductView();
-         viewproduct.Show();
-      }
-
       private void btnProducts_Click(object sender, EventArgs e)
       {
 
@@ -118,6 +112,7 @@ namespace TestQua_Project__APP_.Customer
             productid = Convert.ToInt32(((PictureBox)sender).Tag);
             var viewproduct = new ViewProduct();
             viewproduct.Show();
+            Close();
          }
 
          catch (Exception ex)

@@ -58,6 +58,18 @@ namespace TestQua_Project__APP_.Customer
                txtPassword.Text = Function.reader["password"].ToString();
                txtConfirmPassword.Text = Function.reader["password"].ToString();
                cmbGender.Text = Function.reader["Gender"].ToString();
+               byte[] img = (byte[])(Function.reader["profilepicture"]);
+
+               if (img == null)
+               {
+                  pbProfilePicture.Image = null;
+               }
+               else
+               {
+                  MemoryStream ms = new MemoryStream(img);
+                  pbProfilePicture.Image = Image.FromStream(ms);
+                  pbProfilePicture.BackgroundImageLayout = ImageLayout.Stretch;
+               }
             }
 
             Connection.con.Close();
@@ -152,19 +164,19 @@ namespace TestQua_Project__APP_.Customer
                pbProfilePicture.ImageLocation = imageLocation;
             }
 
+            pbProfilePicture.BackgroundImageLayout = ImageLayout.Stretch;
             byte[] img = null;
             FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fs);
             img = br.ReadBytes((int)fs.Length);
 
             Connection.DB();
-            Function.gen = "UPDATE ProductInformation SET productimage = @img WHERE productid = '" + txtUserid.Text + "' ";
+            Function.gen = "UPDATE UserInformation SET ProfilePicture = @img WHERE userid = '" + txtUserid.Text + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.Parameters.Add(new SqlParameter("@img", img));
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Connection.con.Close();
-            pbProfilePicture.Dispose();
          }
 
          catch (Exception ex)

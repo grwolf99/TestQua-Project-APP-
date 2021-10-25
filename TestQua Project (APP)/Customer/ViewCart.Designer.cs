@@ -29,7 +29,6 @@ namespace TestQua_Project__APP_.Customer
       /// </summary>
       private void InitializeComponent()
       {
-         this.datagridViewCart = new System.Windows.Forms.DataGridView();
          this.btnBack = new System.Windows.Forms.Button();
          this.btnCheckout = new System.Windows.Forms.Button();
          this.btnDelete = new System.Windows.Forms.Button();
@@ -43,22 +42,15 @@ namespace TestQua_Project__APP_.Customer
          this.pictureBox = new System.Windows.Forms.PictureBox();
          this.label4 = new System.Windows.Forms.Label();
          this.lblTotal = new System.Windows.Forms.Label();
-         ((System.ComponentModel.ISupportInitialize)(this.datagridViewCart)).BeginInit();
+         this.datagridViewCart = new System.Windows.Forms.DataGridView();
          ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Quantity)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewCart)).BeginInit();
          this.SuspendLayout();
-         // 
-         // datagridViewCart
-         // 
-         this.datagridViewCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-         this.datagridViewCart.Location = new System.Drawing.Point(58, 84);
-         this.datagridViewCart.Name = "datagridViewCart";
-         this.datagridViewCart.Size = new System.Drawing.Size(634, 361);
-         this.datagridViewCart.TabIndex = 0;
-         this.datagridViewCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridViewCart_CellContentClick);
          // 
          // btnBack
          // 
+         this.btnBack.ForeColor = System.Drawing.Color.Black;
          this.btnBack.Location = new System.Drawing.Point(46, 33);
          this.btnBack.Name = "btnBack";
          this.btnBack.Size = new System.Drawing.Size(75, 23);
@@ -70,6 +62,7 @@ namespace TestQua_Project__APP_.Customer
          // btnCheckout
          // 
          this.btnCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.btnCheckout.ForeColor = System.Drawing.Color.Black;
          this.btnCheckout.Location = new System.Drawing.Point(390, 567);
          this.btnCheckout.Name = "btnCheckout";
          this.btnCheckout.Size = new System.Drawing.Size(215, 49);
@@ -81,6 +74,7 @@ namespace TestQua_Project__APP_.Customer
          // btnDelete
          // 
          this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.btnDelete.ForeColor = System.Drawing.Color.Black;
          this.btnDelete.Location = new System.Drawing.Point(519, 481);
          this.btnDelete.Name = "btnDelete";
          this.btnDelete.Size = new System.Drawing.Size(136, 47);
@@ -92,6 +86,7 @@ namespace TestQua_Project__APP_.Customer
          // btnUpdate
          // 
          this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.btnUpdate.ForeColor = System.Drawing.Color.Black;
          this.btnUpdate.Location = new System.Drawing.Point(324, 481);
          this.btnUpdate.Name = "btnUpdate";
          this.btnUpdate.Size = new System.Drawing.Size(136, 47);
@@ -104,6 +99,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.lblProductName.AutoSize = true;
          this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.lblProductName.ForeColor = System.Drawing.Color.White;
          this.lblProductName.Location = new System.Drawing.Point(784, 332);
          this.lblProductName.Name = "lblProductName";
          this.lblProductName.Size = new System.Drawing.Size(92, 36);
@@ -132,6 +128,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.asd.AutoSize = true;
          this.asd.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.asd.ForeColor = System.Drawing.Color.White;
          this.asd.Location = new System.Drawing.Point(784, 560);
          this.asd.Name = "asd";
          this.asd.Size = new System.Drawing.Size(83, 36);
@@ -142,6 +139,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label3.AutoSize = true;
          this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label3.ForeColor = System.Drawing.Color.White;
          this.label3.Location = new System.Drawing.Point(784, 454);
          this.label3.Name = "label3";
          this.label3.Size = new System.Drawing.Size(125, 36);
@@ -169,7 +167,8 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label4.AutoSize = true;
          this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label4.Location = new System.Drawing.Point(14, 573);
+         this.label4.ForeColor = System.Drawing.Color.White;
+         this.label4.Location = new System.Drawing.Point(52, 518);
          this.label4.Name = "label4";
          this.label4.Size = new System.Drawing.Size(89, 36);
          this.label4.TabIndex = 13;
@@ -179,11 +178,22 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.lblTotal.AutoSize = true;
          this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.lblTotal.Location = new System.Drawing.Point(98, 573);
+         this.lblTotal.ForeColor = System.Drawing.Color.White;
+         this.lblTotal.Location = new System.Drawing.Point(136, 518);
          this.lblTotal.Name = "lblTotal";
          this.lblTotal.Size = new System.Drawing.Size(115, 36);
          this.lblTotal.TabIndex = 14;
          this.lblTotal.Text = "number";
+         // 
+         // datagridViewCart
+         // 
+         this.datagridViewCart.AllowUserToAddRows = false;
+         this.datagridViewCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.datagridViewCart.Location = new System.Drawing.Point(72, 85);
+         this.datagridViewCart.Name = "datagridViewCart";
+         this.datagridViewCart.Size = new System.Drawing.Size(618, 325);
+         this.datagridViewCart.TabIndex = 15;
+         this.datagridViewCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridViewCart_CellClick);
          // 
          // ViewCart
          // 
@@ -191,6 +201,7 @@ namespace TestQua_Project__APP_.Customer
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.datagridViewCart);
          this.Controls.Add(this.lblTotal);
          this.Controls.Add(this.label4);
          this.Controls.Add(this.pictureBox);
@@ -204,23 +215,21 @@ namespace TestQua_Project__APP_.Customer
          this.Controls.Add(this.btnDelete);
          this.Controls.Add(this.btnCheckout);
          this.Controls.Add(this.btnBack);
-         this.Controls.Add(this.datagridViewCart);
+         this.ForeColor = System.Drawing.Color.Black;
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "ViewCart";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "ViewCart";
          this.Load += new System.EventHandler(this.ViewCart_Load);
-         ((System.ComponentModel.ISupportInitialize)(this.datagridViewCart)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Quantity)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewCart)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
       }
 
       #endregion
-
-      private System.Windows.Forms.DataGridView datagridViewCart;
       private System.Windows.Forms.Button btnBack;
       private System.Windows.Forms.Button btnCheckout;
       private System.Windows.Forms.Button btnDelete;
@@ -234,5 +243,6 @@ namespace TestQua_Project__APP_.Customer
       private System.Windows.Forms.PictureBox pictureBox;
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.Label lblTotal;
+      private System.Windows.Forms.DataGridView datagridViewCart;
    }
 }

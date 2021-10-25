@@ -193,6 +193,7 @@ namespace TestQua_Project__APP_.Supplier
          this.btnBrowsePicture.TabIndex = 90;
          this.btnBrowsePicture.Text = "Browse";
          this.btnBrowsePicture.UseVisualStyleBackColor = true;
+         this.btnBrowsePicture.Click += new System.EventHandler(this.btnBrowsePicture_Click);
          // 
          // label13
          // 

@@ -62,15 +62,50 @@ namespace TestQua_Project__APP_.Customer
       {
          try
          {
-            Connection.DB();
-            //Function.gen = "INSERT INTO OrderDb(Userid, ProductId, QuantityBought, TotalPrice, TimeofTransaction) VALUES('" + Login.userid + "', '" + /*ProductId*/ + "', '" + /*QuantityBought*/ + "', '" + Convert.ToInt32(lblTotalpayment.Text) + "', '" + DateTime.Now.ToString() + "')";
-            Function.command = new SqlCommand(Function.gen, Connection.con);
-            Function.command.ExecuteNonQuery();
-            MessageBox.Show("Success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Connection.con.Close();
+            setProductIDs();
+            string productID = "";
+            string quantity = "";
+
+            for (int i = 0; i < ProductIDs.Count; i++)
+            {
+               if (i == ProductIDs.Count - 1)
+               {
+                  productID += ProductIDs[i].ToString();
+                  quantity += QuantityBought[i].ToString();
+
+                  Connection.DB();
+                  Function.gen = "INSERT INTO OrdersDb(Userid, ProductId, QuantityBought, TotalPrice, TimeofTransaction) VALUES('" + Login.userid + "', '" + productID + "', '" + quantity + "', '" + (ViewCart.TotalPrice + 80) + "', '" + DateTime.Now.ToString() + "')";
+                  Function.command = new SqlCommand(Function.gen, Connection.con);
+                  Function.command.ExecuteNonQuery();
+                  Connection.con.Close();
+               }
+
+               productID += ProductIDs[i].ToString() + ",";
+               quantity += QuantityBought[i].ToString() + ",";
+            }
+
+            clearCart();
             var cart = new ViewCart();
             cart.Show();
             Close();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
+
+      private void clearCart()
+      {
+         try
+         {
+            Connection.DB();
+            Function.gen = "DELETE FROM CartDB WHERE userid = '"+ Login.userid +"' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.ExecuteNonQuery();
+            Connection.con.Close();
+
          }
 
          catch (Exception ex)
@@ -99,32 +134,6 @@ namespace TestQua_Project__APP_.Customer
          catch (Exception ex)
          {
             //NONE
-         }
-      }
-
-      private void button2_Click(object sender, EventArgs e)
-      {
-         setProductIDs();
-         //lblTesting.Text = ProductIDs.Count.ToString();
-         string productID = "";
-         string quantity = "";
-
-         for (int i = 0; i < ProductIDs.Count; i++)
-         {
-            if (i == ProductIDs.Count - 1)
-            {
-               productID += ProductIDs[i].ToString();
-               quantity += QuantityBought[i].ToString();
-
-               Connection.DB();
-               Function.gen = "INSERT INTO OrdersDb(Userid, ProductId, QuantityBought, TotalPrice, TimeofTransaction) VALUES('" + Login.userid + "', '" + productID +"', '" + quantity +"', '" + (ViewCart.TotalPrice + 80) + "', '" + DateTime.Now.ToString() + "')";
-               Function.command = new SqlCommand(Function.gen, Connection.con);
-               Function.command.ExecuteNonQuery();
-               Connection.con.Close();
-            }
-
-            productID += ProductIDs[i].ToString() + ",";
-            quantity += QuantityBought[i].ToString() + ",";
          }
       }
    }

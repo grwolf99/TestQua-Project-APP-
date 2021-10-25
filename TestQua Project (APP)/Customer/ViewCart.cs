@@ -35,8 +35,11 @@ namespace TestQua_Project__APP_.Customer
       private void viewCart()
       {
          Connection.DB();
-         Function.gen = "SELECT * from CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE userid = '"+ Login.userid +"' ";
+         Function.gen = "SELECT productinformation.productid, productinformation.productname AS [PRODUCT NAME], productinformation.productprice AS [PRICE], CartDb.Quantity, ProductInformation.Quantity, productinformation.productimage, (ProductInformation.ProductPrice * CartDb.Quantity) as TOTAL  FROM CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE Cartdb.userid = '" + Login.userid +"' ";
          Function.fill(Function.gen, datagridViewCart);
+         datagridViewCart.Columns["productimage"].Visible = false;
+         datagridViewCart.Columns["productid"].Visible = false;
+         datagridViewCart.Columns["quantity1"].Visible = false;
       }
 
       private void button1_Click(object sender, EventArgs e)
@@ -48,36 +51,17 @@ namespace TestQua_Project__APP_.Customer
 
       private void button2_Click(object sender, EventArgs e)
       {
-         var customercheckout = new CustomerCheckout();
-         customercheckout.Show();
-         Close();
-      }
-
-      private void datagridViewCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
-      {
-         txtName.Text = datagridViewCart.Rows[e.RowIndex].Cells["productname"].Value.ToString();
-         price =  Convert.ToDouble(datagridViewCart.Rows[e.RowIndex].Cells["productprice"].Value);
-         double quantity =  Convert.ToDouble(datagridViewCart.Rows[e.RowIndex].Cells["quantity"].Value);
-         txtTotalPrice.Text = (quantity * price).ToString();
-         productid = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["productid"].Value);
-         numericUpDown_Quantity.Value = Convert.ToDecimal(quantity);
-         previousQuantity = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["quantity"].Value);
-         setMax = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["quantity1"].Value);
-         byte[] img = (byte[])(datagridViewCart.Rows[e.RowIndex].Cells["productimage"].Value);
-
-         if (img == null)
+         if (TotalPrice > 0)
          {
-            pictureBox.Image = null;
+            var customercheckout = new CustomerCheckout();
+            customercheckout.Show();
+            Close();
          }
          else
          {
-            MemoryStream ms = new MemoryStream(img);
-            pictureBox.Image = Image.FromStream(ms);
-            pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            MessageBox.Show("CART EMPTY");
          }
-
-         setNumericUpandDown();
-         fieldControl(true);
+         
       }
 
       private void numericUpDown_Quantity_ValueChanged(object sender, EventArgs e)
@@ -139,7 +123,7 @@ namespace TestQua_Project__APP_.Customer
             if (Function.reader.HasRows)
             {
                Function.reader.Read();
-               lblTotal.Text = Function.reader["TOTAL"].ToString();
+               lblTotal.Text = Function.reader["TOTAL"].ToString() + ".00";
                TotalPrice = Convert.ToDouble(Function.reader["TOTAL"]);
             }
          }
@@ -147,7 +131,7 @@ namespace TestQua_Project__APP_.Customer
          catch (Exception ex)
          {
             Connection.con.Close();
-            MessageBox.Show(ex.Message);
+            lblTotal.Text = "0";
          }
       }
 
@@ -195,6 +179,33 @@ namespace TestQua_Project__APP_.Customer
          {
             MessageBox.Show(ex.Message);
          }
+      }
+
+      private void datagridViewCart_CellClick(object sender, DataGridViewCellEventArgs e)
+      {
+         txtName.Text = datagridViewCart.Rows[e.RowIndex].Cells["PRODUCT NAME"].Value.ToString();
+         price = Convert.ToDouble(datagridViewCart.Rows[e.RowIndex].Cells["PRICE"].Value);
+         double quantity = Convert.ToDouble(datagridViewCart.Rows[e.RowIndex].Cells["QUANTITY"].Value);
+         txtTotalPrice.Text = (quantity * price).ToString();
+         productid = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["productid"].Value);
+         numericUpDown_Quantity.Value = Convert.ToDecimal(quantity);
+         previousQuantity = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["QUANTITY"].Value);
+         setMax = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["quantity1"].Value);
+         byte[] img = (byte[])(datagridViewCart.Rows[e.RowIndex].Cells["productimage"].Value);
+
+         if (img == null)
+         {
+            pictureBox.Image = null;
+         }
+         else
+         {
+            MemoryStream ms = new MemoryStream(img);
+            pictureBox.Image = Image.FromStream(ms);
+            pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+         }
+
+         setNumericUpandDown();
+         fieldControl(true);
       }
    }
 }

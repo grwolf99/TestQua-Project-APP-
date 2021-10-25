@@ -18,6 +18,11 @@ namespace TestQua_Project__APP_.Customer
       private int userid = Login.userid;
       private int quantity = 0;
       private int setMax = 0;
+      private int setMin = 0;
+      private int newQuantity = 0;
+      private int previousQuantity = 0;
+      private int ProductQuantity = 0;
+      private int setQuantity = 0;
       public ViewProduct()
       {
          InitializeComponent();
@@ -31,12 +36,14 @@ namespace TestQua_Project__APP_.Customer
 
       private void btnClose_Click(object sender, EventArgs e)
       {
+         var customerproduct = new CustomerProduct();
+         customerproduct.Show();
          Close();
       }
 
       private void setNumericUpandDown()
       {
-         numericUpandDown_Quantity.Minimum = 1;
+         numericUpandDown_Quantity.Minimum = setMin;
          numericUpandDown_Quantity.Maximum = setMax;
       }
 
@@ -57,6 +64,7 @@ namespace TestQua_Project__APP_.Customer
                lblPrice.Text = Function.reader["productprice"].ToString();
                lblQuantity.Text = Function.reader["quantity"].ToString();
                setMax = Convert.ToInt32(Function.reader["quantity"]);
+               ProductQuantity = Convert.ToInt32(Function.reader["quantity"]);
                byte[] img = (byte[])(Function.reader[4]);
 
                if (img == null)
@@ -93,7 +101,8 @@ namespace TestQua_Project__APP_.Customer
             {
                Function.reader.Read();
                quantity = Convert.ToInt32(Function.reader["quantity"]);
-               int newQuantity = quantity + Convert.ToInt32(numericUpandDown_Quantity.Value);
+               previousQuantity = quantity;
+               newQuantity = quantity + Convert.ToInt32(numericUpandDown_Quantity.Value);
 
                Connection.con.Close();
                Connection.DB();
@@ -111,8 +120,16 @@ namespace TestQua_Project__APP_.Customer
                Function.command.ExecuteNonQuery();
                MessageBox.Show("Added to Cart");
             }
-
+            
             Connection.con.Close();
+            Connection.DB();
+            setQuantity = ProductQuantity - (newQuantity - previousQuantity);
+            Function.gen = "UPDATE ProductInformation SET Quantity = '" + setQuantity + "' WHERE productid = '" + productid + "' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.ExecuteNonQuery();
+            Connection.con.Close();
+
+            lblQuantity.Text = setQuantity.ToString();
          }
 
          catch (Exception ex)

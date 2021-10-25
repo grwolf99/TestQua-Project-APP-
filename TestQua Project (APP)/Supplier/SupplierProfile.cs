@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace TestQua_Project__APP_.Supplier
 {
    public partial class SupplierProfile : Form
    {
+      private string imageLocation = "";
+
       public SupplierProfile()
       {
          InitializeComponent();
@@ -63,6 +66,18 @@ namespace TestQua_Project__APP_.Supplier
                txtPassword.Text = Function.reader["password"].ToString();
                txtConfirmPassword.Text = Function.reader["password"].ToString();
                cmbGender.Text = Function.reader["Gender"].ToString();
+               byte[] img = (byte[])(Function.reader["profilepicture"]);
+
+               if (img == null)
+               {
+                  pbProfilePicture.Image = null;
+               }
+               else
+               {
+                  MemoryStream ms = new MemoryStream(img);
+                  pbProfilePicture.Image = Image.FromStream(ms);
+                  pbProfilePicture.BackgroundImageLayout = ImageLayout.Stretch;
+               }
             }
 
             Connection.con.Close();
@@ -119,6 +134,41 @@ namespace TestQua_Project__APP_.Supplier
          var transac = new SupplierTransactions();
          transac.Show();
          Close();
+      }
+
+      private void btnBrowsePicture_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|PNG Files (*.png)|*.png| All Files (*.*)|*.*";
+            dlg.Title = "Select Product Picture";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+               imageLocation = dlg.FileName.ToString();
+               pbProfilePicture.ImageLocation = imageLocation;
+            }
+
+            pbProfilePicture.BackgroundImageLayout = ImageLayout.Stretch;
+            byte[] img = null;
+            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+
+            Connection.DB();
+            Function.gen = "UPDATE UserInformation SET ProfilePicture = @img WHERE userid = '" + txtUserid.Text + "' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.Parameters.Add(new SqlParameter("@img", img));
+            Function.command.ExecuteNonQuery();
+            MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Connection.con.Close();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
       }
    }
 }

@@ -25,13 +25,6 @@ namespace TestQua_Project__APP_
          InitializeComponent();
       }
 
-      private void linklblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-      {
-         var register = new Register();
-         register.Show();
-         Hide();
-      }
-
       private void btnLogin_Click_1(object sender, EventArgs e)
       {
          try
@@ -96,5 +89,12 @@ namespace TestQua_Project__APP_
             MessageBox.Show(ex.Message);
          }
       }
-    }
+
+      private void linklblRegister_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+      {
+         var register = new Register();
+         register.Show();
+         Hide();
+      }
+   }
 }

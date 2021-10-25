@@ -231,7 +231,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label3.AutoSize = true;
          this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label3.Location = new System.Drawing.Point(487, 247);
+         this.label3.Location = new System.Drawing.Point(486, 221);
          this.label3.Name = "label3";
          this.label3.Size = new System.Drawing.Size(97, 24);
          this.label3.TabIndex = 82;
@@ -241,7 +241,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label11.AutoSize = true;
          this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label11.Location = new System.Drawing.Point(487, 287);
+         this.label11.Location = new System.Drawing.Point(486, 261);
          this.label11.Name = "label11";
          this.label11.Size = new System.Drawing.Size(141, 24);
          this.label11.TabIndex = 81;
@@ -251,7 +251,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label12.AutoSize = true;
          this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label12.Location = new System.Drawing.Point(487, 337);
+         this.label12.Location = new System.Drawing.Point(486, 311);
          this.label12.Name = "label12";
          this.label12.Size = new System.Drawing.Size(161, 24);
          this.label12.TabIndex = 80;
@@ -261,7 +261,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtConfirmPassword.Location = new System.Drawing.Point(656, 335);
+         this.txtConfirmPassword.Location = new System.Drawing.Point(655, 309);
          this.txtConfirmPassword.Name = "txtConfirmPassword";
          this.txtConfirmPassword.Size = new System.Drawing.Size(125, 26);
          this.txtConfirmPassword.TabIndex = 79;
@@ -271,7 +271,7 @@ namespace TestQua_Project__APP_.Customer
          this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtUsername.Enabled = false;
          this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtUsername.Location = new System.Drawing.Point(656, 247);
+         this.txtUsername.Location = new System.Drawing.Point(655, 221);
          this.txtUsername.Name = "txtUsername";
          this.txtUsername.Size = new System.Drawing.Size(125, 26);
          this.txtUsername.TabIndex = 78;
@@ -280,7 +280,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtPassword.Location = new System.Drawing.Point(656, 287);
+         this.txtPassword.Location = new System.Drawing.Point(655, 261);
          this.txtPassword.Name = "txtPassword";
          this.txtPassword.Size = new System.Drawing.Size(125, 26);
          this.txtPassword.TabIndex = 77;
@@ -294,7 +294,7 @@ namespace TestQua_Project__APP_.Customer
             "Male",
             "Female",
             "Other"});
-         this.cmbGender.Location = new System.Drawing.Point(673, 74);
+         this.cmbGender.Location = new System.Drawing.Point(656, 83);
          this.cmbGender.Name = "cmbGender";
          this.cmbGender.Size = new System.Drawing.Size(121, 28);
          this.cmbGender.TabIndex = 76;
@@ -303,7 +303,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label10.AutoSize = true;
          this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label10.Location = new System.Drawing.Point(487, 118);
+         this.label10.Location = new System.Drawing.Point(487, 127);
          this.label10.Name = "label10";
          this.label10.Size = new System.Drawing.Size(105, 24);
          this.label10.TabIndex = 75;
@@ -323,7 +323,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label8.AutoSize = true;
          this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label8.Location = new System.Drawing.Point(500, 78);
+         this.label8.Location = new System.Drawing.Point(500, 87);
          this.label8.Name = "label8";
          this.label8.Size = new System.Drawing.Size(74, 24);
          this.label8.TabIndex = 73;
@@ -353,7 +353,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.label5.AutoSize = true;
          this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label5.Location = new System.Drawing.Point(500, 175);
+         this.label5.Location = new System.Drawing.Point(500, 178);
          this.label5.Name = "label5";
          this.label5.Size = new System.Drawing.Size(57, 24);
          this.label5.TabIndex = 70;
@@ -399,7 +399,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.txtContacno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtContacno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtContacno.Location = new System.Drawing.Point(673, 119);
+         this.txtContacno.Location = new System.Drawing.Point(656, 128);
          this.txtContacno.Name = "txtContacno";
          this.txtContacno.Size = new System.Drawing.Size(121, 26);
          this.txtContacno.TabIndex = 65;
@@ -408,7 +408,7 @@ namespace TestQua_Project__APP_.Customer
          // 
          this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtEmail.Location = new System.Drawing.Point(669, 176);
+         this.txtEmail.Location = new System.Drawing.Point(656, 176);
          this.txtEmail.Name = "txtEmail";
          this.txtEmail.Size = new System.Drawing.Size(125, 26);
          this.txtEmail.TabIndex = 64;

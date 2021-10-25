@@ -130,12 +130,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AddProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\AddProduct.Designer.cs">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\AdminHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,12 +153,6 @@
     </Compile>
     <Compile Include="Admin\AdminReport.Designer.cs">
       <DependentUpon>AdminReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ViewProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\ViewProduct.Designer.cs">
-      <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Customer\CustomerCheckout.cs">
@@ -190,12 +178,6 @@
     </Compile>
     <Compile Include="Customer\CustomerProduct.Designer.cs">
       <DependentUpon>CustomerProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\CustomerProductView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\CustomerProductView.Designer.cs">
-      <DependentUpon>CustomerProductView.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerProfile.cs">
       <SubType>Form</SubType>
@@ -284,9 +266,6 @@
     <Compile Include="Supplier\SupplierTransactions.Designer.cs">
       <DependentUpon>SupplierTransactions.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin\AddProduct.resx">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,9 +278,6 @@
     <EmbeddedResource Include="Admin\AdminReport.resx">
       <DependentUpon>AdminReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\ViewProduct.resx">
-      <DependentUpon>ViewProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerCheckout.resx">
       <DependentUpon>CustomerCheckout.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,9 +289,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerProduct.resx">
       <DependentUpon>CustomerProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerProductView.resx">
-      <DependentUpon>CustomerProductView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerProfile.resx">
       <DependentUpon>CustomerProfile.cs</DependentUpon>

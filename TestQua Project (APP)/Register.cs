@@ -21,12 +21,22 @@ namespace TestQua_Project__APP_
          InitializeComponent();
       }
 
-      private void btnSaveRegister_Click(object sender, EventArgs e)
+      private void Register_Load(object sender, EventArgs e)
+      {
+
+      }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      private void btnSaveRegister_Click_1(object sender, EventArgs e)
       {
          try
          {
             Connection.DB();
-            Function.gen = "INSERT INTO UserInformation(RoleId, Firstname, Lastname, Age, Address, Gender, Email, DateRegistered, Username, Password, ContactNo) VALUES('" + 2 + "', '" + txtFirstname.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + txtAddress.Text + "', '" + cmbGender.Text + "', '" + txtEmail.Text + "', '" + DateTime.Now.ToString() + "', '" + txtUsername.Text + "', '" + txtPassword.Text + "', '" + txtContacno.Text +"')";
+            Function.gen = "INSERT INTO UserInformation(RoleId, Firstname, Lastname, Age, Address, Gender, Email, DateRegistered, Username, Password, ContactNo) VALUES('" + 2 + "', '" + txtFirstname.Text + "', '" + txtLastname.Text + "', '" + txtAge.Text + "', '" + txtAddress.Text + "', '" + cmbGender.Text + "', '" + txtEmail.Text + "', '" + DateTime.Now.ToString() + "', '" + txtUsername.Text + "', '" + txtPassword.Text + "', '" + txtContacno.Text + "')";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Registration success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -42,23 +52,11 @@ namespace TestQua_Project__APP_
          }
       }
 
-      private void btnBack_Click(object sender, EventArgs e)
+      private void btnBack_Click_1(object sender, EventArgs e)
       {
          var homepage = new Homepage();
          homepage.Show();
          Close();
       }
-
-      private void Register_Load(object sender, EventArgs e)
-      {
-
-      }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+   }
 }
-//https://app.involve.me/editor/flowers-order-form-d4d8
-// 1 column, spacing should be far in each field.

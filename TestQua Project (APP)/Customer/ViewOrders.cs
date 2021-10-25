@@ -37,11 +37,13 @@ namespace TestQua_Project__APP_.Customer
                if (Function.reader.HasRows)
                {
                   Function.reader.Read();
-                  dataGridViewOrder.Rows.Add(dataGridViewOrder.Rows.Count - 1 + 1, Function.reader["ProductName"].ToString(), CustomerOrder.QuantityBought[i], (Convert.ToDouble(Function.reader["productprice"]) * Convert.ToDouble(CustomerOrder.QuantityBought[i])));
+                  dataGridViewOrder.Rows.Add(dataGridViewOrder.Rows.Count - 1 + 1, Function.reader["ProductName"].ToString(), CustomerOrder.QuantityBought[i], (Convert.ToDouble(Function.reader["productprice"]) * Convert.ToDouble(CustomerOrder.QuantityBought[i])).ToString() + ".00");
                }
             }
 
-            dataGridViewOrder.Rows.Add(" ", " ", " ", CustomerOrder.TotalPrice.ToString());
+            dataGridViewOrder.Rows.Add(" ", "Delivery Fee", "", "80.00");
+            dataGridViewOrder.Rows.Add(" ", " ", " ", CustomerOrder.TotalPrice.ToString() + ".00");
+            dataGridViewOrder.AllowUserToAddRows = false;
          }
 
          catch (Exception ex)

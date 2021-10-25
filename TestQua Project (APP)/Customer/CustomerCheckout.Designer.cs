@@ -41,10 +41,6 @@ namespace TestQua_Project__APP_.Customer
          this.lblFullName = new System.Windows.Forms.Label();
          this.lblContactnumber = new System.Windows.Forms.Label();
          this.lblAddress = new System.Windows.Forms.Label();
-         this.label1 = new System.Windows.Forms.Label();
-         this.label4 = new System.Windows.Forms.Label();
-         this.button2 = new System.Windows.Forms.Button();
-         this.lblTesting = new System.Windows.Forms.Label();
          ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
          this.SuspendLayout();
          // 
@@ -62,7 +58,7 @@ namespace TestQua_Project__APP_.Customer
          this.button1.Name = "button1";
          this.button1.Size = new System.Drawing.Size(75, 23);
          this.button1.TabIndex = 61;
-         this.button1.Text = "button1";
+         this.button1.Text = "Back";
          this.button1.UseVisualStyleBackColor = true;
          this.button1.Click += new System.EventHandler(this.button1_Click);
          // 
@@ -176,59 +172,12 @@ namespace TestQua_Project__APP_.Customer
          this.lblAddress.TabIndex = 70;
          this.lblAddress.Text = "Address";
          // 
-         // label1
-         // 
-         this.label1.AutoSize = true;
-         this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label1.ForeColor = System.Drawing.Color.White;
-         this.label1.Location = new System.Drawing.Point(573, 436);
-         this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(212, 36);
-         this.label1.TabIndex = 72;
-         this.label1.Text = "Total Payment:";
-         // 
-         // label4
-         // 
-         this.label4.AutoSize = true;
-         this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label4.ForeColor = System.Drawing.Color.White;
-         this.label4.Location = new System.Drawing.Point(816, 436);
-         this.label4.Name = "label4";
-         this.label4.Size = new System.Drawing.Size(115, 36);
-         this.label4.TabIndex = 71;
-         this.label4.Text = "number";
-         // 
-         // button2
-         // 
-         this.button2.Location = new System.Drawing.Point(121, 579);
-         this.button2.Name = "button2";
-         this.button2.Size = new System.Drawing.Size(75, 23);
-         this.button2.TabIndex = 73;
-         this.button2.Text = "button2";
-         this.button2.UseVisualStyleBackColor = true;
-         this.button2.Click += new System.EventHandler(this.button2_Click);
-         // 
-         // lblTesting
-         // 
-         this.lblTesting.AutoSize = true;
-         this.lblTesting.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.lblTesting.ForeColor = System.Drawing.Color.White;
-         this.lblTesting.Location = new System.Drawing.Point(227, 579);
-         this.lblTesting.Name = "lblTesting";
-         this.lblTesting.Size = new System.Drawing.Size(115, 36);
-         this.lblTesting.TabIndex = 74;
-         this.lblTesting.Text = "number";
-         // 
          // CustomerCheckout
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
-         this.Controls.Add(this.lblTesting);
-         this.Controls.Add(this.button2);
-         this.Controls.Add(this.label1);
-         this.Controls.Add(this.label4);
          this.Controls.Add(this.lblAddress);
          this.Controls.Add(this.lblContactnumber);
          this.Controls.Add(this.lblFullName);
@@ -265,9 +214,5 @@ namespace TestQua_Project__APP_.Customer
       private System.Windows.Forms.Label lblFullName;
       private System.Windows.Forms.Label lblContactnumber;
       private System.Windows.Forms.Label lblAddress;
-      private System.Windows.Forms.Label label1;
-      private System.Windows.Forms.Label label4;
-      private System.Windows.Forms.Button button2;
-      private System.Windows.Forms.Label lblTesting;
    }
 }

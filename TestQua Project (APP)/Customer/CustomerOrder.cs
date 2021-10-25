@@ -60,11 +60,14 @@ namespace TestQua_Project__APP_.Customer
          Connection.DB();
          Function.gen = "SELECT * FROM OrdersDB WHERE userid = '"+ Login.userid +"' ";
          Function.fill(Function.gen, dataGridView1);
+         dataGridView1.Columns["productid"].Visible = false;
+         dataGridView1.Columns["QuantityBought"].Visible = false;
+         dataGridView1.Columns["userid"].Visible = false;
       }
 
-      private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+      private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
       {
-         TotalPrice = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TotalPrice"].Value);   
+         TotalPrice = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TotalPrice"].Value);
 
          string strProductId = dataGridView1.Rows[e.RowIndex].Cells["ProductId"].Value.ToString();
          string[] newProductId = strProductId.Split(',');
@@ -72,21 +75,16 @@ namespace TestQua_Project__APP_.Customer
          string strQuantity = dataGridView1.Rows[e.RowIndex].Cells["QuantityBought"].Value.ToString();
          string[] newStrQuantity = strQuantity.Split(',');
 
-         for(int i = 0; i < newProductId.Length; i++)
+         for (int i = 0; i < newProductId.Length; i++)
          {
             ProductIDs.Add(newProductId[i]);
             QuantityBought.Add(newStrQuantity[i]);
-            lblTesting.Text = ProductIDs.Count.ToString();
          }
 
          var vieworder = new ViewOrders();
          vieworder.Show();
-      }
-
-      private void button1_Click(object sender, EventArgs e)
-      {
-         var vieworder = new ViewOrders();
-         vieworder.Show();
+         ProductIDs.Clear();
+         QuantityBought.Clear();
       }
    }
 }
