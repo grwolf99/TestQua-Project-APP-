@@ -43,6 +43,8 @@ namespace TestQua_Project__APP_.Admin
          this.dataGridView1 = new System.Windows.Forms.DataGridView();
          this.tabPage2 = new System.Windows.Forms.TabPage();
          this.tabPage3 = new System.Windows.Forms.TabPage();
+         this.label1 = new System.Windows.Forms.Label();
+         this.lblTotalSales = new System.Windows.Forms.Label();
          this.panel1.SuspendLayout();
          this.tabControl1.SuspendLayout();
          this.tabPage1.SuspendLayout();
@@ -177,6 +179,8 @@ namespace TestQua_Project__APP_.Admin
          // 
          // tabPage1
          // 
+         this.tabPage1.Controls.Add(this.lblTotalSales);
+         this.tabPage1.Controls.Add(this.label1);
          this.tabPage1.Controls.Add(this.dataGridView1);
          this.tabPage1.Location = new System.Drawing.Point(4, 33);
          this.tabPage1.Name = "tabPage1";
@@ -216,6 +220,24 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage3.Text = "Returned Products";
          this.tabPage3.UseVisualStyleBackColor = true;
          // 
+         // label1
+         // 
+         this.label1.AutoSize = true;
+         this.label1.Location = new System.Drawing.Point(475, 9);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(107, 24);
+         this.label1.TabIndex = 1;
+         this.label1.Text = "Total Sales:";
+         // 
+         // lblTotalSales
+         // 
+         this.lblTotalSales.AutoSize = true;
+         this.lblTotalSales.Location = new System.Drawing.Point(576, 9);
+         this.lblTotalSales.Name = "lblTotalSales";
+         this.lblTotalSales.Size = new System.Drawing.Size(20, 24);
+         this.lblTotalSales.TabIndex = 2;
+         this.lblTotalSales.Text = "0";
+         // 
          // AdminReport
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +260,7 @@ namespace TestQua_Project__APP_.Admin
          this.panel1.PerformLayout();
          this.tabControl1.ResumeLayout(false);
          this.tabPage1.ResumeLayout(false);
+         this.tabPage1.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
          this.ResumeLayout(false);
 
@@ -258,5 +281,7 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.TabPage tabPage2;
       private System.Windows.Forms.TabPage tabPage3;
       private System.Windows.Forms.DataGridView dataGridView1;
+      private System.Windows.Forms.Label lblTotalSales;
+      private System.Windows.Forms.Label label1;
    }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,30 @@ namespace TestQua_Project__APP_.Admin
       {
          btnReports.FlatStyle = FlatStyle.Standard;
          viewOrdersDb();
+         setTotalSales();
+      }
+
+      private void setTotalSales()
+      {
+         try
+         {
+            Connection.DB();
+            Function.gen = "SELECT SUM(TotalPrice) as TOTAL FROM OrdersDb ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.reader = Function.command.ExecuteReader();
+
+            if (Function.reader.HasRows)
+            {
+               Function.reader.Read();
+               lblTotalSales.Text = Function.reader["TOTAL"].ToString() + ".00";
+            }
+         }
+
+         catch (Exception ex)
+         {
+            Connection.con.Close();
+            lblTotalSales.Text = "0";
+         }
       }
 
       private void viewOrdersDb()
