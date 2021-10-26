@@ -32,7 +32,6 @@ namespace TestQua_Project__APP_.Customer
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerProduct));
          this.flowlayoutViewProducts = new System.Windows.Forms.FlowLayoutPanel();
          this.lblCountCart = new System.Windows.Forms.Label();
-         this.button1 = new System.Windows.Forms.Button();
          this.btnProducts = new System.Windows.Forms.Button();
          this.btnProfile = new System.Windows.Forms.Button();
          this.btnOrder = new System.Windows.Forms.Button();
@@ -59,21 +58,11 @@ namespace TestQua_Project__APP_.Customer
          this.lblCountCart.AutoSize = true;
          this.lblCountCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.lblCountCart.ForeColor = System.Drawing.Color.White;
-         this.lblCountCart.Location = new System.Drawing.Point(811, 93);
+         this.lblCountCart.Location = new System.Drawing.Point(873, 93);
          this.lblCountCart.Name = "lblCountCart";
          this.lblCountCart.Size = new System.Drawing.Size(194, 31);
          this.lblCountCart.TabIndex = 34;
          this.lblCountCart.Text = "COUNT CART";
-         // 
-         // button1
-         // 
-         this.button1.Location = new System.Drawing.Point(627, 93);
-         this.button1.Name = "button1";
-         this.button1.Size = new System.Drawing.Size(75, 23);
-         this.button1.TabIndex = 35;
-         this.button1.Text = "button1";
-         this.button1.UseVisualStyleBackColor = true;
-         this.button1.Click += new System.EventHandler(this.button1_Click);
          // 
          // btnProducts
          // 
@@ -215,7 +204,6 @@ namespace TestQua_Project__APP_.Customer
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
          this.Controls.Add(this.btnViewCart);
-         this.Controls.Add(this.button1);
          this.Controls.Add(this.lblCountCart);
          this.Controls.Add(this.txtSearchProduct);
          this.Controls.Add(this.flowlayoutViewProducts);
@@ -240,7 +228,6 @@ namespace TestQua_Project__APP_.Customer
       #endregion
       private System.Windows.Forms.FlowLayoutPanel flowlayoutViewProducts;
       private System.Windows.Forms.Label lblCountCart;
-      private System.Windows.Forms.Button button1;
       private System.Windows.Forms.Button btnProducts;
       private System.Windows.Forms.Button btnProfile;
       private System.Windows.Forms.Button btnOrder;

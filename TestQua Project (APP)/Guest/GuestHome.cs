@@ -35,5 +35,12 @@ namespace TestQua_Project__APP_.Guest
          prod.Show();
          Close();
       }
+
+      private void button1_Click(object sender, EventArgs e)
+      {
+         var reg = new Register();
+         reg.Show();
+         Close();
+      }
    }
 }

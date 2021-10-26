@@ -149,12 +149,6 @@ namespace TestQua_Project__APP_.Customer
          }
       }
 
-      private void button1_Click(object sender, EventArgs e)
-      {
-         var viewproduct = new ViewProduct();
-         viewproduct.Show();
-      }
-
       private void btnViewCart_Click(object sender, EventArgs e)
       {
          var viewcart = new ViewCart();

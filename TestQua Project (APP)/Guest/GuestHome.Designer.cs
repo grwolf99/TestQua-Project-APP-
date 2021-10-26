@@ -42,6 +42,7 @@ namespace TestQua_Project__APP_.Guest
          this.panel1 = new System.Windows.Forms.Panel();
          this.label4 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
+         this.button1 = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -119,7 +120,7 @@ namespace TestQua_Project__APP_.Guest
          this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnHome.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
          this.btnHome.ForeColor = System.Drawing.Color.White;
-         this.btnHome.Location = new System.Drawing.Point(12, 296);
+         this.btnHome.Location = new System.Drawing.Point(12, 211);
          this.btnHome.Name = "btnHome";
          this.btnHome.Size = new System.Drawing.Size(167, 64);
          this.btnHome.TabIndex = 51;
@@ -189,12 +190,29 @@ namespace TestQua_Project__APP_.Guest
          this.label2.TabIndex = 0;
          this.label2.Text = "Bloom and Puff";
          // 
+         // button1
+         // 
+         this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.button1.FlatAppearance.BorderSize = 0;
+         this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.button1.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
+         this.button1.ForeColor = System.Drawing.Color.White;
+         this.button1.Location = new System.Drawing.Point(12, 302);
+         this.button1.Name = "button1";
+         this.button1.Size = new System.Drawing.Size(167, 64);
+         this.button1.TabIndex = 52;
+         this.button1.Text = "Register";
+         this.button1.UseVisualStyleBackColor = false;
+         this.button1.Click += new System.EventHandler(this.button1_Click);
+         // 
          // GuestHome
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.button1);
          this.Controls.Add(this.btnLogout);
          this.Controls.Add(this.label3);
          this.Controls.Add(this.pictureBox2);
@@ -234,5 +252,6 @@ namespace TestQua_Project__APP_.Guest
       private System.Windows.Forms.Label label2;
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.Button btnHome;
+      private System.Windows.Forms.Button button1;
    }
 }
