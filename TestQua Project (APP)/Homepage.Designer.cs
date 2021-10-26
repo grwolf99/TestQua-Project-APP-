@@ -40,6 +40,7 @@ namespace TestQua_Project__APP_
          this.pictureBox8 = new System.Windows.Forms.PictureBox();
          this.label1 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
+         this.linklblGuest = new System.Windows.Forms.LinkLabel();
          this.panel3.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -159,12 +160,26 @@ namespace TestQua_Project__APP_
          this.label2.Text = "Flowers are ready gift-wrapped, with customed notes";
          this.label2.Click += new System.EventHandler(this.label2_Click);
          // 
+         // linklblGuest
+         // 
+         this.linklblGuest.AutoSize = true;
+         this.linklblGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.linklblGuest.ForeColor = System.Drawing.Color.White;
+         this.linklblGuest.Location = new System.Drawing.Point(678, 58);
+         this.linklblGuest.Name = "linklblGuest";
+         this.linklblGuest.Size = new System.Drawing.Size(204, 29);
+         this.linklblGuest.TabIndex = 88;
+         this.linklblGuest.TabStop = true;
+         this.linklblGuest.Text = "Login as a Guest";
+         this.linklblGuest.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblGuest_LinkClicked);
+         // 
          // Homepage
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(986, 538);
+         this.Controls.Add(this.linklblGuest);
          this.Controls.Add(this.label2);
          this.Controls.Add(this.label1);
          this.Controls.Add(this.pictureBox8);
@@ -201,6 +216,7 @@ namespace TestQua_Project__APP_
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-    }
+      private System.Windows.Forms.LinkLabel linklblGuest;
+   }
 }
 

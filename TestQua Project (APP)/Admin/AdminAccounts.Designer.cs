@@ -517,10 +517,11 @@ namespace TestQua_Project__APP_.Admin
          // 
          // viewAccounts
          // 
+         this.viewAccounts.AllowUserToAddRows = false;
          this.viewAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
          this.viewAccounts.Location = new System.Drawing.Point(-4, 47);
          this.viewAccounts.Name = "viewAccounts";
-         this.viewAccounts.Size = new System.Drawing.Size(913, 450);
+         this.viewAccounts.Size = new System.Drawing.Size(892, 427);
          this.viewAccounts.TabIndex = 0;
          this.viewAccounts.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.viewAccounts_CellMouseClick);
          // 

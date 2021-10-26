@@ -14,6 +14,7 @@ namespace TestQua_Project__APP_.Guest
 {
    public partial class GuestViewProduct : Form
    {
+      public static int productid = 0;
       private PictureBox pic = new PictureBox();
       private Label price;
       private Label name;
@@ -75,10 +76,29 @@ namespace TestQua_Project__APP_.Guest
             pic.Controls.Add(name);
             pic.Controls.Add(price);
             flowlayoutViewProducts.Controls.Add(pic);
+
+            pic.Click += new EventHandler(OnClick);
          }
 
          flowlayoutViewProducts.AutoScroll = true;
          Connection.con.Close();
+      }
+
+      public void OnClick(object sender, EventArgs e)
+      {
+         try
+         {
+            productid = Convert.ToInt32(((PictureBox)sender).Tag);
+            var viewproduct = new GuestSelectProduct();
+            viewproduct.Show();
+            Close();
+         }
+
+         catch (Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+
       }
 
       private void btnHome_Click(object sender, EventArgs e)

@@ -78,7 +78,7 @@ namespace TestQua_Project__APP_.Customer
 
          catch (Exception ex)
          {
-            MessageBox.Show(ex.Message);
+            //MessageBox.Show(ex.Message);
          }
       }
 

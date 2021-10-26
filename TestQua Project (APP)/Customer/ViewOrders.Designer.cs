@@ -32,16 +32,18 @@ namespace TestQua_Project__APP_.Customer
          System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
          System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
          this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
-         this.button1 = new System.Windows.Forms.Button();
          this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.button1 = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
          this.SuspendLayout();
          // 
          // dataGridViewOrder
          // 
+         this.dataGridViewOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+         this.dataGridViewOrder.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
          dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
          dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
          dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -71,6 +73,30 @@ namespace TestQua_Project__APP_.Customer
          this.dataGridViewOrder.Size = new System.Drawing.Size(552, 317);
          this.dataGridViewOrder.TabIndex = 0;
          // 
+         // Column1
+         // 
+         this.Column1.HeaderText = "No.";
+         this.Column1.Name = "Column1";
+         this.Column1.Width = 65;
+         // 
+         // Column2
+         // 
+         this.Column2.HeaderText = "Product Name";
+         this.Column2.Name = "Column2";
+         this.Column2.Width = 156;
+         // 
+         // Column3
+         // 
+         this.Column3.HeaderText = "Quantity";
+         this.Column3.Name = "Column3";
+         this.Column3.Width = 103;
+         // 
+         // Column4
+         // 
+         this.Column4.HeaderText = "Total";
+         this.Column4.Name = "Column4";
+         this.Column4.Width = 76;
+         // 
          // button1
          // 
          this.button1.Location = new System.Drawing.Point(41, 13);
@@ -80,27 +106,6 @@ namespace TestQua_Project__APP_.Customer
          this.button1.Text = "button1";
          this.button1.UseVisualStyleBackColor = true;
          this.button1.Click += new System.EventHandler(this.button1_Click);
-         // 
-         // Column1
-         // 
-         this.Column1.HeaderText = "No.";
-         this.Column1.Name = "Column1";
-         // 
-         // Column2
-         // 
-         this.Column2.HeaderText = "Product Name";
-         this.Column2.Name = "Column2";
-         this.Column2.Width = 200;
-         // 
-         // Column3
-         // 
-         this.Column3.HeaderText = "Quantity";
-         this.Column3.Name = "Column3";
-         // 
-         // Column4
-         // 
-         this.Column4.HeaderText = "Total";
-         this.Column4.Name = "Column4";
          // 
          // ViewOrders
          // 

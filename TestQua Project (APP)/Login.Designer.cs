@@ -37,6 +37,7 @@ namespace TestQua_Project__APP_
          this.label2 = new System.Windows.Forms.Label();
          this.label3 = new System.Windows.Forms.Label();
          this.label4 = new System.Windows.Forms.Label();
+         this.linklblGuest = new System.Windows.Forms.LinkLabel();
          this.SuspendLayout();
          // 
          // txtPassword
@@ -134,12 +135,26 @@ namespace TestQua_Project__APP_
          this.label4.TabIndex = 26;
          this.label4.Text = "Enter one\'s credentials for us to help you";
          // 
+         // linklblGuest
+         // 
+         this.linklblGuest.AutoSize = true;
+         this.linklblGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.linklblGuest.ForeColor = System.Drawing.Color.White;
+         this.linklblGuest.Location = new System.Drawing.Point(207, 417);
+         this.linklblGuest.Name = "linklblGuest";
+         this.linklblGuest.Size = new System.Drawing.Size(204, 29);
+         this.linklblGuest.TabIndex = 27;
+         this.linklblGuest.TabStop = true;
+         this.linklblGuest.Text = "Login as a Guest";
+         this.linklblGuest.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblGuest_LinkClicked);
+         // 
          // Login
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(986, 538);
+         this.Controls.Add(this.linklblGuest);
          this.Controls.Add(this.label4);
          this.Controls.Add(this.label3);
          this.Controls.Add(this.label2);
@@ -166,5 +181,6 @@ namespace TestQua_Project__APP_
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+      private System.Windows.Forms.LinkLabel linklblGuest;
    }
 }

@@ -96,5 +96,12 @@ namespace TestQua_Project__APP_
          register.Show();
          Hide();
       }
+
+      private void linklblGuest_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+      {
+         var guest = new Guest.GuestHome();
+         guest.Show();
+         Close();
+      }
    }
 }

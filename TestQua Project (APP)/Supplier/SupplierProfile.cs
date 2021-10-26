@@ -86,7 +86,7 @@ namespace TestQua_Project__APP_.Supplier
 
          catch (Exception ex)
          {
-            MessageBox.Show(ex.Message);
+            //MessageBox.Show(ex.Message);
          }
       }
 

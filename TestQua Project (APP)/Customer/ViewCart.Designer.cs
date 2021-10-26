@@ -29,6 +29,8 @@ namespace TestQua_Project__APP_.Customer
       /// </summary>
       private void InitializeComponent()
       {
+         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
          this.btnBack = new System.Windows.Forms.Button();
          this.btnCheckout = new System.Windows.Forms.Button();
          this.btnDelete = new System.Windows.Forms.Button();
@@ -188,9 +190,29 @@ namespace TestQua_Project__APP_.Customer
          // datagridViewCart
          // 
          this.datagridViewCart.AllowUserToAddRows = false;
+         this.datagridViewCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+         this.datagridViewCart.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+         dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+         dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+         dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+         dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+         dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+         dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+         dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+         this.datagridViewCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
          this.datagridViewCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+         dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+         dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+         dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+         dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+         dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+         this.datagridViewCart.DefaultCellStyle = dataGridViewCellStyle2;
          this.datagridViewCart.Location = new System.Drawing.Point(72, 85);
          this.datagridViewCart.Name = "datagridViewCart";
+         this.datagridViewCart.RowHeadersWidth = 50;
+         this.datagridViewCart.RowTemplate.Height = 30;
          this.datagridViewCart.Size = new System.Drawing.Size(618, 325);
          this.datagridViewCart.TabIndex = 15;
          this.datagridViewCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridViewCart_CellClick);

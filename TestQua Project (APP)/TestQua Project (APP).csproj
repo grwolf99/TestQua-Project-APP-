@@ -215,6 +215,12 @@
     <Compile Include="Guest\GuestHome.Designer.cs">
       <DependentUpon>GuestHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guest\GuestSelectProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest\GuestSelectProduct.Designer.cs">
+      <DependentUpon>GuestSelectProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Guest\GuestViewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Guest\GuestHome.resx">
       <DependentUpon>GuestHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest\GuestSelectProduct.resx">
+      <DependentUpon>GuestSelectProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Guest\GuestViewProduct.resx">
       <DependentUpon>GuestViewProduct.cs</DependentUpon>

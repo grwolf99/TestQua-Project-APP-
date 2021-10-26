@@ -20,6 +20,14 @@ namespace TestQua_Project__APP_.Admin
       private void AdminReport_Load(object sender, EventArgs e)
       {
          btnReports.FlatStyle = FlatStyle.Standard;
+         viewOrdersDb();
+      }
+
+      private void viewOrdersDb()
+      {
+         Connection.DB();
+         Function.gen = "SELECT * FROM OrdersDB";
+         Function.fill(Function.gen, dataGridView1);
       }
 
       private void btnHome_Click(object sender, EventArgs e)

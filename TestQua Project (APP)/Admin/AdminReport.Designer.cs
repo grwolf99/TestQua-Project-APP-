@@ -38,11 +38,15 @@ namespace TestQua_Project__APP_.Admin
          this.btnLogout = new System.Windows.Forms.Button();
          this.btnReports = new System.Windows.Forms.Button();
          this.btnAccounts = new System.Windows.Forms.Button();
-         this.ViewReports = new System.Windows.Forms.DataGridView();
-         this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-         this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+         this.tabControl1 = new System.Windows.Forms.TabControl();
+         this.tabPage1 = new System.Windows.Forms.TabPage();
+         this.dataGridView1 = new System.Windows.Forms.DataGridView();
+         this.tabPage2 = new System.Windows.Forms.TabPage();
+         this.tabPage3 = new System.Windows.Forms.TabPage();
          this.panel1.SuspendLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.ViewReports)).BeginInit();
+         this.tabControl1.SuspendLayout();
+         this.tabPage1.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
          this.SuspendLayout();
          // 
          // btnHome
@@ -159,13 +163,58 @@ namespace TestQua_Project__APP_.Admin
          this.btnAccounts.UseVisualStyleBackColor = false;
          this.btnAccounts.Click += new System.EventHandler(this.btnAccounts_Click);
          // 
-         // ViewReports
+         // tabControl1
          // 
-         this.ViewReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-         this.ViewReports.Location = new System.Drawing.Point(176, 133);
-         this.ViewReports.Name = "ViewReports";
-         this.ViewReports.Size = new System.Drawing.Size(891, 493);
-         this.ViewReports.TabIndex = 48;
+         this.tabControl1.Controls.Add(this.tabPage1);
+         this.tabControl1.Controls.Add(this.tabPage2);
+         this.tabControl1.Controls.Add(this.tabPage3);
+         this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.tabControl1.Location = new System.Drawing.Point(242, 135);
+         this.tabControl1.Name = "tabControl1";
+         this.tabControl1.SelectedIndex = 0;
+         this.tabControl1.Size = new System.Drawing.Size(821, 489);
+         this.tabControl1.TabIndex = 48;
+         // 
+         // tabPage1
+         // 
+         this.tabPage1.Controls.Add(this.dataGridView1);
+         this.tabPage1.Location = new System.Drawing.Point(4, 33);
+         this.tabPage1.Name = "tabPage1";
+         this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+         this.tabPage1.Size = new System.Drawing.Size(813, 452);
+         this.tabPage1.TabIndex = 0;
+         this.tabPage1.Text = "View Sales";
+         this.tabPage1.UseVisualStyleBackColor = true;
+         // 
+         // dataGridView1
+         // 
+         this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+         this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+         this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.dataGridView1.Location = new System.Drawing.Point(7, 36);
+         this.dataGridView1.Name = "dataGridView1";
+         this.dataGridView1.Size = new System.Drawing.Size(800, 410);
+         this.dataGridView1.TabIndex = 0;
+         // 
+         // tabPage2
+         // 
+         this.tabPage2.Location = new System.Drawing.Point(4, 33);
+         this.tabPage2.Name = "tabPage2";
+         this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+         this.tabPage2.Size = new System.Drawing.Size(813, 452);
+         this.tabPage2.TabIndex = 1;
+         this.tabPage2.Text = "View Delivered Products";
+         this.tabPage2.UseVisualStyleBackColor = true;
+         // 
+         // tabPage3
+         // 
+         this.tabPage3.Location = new System.Drawing.Point(4, 33);
+         this.tabPage3.Name = "tabPage3";
+         this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+         this.tabPage3.Size = new System.Drawing.Size(813, 452);
+         this.tabPage3.TabIndex = 2;
+         this.tabPage3.Text = "Returned Products";
+         this.tabPage3.UseVisualStyleBackColor = true;
          // 
          // AdminReport
          // 
@@ -173,7 +222,7 @@ namespace TestQua_Project__APP_.Admin
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
-         this.Controls.Add(this.ViewReports);
+         this.Controls.Add(this.tabControl1);
          this.Controls.Add(this.btnHome);
          this.Controls.Add(this.panel1);
          this.Controls.Add(this.btnProducts);
@@ -187,7 +236,9 @@ namespace TestQua_Project__APP_.Admin
          this.Load += new System.EventHandler(this.AdminReport_Load);
          this.panel1.ResumeLayout(false);
          this.panel1.PerformLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.ViewReports)).EndInit();
+         this.tabControl1.ResumeLayout(false);
+         this.tabPage1.ResumeLayout(false);
+         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
          this.ResumeLayout(false);
 
       }
@@ -202,8 +253,10 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.Button btnLogout;
       private System.Windows.Forms.Button btnReports;
       private System.Windows.Forms.Button btnAccounts;
-      private System.Windows.Forms.DataGridView ViewReports;
-      private System.ComponentModel.BackgroundWorker backgroundWorker1;
-      private System.ComponentModel.BackgroundWorker backgroundWorker2;
+      private System.Windows.Forms.TabControl tabControl1;
+      private System.Windows.Forms.TabPage tabPage1;
+      private System.Windows.Forms.TabPage tabPage2;
+      private System.Windows.Forms.TabPage tabPage3;
+      private System.Windows.Forms.DataGridView dataGridView1;
    }
 }

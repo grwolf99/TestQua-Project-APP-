@@ -170,6 +170,7 @@ namespace TestQua_Project__APP_
          this.txtPassword.Name = "txtPassword";
          this.txtPassword.Size = new System.Drawing.Size(125, 30);
          this.txtPassword.TabIndex = 63;
+         this.txtPassword.UseSystemPasswordChar = true;
          // 
          // txtConfirmPassword
          // 
@@ -179,6 +180,7 @@ namespace TestQua_Project__APP_
          this.txtConfirmPassword.Name = "txtConfirmPassword";
          this.txtConfirmPassword.Size = new System.Drawing.Size(125, 30);
          this.txtConfirmPassword.TabIndex = 67;
+         this.txtConfirmPassword.UseSystemPasswordChar = true;
          // 
          // btnBack
          // 
