@@ -96,11 +96,13 @@ namespace TestQua_Project__APP_.Customer
 
             if (gen == DialogResult.Yes)
             {
-               Function.gen = "DELETE FROM CartDB WHERE UserId = '" + productid + "' ";
+               Function.gen = "DELETE FROM CartDB WHERE productid = '" + productid + "' AND userid = '"+ Login.userid +"' ";
                Function.command = new SqlCommand(Function.gen, Connection.con);
                Function.command.ExecuteNonQuery();
                Connection.con.Close();
                clearFields();
+               setTotalPrice();
+               viewCart();
                fieldControl(false);
             }
          }

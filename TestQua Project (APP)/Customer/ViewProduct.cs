@@ -90,49 +90,56 @@ namespace TestQua_Project__APP_.Customer
 
       private void btnAddtoCart_Click(object sender, EventArgs e)
       {
-         try
+         if (newQuantity > 0)
          {
-            Connection.DB();
-            Function.gen = "SELECT * FROM CartDb WHERE productid = '" + productid + "' AND userid = '" + userid + "' ";
-            Function.command = new SqlCommand(Function.gen, Connection.con);
-            Function.reader = Function.command.ExecuteReader();
-
-            if (Function.reader.HasRows) //UPDATE
+            try
             {
-               Function.reader.Read();
-               quantity = Convert.ToInt32(Function.reader["quantity"]);
-               previousQuantity = quantity;
+               Connection.DB();
+               Function.gen = "SELECT * FROM CartDb WHERE productid = '" + productid + "' AND userid = '" + userid + "' ";
+               Function.command = new SqlCommand(Function.gen, Connection.con);
+               Function.reader = Function.command.ExecuteReader();
+
+               if (Function.reader.HasRows) //UPDATE
+               {
+                  Function.reader.Read();
+                  quantity = Convert.ToInt32(Function.reader["quantity"]);
+                  previousQuantity = quantity;
+                  Connection.con.Close();
+                  Connection.DB();
+                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + userid + "' ";
+                  Function.command = new SqlCommand(Function.gen, Connection.con);
+                  Function.command.ExecuteNonQuery();
+                  MessageBox.Show("Cart Updated");
+               }
+               else
+               {
+                  Connection.con.Close();
+                  Connection.DB();
+                  Function.gen = "INSERT INTO CartDb(userid, productid, quantity, checker) VALUES('" + userid + "', '" + productid + "', '" + numericUpandDown_Quantity.Value + "', '" + 1 + "' )";
+                  Function.command = new SqlCommand(Function.gen, Connection.con);
+                  Function.command.ExecuteNonQuery();
+                  MessageBox.Show("Added to Cart");
+               }
+
                Connection.con.Close();
                Connection.DB();
-               Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + userid + "' ";
+               setQuantity = ProductQuantity - (newQuantity - previousQuantity);
+               Function.gen = "UPDATE ProductInformation SET Quantity = '" + setQuantity + "' WHERE productid = '" + productid + "' ";
                Function.command = new SqlCommand(Function.gen, Connection.con);
                Function.command.ExecuteNonQuery();
-               MessageBox.Show("Cart Updated");
-            }
-            else
-            {
                Connection.con.Close();
-               Connection.DB();
-               Function.gen = "INSERT INTO CartDb(userid, productid, quantity, checker) VALUES('"+ userid +"', '"+ productid + "', '"+ numericUpandDown_Quantity.Value +"', '"+ 1 +"' )";
-               Function.command = new SqlCommand(Function.gen, Connection.con);
-               Function.command.ExecuteNonQuery();
-               MessageBox.Show("Added to Cart");
-            }
-            
-            Connection.con.Close();
-            Connection.DB();
-            setQuantity = ProductQuantity - (newQuantity - previousQuantity);
-            Function.gen = "UPDATE ProductInformation SET Quantity = '" + setQuantity + "' WHERE productid = '" + productid + "' ";
-            Function.command = new SqlCommand(Function.gen, Connection.con);
-            Function.command.ExecuteNonQuery();
-            Connection.con.Close();
 
-            lblQuantity.Text = setQuantity.ToString();
+               lblQuantity.Text = setQuantity.ToString();
+            }
+
+            catch (Exception ex)
+            {
+               MessageBox.Show(ex.Message);
+            }
          }
-
-         catch (Exception ex)
+         else
          {
-            MessageBox.Show(ex.Message);
+            MessageBox.Show("Please set the quantity first");
          }
       }
 

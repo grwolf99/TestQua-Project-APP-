@@ -68,7 +68,7 @@ namespace TestQua_Project__APP_.Customer
          dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
          dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
          this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-         this.dataGridView.Location = new System.Drawing.Point(74, 70);
+         this.dataGridView.Location = new System.Drawing.Point(74, 160);
          this.dataGridView.Name = "dataGridView";
          this.dataGridView.RowHeadersWidth = 50;
          this.dataGridView.RowTemplate.Height = 30;
@@ -90,7 +90,7 @@ namespace TestQua_Project__APP_.Customer
          this.lblTotalpayment.AutoSize = true;
          this.lblTotalpayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.lblTotalpayment.ForeColor = System.Drawing.Color.White;
-         this.lblTotalpayment.Location = new System.Drawing.Point(816, 214);
+         this.lblTotalpayment.Location = new System.Drawing.Point(831, 299);
          this.lblTotalpayment.Name = "lblTotalpayment";
          this.lblTotalpayment.Size = new System.Drawing.Size(115, 36);
          this.lblTotalpayment.TabIndex = 62;
@@ -101,7 +101,7 @@ namespace TestQua_Project__APP_.Customer
          this.label2.AutoSize = true;
          this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.label2.ForeColor = System.Drawing.Color.White;
-         this.label2.Location = new System.Drawing.Point(573, 214);
+         this.label2.Location = new System.Drawing.Point(588, 299);
          this.label2.Name = "label2";
          this.label2.Size = new System.Drawing.Size(212, 36);
          this.label2.TabIndex = 63;
@@ -112,7 +112,7 @@ namespace TestQua_Project__APP_.Customer
          this.label3.AutoSize = true;
          this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.label3.ForeColor = System.Drawing.Color.White;
-         this.label3.Location = new System.Drawing.Point(573, 91);
+         this.label3.Location = new System.Drawing.Point(588, 176);
          this.label3.Name = "label3";
          this.label3.Size = new System.Drawing.Size(245, 36);
          this.label3.TabIndex = 65;
@@ -123,7 +123,7 @@ namespace TestQua_Project__APP_.Customer
          this.lblSubtotal.AutoSize = true;
          this.lblSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.lblSubtotal.ForeColor = System.Drawing.Color.White;
-         this.lblSubtotal.Location = new System.Drawing.Point(816, 91);
+         this.lblSubtotal.Location = new System.Drawing.Point(831, 176);
          this.lblSubtotal.Name = "lblSubtotal";
          this.lblSubtotal.Size = new System.Drawing.Size(115, 36);
          this.lblSubtotal.TabIndex = 64;
@@ -134,7 +134,7 @@ namespace TestQua_Project__APP_.Customer
          this.label5.AutoSize = true;
          this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.label5.ForeColor = System.Drawing.Color.White;
-         this.label5.Location = new System.Drawing.Point(573, 148);
+         this.label5.Location = new System.Drawing.Point(588, 233);
          this.label5.Name = "label5";
          this.label5.Size = new System.Drawing.Size(188, 36);
          this.label5.TabIndex = 67;
@@ -145,7 +145,7 @@ namespace TestQua_Project__APP_.Customer
          this.lblDeliveryfee.AutoSize = true;
          this.lblDeliveryfee.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.lblDeliveryfee.ForeColor = System.Drawing.Color.White;
-         this.lblDeliveryfee.Location = new System.Drawing.Point(816, 148);
+         this.lblDeliveryfee.Location = new System.Drawing.Point(831, 233);
          this.lblDeliveryfee.Name = "lblDeliveryfee";
          this.lblDeliveryfee.Size = new System.Drawing.Size(115, 36);
          this.lblDeliveryfee.TabIndex = 66;
@@ -178,7 +178,7 @@ namespace TestQua_Project__APP_.Customer
          this.lblContactnumber.AutoSize = true;
          this.lblContactnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.lblContactnumber.ForeColor = System.Drawing.Color.White;
-         this.lblContactnumber.Location = new System.Drawing.Point(375, 9);
+         this.lblContactnumber.Location = new System.Drawing.Point(183, 63);
          this.lblContactnumber.Name = "lblContactnumber";
          this.lblContactnumber.Size = new System.Drawing.Size(225, 36);
          this.lblContactnumber.TabIndex = 69;
@@ -189,7 +189,7 @@ namespace TestQua_Project__APP_.Customer
          this.lblAddress.AutoSize = true;
          this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.lblAddress.ForeColor = System.Drawing.Color.White;
-         this.lblAddress.Location = new System.Drawing.Point(641, 12);
+         this.lblAddress.Location = new System.Drawing.Point(183, 112);
          this.lblAddress.Name = "lblAddress";
          this.lblAddress.Size = new System.Drawing.Size(126, 36);
          this.lblAddress.TabIndex = 70;
