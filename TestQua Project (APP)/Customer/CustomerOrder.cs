@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TestQua_Project__APP_.Customer
@@ -58,7 +51,7 @@ namespace TestQua_Project__APP_.Customer
       private void viewOrders()
       {
          Connection.DB();
-         Function.gen = "SELECT * FROM OrdersDB WHERE userid = '"+ Login.userid +"' ";
+         Function.gen = "SELECT * FROM OrdersDB WHERE userid = '" + Login.userid + "' ";
          Function.fill(Function.gen, dataGridView1);
          dataGridView1.Columns["productid"].Visible = false;
          dataGridView1.Columns["QuantityBought"].Visible = false;

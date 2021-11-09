@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Collections;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 
 namespace TestQua_Project__APP_.Customer
@@ -104,7 +97,7 @@ namespace TestQua_Project__APP_.Customer
          try
          {
             Connection.DB();
-            Function.gen = "DELETE FROM CartDB WHERE userid = '"+ Login.userid +"' ";
+            Function.gen = "DELETE FROM CartDB WHERE userid = '" + Login.userid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.ExecuteNonQuery();
             Connection.con.Close();
@@ -122,11 +115,11 @@ namespace TestQua_Project__APP_.Customer
          try
          {
             Connection.DB();
-            Function.gen = "SELECT * FROM CartDB WHERE userid = '"+ Login.userid +"' ";
+            Function.gen = "SELECT * FROM CartDB WHERE userid = '" + Login.userid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
-            while (Function.reader.HasRows && Function.reader.HasRows) 
+            while (Function.reader.HasRows && Function.reader.HasRows)
             {
                Function.reader.Read();
                ProductIDs.Add(Convert.ToInt32(Function.reader["ProductId"]));

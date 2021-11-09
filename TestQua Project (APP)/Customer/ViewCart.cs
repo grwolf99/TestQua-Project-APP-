@@ -9,7 +9,7 @@ namespace TestQua_Project__APP_.Customer
    public partial class ViewCart : Form
    {
       private double price = 0;
-      private int productid  = 0;
+      private int productid = 0;
       private int setMax = 0;
       private int previousQuantity = 0;
       private int newQuantity = 0;
@@ -35,7 +35,7 @@ namespace TestQua_Project__APP_.Customer
       private void viewCart()
       {
          Connection.DB();
-         Function.gen = "SELECT productinformation.productid, productinformation.productname AS [PRODUCT NAME], productinformation.productprice AS [PRICE], CartDb.Quantity, ProductInformation.Quantity, productinformation.productimage, (ProductInformation.ProductPrice * CartDb.Quantity) as TOTAL  FROM CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE Cartdb.userid = '" + Login.userid +"' ";
+         Function.gen = "SELECT productinformation.productid, productinformation.productname AS [PRODUCT NAME], productinformation.productprice AS [PRICE], CartDb.Quantity, ProductInformation.Quantity, productinformation.productimage, (ProductInformation.ProductPrice * CartDb.Quantity) as TOTAL  FROM CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE Cartdb.userid = '" + Login.userid + "' ";
          Function.fill(Function.gen, datagridViewCart);
          datagridViewCart.Columns["productimage"].Visible = false;
          datagridViewCart.Columns["productid"].Visible = false;
@@ -61,7 +61,7 @@ namespace TestQua_Project__APP_.Customer
          {
             MessageBox.Show("CART EMPTY");
          }
-         
+
       }
 
       private void numericUpDown_Quantity_ValueChanged(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace TestQua_Project__APP_.Customer
 
             if (gen == DialogResult.Yes)
             {
-               Function.gen = "DELETE FROM CartDB WHERE productid = '" + productid + "' AND userid = '"+ Login.userid +"' ";
+               Function.gen = "DELETE FROM CartDB WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "' ";
                Function.command = new SqlCommand(Function.gen, Connection.con);
                Function.command.ExecuteNonQuery();
                Connection.con.Close();
@@ -113,12 +113,12 @@ namespace TestQua_Project__APP_.Customer
          }
       }
 
-      private void setTotalPrice() 
+      private void setTotalPrice()
       {
          try
          {
             Connection.DB();
-            Function.gen = "SELECT SUM(ProductInformation.ProductPrice * CartDb.Quantity) as TOTAL FROM productinformation INNER JOIN CartDb ON cartdb.productid = ProductInformation.ProductId WHERE CartDb.UserId = '"+ Login.userid +"' ";
+            Function.gen = "SELECT SUM(ProductInformation.ProductPrice * CartDb.Quantity) as TOTAL FROM productinformation INNER JOIN CartDb ON cartdb.productid = ProductInformation.ProductId WHERE CartDb.UserId = '" + Login.userid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 

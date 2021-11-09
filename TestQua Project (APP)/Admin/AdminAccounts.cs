@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TestQua_Project__APP_.Admin
@@ -18,7 +11,7 @@ namespace TestQua_Project__APP_.Admin
          InitializeComponent();
       }
 
-      private void dataviewAccounts() 
+      private void dataviewAccounts()
       {
          Connection.DB();
          Function.gen = "SELECT * FROM UserInformation";
@@ -63,7 +56,7 @@ namespace TestQua_Project__APP_.Admin
             txtLastname.Text = viewAccounts[3, e.RowIndex].Value.ToString();
             txtAge.Text = viewAccounts[4, e.RowIndex].Value.ToString();
             txtAddress.Text = viewAccounts[5, e.RowIndex].Value.ToString();
-            cmbGender.Text = viewAccounts[6, e.RowIndex].Value.ToString(); 
+            cmbGender.Text = viewAccounts[6, e.RowIndex].Value.ToString();
             txtEmail.Text = viewAccounts[7, e.RowIndex].Value.ToString();
             txtUsername.Text = viewAccounts[9, e.RowIndex].Value.ToString();
             txtPassword.Text = viewAccounts[10, e.RowIndex].Value.ToString();
@@ -77,7 +70,7 @@ namespace TestQua_Project__APP_.Admin
             {
                cmbRole.Text = "Customer";
             }
-            else 
+            else
             {
                cmbRole.Text = "Supplier";
             }
@@ -146,7 +139,7 @@ namespace TestQua_Project__APP_.Admin
          try
          {
             Connection.DB();
-            Function.gen = "UPDATE Userinformation SET Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', contactno = '"+ txtContacno.Text +"' WHERE Userid = '"+ txtUserid.Text +"' ";
+            Function.gen = "UPDATE Userinformation SET Firstname = '" + txtFirstname.Text + "', Lastname = '" + txtLastname.Text + "', Age = '" + txtAge.Text + "', Address = '" + txtAddress.Text + "', Gender = '" + cmbGender.Text + "', email = '" + txtEmail.Text + "', password = '" + txtPassword.Text + "', contactno = '" + txtContacno.Text + "' WHERE Userid = '" + txtUserid.Text + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
