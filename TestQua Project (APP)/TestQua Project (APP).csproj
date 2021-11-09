@@ -260,6 +260,12 @@
     <Compile Include="Supplier\SupplierHome.Designer.cs">
       <DependentUpon>SupplierHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Supplier\SupplierProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierProduct.Designer.cs">
+      <DependentUpon>SupplierProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Supplier\SupplierProfile.cs">
       <SubType>Form</SubType>
     </Compile>

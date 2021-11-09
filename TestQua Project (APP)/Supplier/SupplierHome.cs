@@ -35,5 +35,10 @@ namespace TestQua_Project__APP_.Supplier
          transac.Show();
          Close();
       }
+
+      private void btnProduct_Click(object sender, EventArgs e)
+      {
+
+      }
    }
 }

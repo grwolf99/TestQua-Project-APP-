@@ -41,6 +41,7 @@
          this.panel1 = new System.Windows.Forms.Panel();
          this.label4 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
+         this.btnProduct = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -121,7 +122,7 @@
          this.btnTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnTransactions.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
          this.btnTransactions.ForeColor = System.Drawing.Color.White;
-         this.btnTransactions.Location = new System.Drawing.Point(12, 312);
+         this.btnTransactions.Location = new System.Drawing.Point(12, 393);
          this.btnTransactions.Name = "btnTransactions";
          this.btnTransactions.Size = new System.Drawing.Size(203, 64);
          this.btnTransactions.TabIndex = 36;
@@ -192,12 +193,29 @@
          this.label2.TabIndex = 0;
          this.label2.Text = "Bloom and Puff";
          // 
+         // btnProduct
+         // 
+         this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.btnProduct.FlatAppearance.BorderSize = 0;
+         this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.btnProduct.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold);
+         this.btnProduct.ForeColor = System.Drawing.Color.White;
+         this.btnProduct.Location = new System.Drawing.Point(12, 304);
+         this.btnProduct.Name = "btnProduct";
+         this.btnProduct.Size = new System.Drawing.Size(203, 64);
+         this.btnProduct.TabIndex = 40;
+         this.btnProduct.Text = "Product";
+         this.btnProduct.UseVisualStyleBackColor = false;
+         this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+         // 
          // SupplierHome
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.btnProduct);
          this.Controls.Add(this.btnHome);
          this.Controls.Add(this.btnLogout);
          this.Controls.Add(this.label3);
@@ -237,5 +255,6 @@
       private System.Windows.Forms.Panel panel1;
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.Label label2;
+      private System.Windows.Forms.Button btnProduct;
    }
 }
