@@ -95,3 +95,9 @@ C:\Users\josep\Downloads\TestQua-Project-APP--master\TestQua-Project-APP--master
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.CustomerDeliveryDate.resources
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Customer.ViewOrders.resources
 D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Guest.GuestSelectProduct.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua_Project__APP_.Supplier.SupplierProduct.resources
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\bin\Debug\TestQua Project (APP).exe.manifest
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\bin\Debug\TestQua Project (APP).application
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).exe.manifest
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).application
+D:\Programming\TestQua Project (APP)\TestQua Project (APP)\obj\Debug\TestQua Project (APP).csproj.CopyComplete

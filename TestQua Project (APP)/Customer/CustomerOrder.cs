@@ -9,6 +9,8 @@ namespace TestQua_Project__APP_.Customer
       public static ArrayList ProductIDs = new ArrayList();
       public static ArrayList QuantityBought = new ArrayList();
       public static double TotalPrice = 0;
+      public static string Status = "";
+      public static int OrderId = 0;
 
       public CustomerOrder()
       {
@@ -48,7 +50,7 @@ namespace TestQua_Project__APP_.Customer
          viewOrders();
       }
 
-      private void viewOrders()
+      public void viewOrders()
       {
          Connection.DB();
          Function.gen = "SELECT * FROM OrdersDB WHERE userid = '" + Login.userid + "' ";
@@ -61,6 +63,8 @@ namespace TestQua_Project__APP_.Customer
       private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
       {
          TotalPrice = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TotalPrice"].Value);
+         Status = dataGridView1.Rows[e.RowIndex].Cells["status"].Value.ToString();
+         OrderId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["OrderId"].Value);
 
          string strProductId = dataGridView1.Rows[e.RowIndex].Cells["ProductId"].Value.ToString();
          string[] newProductId = strProductId.Split(',');
@@ -78,6 +82,7 @@ namespace TestQua_Project__APP_.Customer
          vieworder.Show();
          ProductIDs.Clear();
          QuantityBought.Clear();
+         Close();
       }
    }
 }

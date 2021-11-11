@@ -238,6 +238,6 @@ namespace TestQua_Project__APP_.Customer
       private System.Windows.Forms.Label label2;
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.Button btnHome;
-      private System.Windows.Forms.DataGridView dataGridView1;
+      public System.Windows.Forms.DataGridView dataGridView1;
    }
 }

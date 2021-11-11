@@ -16,5 +16,20 @@ namespace TestQua_Project__APP_.Supplier
       {
          InitializeComponent();
       }
+
+      private void SupplierProduct_Load(object sender, EventArgs e)
+      {
+
+      }
+
+
    }
 }
+/*
+   supplier to admin (need db)
+   to get supply (warehousedb - productinformation 
+
+   for defective product
+   label as return
+
+ */
