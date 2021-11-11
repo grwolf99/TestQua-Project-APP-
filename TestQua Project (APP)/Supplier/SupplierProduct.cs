@@ -22,7 +22,30 @@ namespace TestQua_Project__APP_.Supplier
 
       }
 
+      private void btnBrowse_Click(object sender, EventArgs e)
+      {
 
+      }
+
+      private void btnUpdatePic_Click(object sender, EventArgs e)
+      {
+
+      }
+
+      private void btnDelete_Click(object sender, EventArgs e)
+      {
+
+      }
+
+      private void btnUpdate_Click(object sender, EventArgs e)
+      {
+
+      }
+
+      private void btnSave_Click(object sender, EventArgs e)
+      {
+
+      }
    }
 }
 /*
