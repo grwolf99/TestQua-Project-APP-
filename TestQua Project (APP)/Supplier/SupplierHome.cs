@@ -38,7 +38,9 @@ namespace TestQua_Project__APP_.Supplier
 
       private void btnProduct_Click(object sender, EventArgs e)
       {
-
+         var supplierproduct = new SupplierProduct();
+         supplierproduct.Show();
+         Close();
       }
    }
 }

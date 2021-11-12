@@ -9,6 +9,7 @@ namespace TestQua_Project__APP_.Admin
    public partial class AdminProduct : Form
    {
       string imageLocation = "";
+      public static int productid;
 
       public AdminProduct()
       {
@@ -74,6 +75,7 @@ namespace TestQua_Project__APP_.Admin
       {
          ViewProducts();
          btnProducts.FlatStyle = FlatStyle.Standard;
+         ViewWarehouse();
       }
 
       private void btnSave_Click(object sender, EventArgs e)
@@ -86,7 +88,7 @@ namespace TestQua_Project__APP_.Admin
             img = br.ReadBytes((int)fs.Length);
 
             Connection.DB();
-            Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage, Quantity) VALUES('" + txtProductName.Text + "', '" + txtProductDescription.Text + "', '" + txtPrice.Text + "', @img, '" + txtQuantity.Text + "')";
+            Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage, Quantity, TImeStored) VALUES('" + txtProductName.Text + "', '" + txtProductDescription.Text + "', '" + txtPrice.Text + "', @img, '" + txtQuantity.Text + "', '" + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt") + "' )";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.Parameters.Add(new SqlParameter("@img", img));
             Function.command.ExecuteNonQuery();
@@ -148,6 +150,13 @@ namespace TestQua_Project__APP_.Admin
          Connection.DB();
          Function.gen = "SELECT * from ProductInformation";
          Function.fill(Function.gen, datagridViewProduct);
+      }
+
+      private void ViewWarehouse()
+      {
+         Connection.DB();
+         Function.gen = "SELECT * from Warehousedb";
+         Function.fill(Function.gen, datagridViewWarehouse);
       }
 
       private void datagridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -215,6 +224,20 @@ namespace TestQua_Project__APP_.Admin
          var adminproduct = new AdminProduct();
          adminproduct.Show();
          Close();
+      }
+
+      private void txtSearchWarehouse_TextChanged(object sender, EventArgs e)
+      {
+         //to be added later
+      }
+
+      private void datagridViewWarehouse_CellClick(object sender, DataGridViewCellEventArgs e)
+      {
+         productid = Convert.ToInt32(datagridViewWarehouse.Rows[e.RowIndex].Cells["ProductId"].Value);
+         var addsupply = new AddFromSupply();
+         addsupply.Show();
+         Close();
+         //Pass those fields to AddFromSupply form then INSERT ProductInfo DB
       }
    }
 }

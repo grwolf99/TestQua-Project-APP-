@@ -37,9 +37,6 @@ namespace TestQua_Project__APP_.Admin
          this.btnUpdate = new System.Windows.Forms.Button();
          this.btnSave = new System.Windows.Forms.Button();
          this.btnHome = new System.Windows.Forms.Button();
-         this.panel1 = new System.Windows.Forms.Panel();
-         this.label4 = new System.Windows.Forms.Label();
-         this.label2 = new System.Windows.Forms.Label();
          this.tabPage1 = new System.Windows.Forms.TabPage();
          this.label7 = new System.Windows.Forms.Label();
          this.txtProductId = new System.Windows.Forms.TextBox();
@@ -55,18 +52,24 @@ namespace TestQua_Project__APP_.Admin
          this.label5 = new System.Windows.Forms.Label();
          this.txtQuantity = new System.Windows.Forms.TextBox();
          this.tabcontrolAdminProducts = new System.Windows.Forms.TabControl();
-         this.tabPage3 = new System.Windows.Forms.TabPage();
          this.tabPage4 = new System.Windows.Forms.TabPage();
+         this.datagridViewWarehouse = new System.Windows.Forms.DataGridView();
+         this.txtSearchWarehouse = new System.Windows.Forms.TextBox();
          this.btnLogout = new System.Windows.Forms.Button();
          this.btnProducts = new System.Windows.Forms.Button();
          this.btnReports = new System.Windows.Forms.Button();
          this.btnAccounts = new System.Windows.Forms.Button();
+         this.panel1 = new System.Windows.Forms.Panel();
+         this.label4 = new System.Windows.Forms.Label();
+         this.label2 = new System.Windows.Forms.Label();
          this.tabPage2.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewProduct)).BeginInit();
-         this.panel1.SuspendLayout();
          this.tabPage1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).BeginInit();
          this.tabcontrolAdminProducts.SuspendLayout();
+         this.tabPage4.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewWarehouse)).BeginInit();
+         this.panel1.SuspendLayout();
          this.SuspendLayout();
          // 
          // tabPage2
@@ -74,10 +77,10 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage2.Controls.Add(this.datagridViewProduct);
          this.tabPage2.Controls.Add(this.txtSearch);
          this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.tabPage2.Location = new System.Drawing.Point(4, 22);
+         this.tabPage2.Location = new System.Drawing.Point(4, 38);
          this.tabPage2.Name = "tabPage2";
          this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-         this.tabPage2.Size = new System.Drawing.Size(891, 493);
+         this.tabPage2.Size = new System.Drawing.Size(891, 477);
          this.tabPage2.TabIndex = 1;
          this.tabPage2.Text = "View Products";
          this.tabPage2.UseVisualStyleBackColor = true;
@@ -143,41 +146,6 @@ namespace TestQua_Project__APP_.Admin
          this.btnHome.Text = "Home";
          this.btnHome.UseVisualStyleBackColor = false;
          this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-         // 
-         // panel1
-         // 
-         this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
-         this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-         this.panel1.Controls.Add(this.label4);
-         this.panel1.Controls.Add(this.label2);
-         this.panel1.Location = new System.Drawing.Point(-1, -1);
-         this.panel1.Name = "panel1";
-         this.panel1.Size = new System.Drawing.Size(1089, 73);
-         this.panel1.TabIndex = 41;
-         // 
-         // label4
-         // 
-         this.label4.AutoSize = true;
-         this.label4.BackColor = System.Drawing.Color.Transparent;
-         this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
-         this.label4.Location = new System.Drawing.Point(56, 47);
-         this.label4.Name = "label4";
-         this.label4.Size = new System.Drawing.Size(212, 18);
-         this.label4.TabIndex = 9;
-         this.label4.Text = "A Group of TEAM POWER";
-         // 
-         // label2
-         // 
-         this.label2.AutoSize = true;
-         this.label2.BackColor = System.Drawing.Color.Transparent;
-         this.label2.Font = new System.Drawing.Font("Segoe Print", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
-         this.label2.Location = new System.Drawing.Point(50, 9);
-         this.label2.Name = "label2";
-         this.label2.Size = new System.Drawing.Size(251, 51);
-         this.label2.TabIndex = 0;
-         this.label2.Text = "Bloom and Puff";
          // 
          // tabPage1
          // 
@@ -338,7 +306,6 @@ namespace TestQua_Project__APP_.Admin
          // 
          this.tabcontrolAdminProducts.Controls.Add(this.tabPage1);
          this.tabcontrolAdminProducts.Controls.Add(this.tabPage2);
-         this.tabcontrolAdminProducts.Controls.Add(this.tabPage3);
          this.tabcontrolAdminProducts.Controls.Add(this.tabPage4);
          this.tabcontrolAdminProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.tabcontrolAdminProducts.Location = new System.Drawing.Point(175, 135);
@@ -347,25 +314,36 @@ namespace TestQua_Project__APP_.Admin
          this.tabcontrolAdminProducts.Size = new System.Drawing.Size(899, 519);
          this.tabcontrolAdminProducts.TabIndex = 46;
          // 
-         // tabPage3
-         // 
-         this.tabPage3.Location = new System.Drawing.Point(4, 22);
-         this.tabPage3.Name = "tabPage3";
-         this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-         this.tabPage3.Size = new System.Drawing.Size(891, 493);
-         this.tabPage3.TabIndex = 2;
-         this.tabPage3.Text = "Add Supply";
-         this.tabPage3.UseVisualStyleBackColor = true;
-         // 
          // tabPage4
          // 
-         this.tabPage4.Location = new System.Drawing.Point(4, 22);
+         this.tabPage4.Controls.Add(this.datagridViewWarehouse);
+         this.tabPage4.Controls.Add(this.txtSearchWarehouse);
+         this.tabPage4.Location = new System.Drawing.Point(4, 38);
          this.tabPage4.Name = "tabPage4";
          this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-         this.tabPage4.Size = new System.Drawing.Size(891, 493);
+         this.tabPage4.Size = new System.Drawing.Size(891, 477);
          this.tabPage4.TabIndex = 3;
-         this.tabPage4.Text = "View Supply";
+         this.tabPage4.Text = "Add Supply";
          this.tabPage4.UseVisualStyleBackColor = true;
+         // 
+         // datagridViewWarehouse
+         // 
+         this.datagridViewWarehouse.AllowUserToAddRows = false;
+         this.datagridViewWarehouse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+         this.datagridViewWarehouse.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+         this.datagridViewWarehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.datagridViewWarehouse.Location = new System.Drawing.Point(2, 47);
+         this.datagridViewWarehouse.Name = "datagridViewWarehouse";
+         this.datagridViewWarehouse.Size = new System.Drawing.Size(891, 431);
+         this.datagridViewWarehouse.TabIndex = 67;
+         this.datagridViewWarehouse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridViewWarehouse_CellClick);
+         // 
+         // txtSearchWarehouse
+         // 
+         this.txtSearchWarehouse.Location = new System.Drawing.Point(265, 6);
+         this.txtSearchWarehouse.Name = "txtSearchWarehouse";
+         this.txtSearchWarehouse.Size = new System.Drawing.Size(100, 35);
+         this.txtSearchWarehouse.TabIndex = 66;
          // 
          // btnLogout
          // 
@@ -431,6 +409,41 @@ namespace TestQua_Project__APP_.Admin
          this.btnAccounts.UseVisualStyleBackColor = false;
          this.btnAccounts.Click += new System.EventHandler(this.btnAccounts_Click);
          // 
+         // panel1
+         // 
+         this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
+         this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+         this.panel1.Controls.Add(this.label4);
+         this.panel1.Controls.Add(this.label2);
+         this.panel1.Location = new System.Drawing.Point(-1, -1);
+         this.panel1.Name = "panel1";
+         this.panel1.Size = new System.Drawing.Size(1089, 73);
+         this.panel1.TabIndex = 41;
+         // 
+         // label4
+         // 
+         this.label4.AutoSize = true;
+         this.label4.BackColor = System.Drawing.Color.Transparent;
+         this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
+         this.label4.Location = new System.Drawing.Point(56, 47);
+         this.label4.Name = "label4";
+         this.label4.Size = new System.Drawing.Size(212, 18);
+         this.label4.TabIndex = 9;
+         this.label4.Text = "A Group of TEAM POWER";
+         // 
+         // label2
+         // 
+         this.label2.AutoSize = true;
+         this.label2.BackColor = System.Drawing.Color.Transparent;
+         this.label2.Font = new System.Drawing.Font("Segoe Print", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
+         this.label2.Location = new System.Drawing.Point(50, 9);
+         this.label2.Name = "label2";
+         this.label2.Size = new System.Drawing.Size(251, 51);
+         this.label2.TabIndex = 0;
+         this.label2.Text = "Bloom and Puff";
+         // 
          // AdminProduct
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,12 +465,15 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage2.ResumeLayout(false);
          this.tabPage2.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.datagridViewProduct)).EndInit();
-         this.panel1.ResumeLayout(false);
-         this.panel1.PerformLayout();
          this.tabPage1.ResumeLayout(false);
          this.tabPage1.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).EndInit();
          this.tabcontrolAdminProducts.ResumeLayout(false);
+         this.tabPage4.ResumeLayout(false);
+         this.tabPage4.PerformLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewWarehouse)).EndInit();
+         this.panel1.ResumeLayout(false);
+         this.panel1.PerformLayout();
          this.ResumeLayout(false);
 
       }
@@ -492,7 +508,8 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.Label label7;
       private System.Windows.Forms.TextBox txtSearch;
       private System.Windows.Forms.DataGridView datagridViewProduct;
-      private System.Windows.Forms.TabPage tabPage3;
       private System.Windows.Forms.TabPage tabPage4;
+      private System.Windows.Forms.DataGridView datagridViewWarehouse;
+      private System.Windows.Forms.TextBox txtSearchWarehouse;
    }
 }
