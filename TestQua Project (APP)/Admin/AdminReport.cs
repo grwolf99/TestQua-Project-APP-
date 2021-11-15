@@ -15,6 +15,8 @@ namespace TestQua_Project__APP_.Admin
       {
          btnReports.FlatStyle = FlatStyle.Standard;
          viewOrdersDb();
+         viewDelivered();
+         viewReturn();
          setTotalSales();
       }
 
@@ -23,29 +25,52 @@ namespace TestQua_Project__APP_.Admin
          try
          {
             Connection.DB();
-            Function.gen = "SELECT SUM(TotalPrice) as TOTAL FROM OrdersDb ";
+            Function.gen = "SELECT 'P' + convert(varchar, cast(SUM(TotalPrice) AS MONEY), 1) AS [TOTAL] FROM OrdersDb ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
             if (Function.reader.HasRows)
             {
                Function.reader.Read();
-               lblTotalSales.Text = Function.reader["TOTAL"].ToString() + ".00";
+               lblTotalSales.Text = Function.reader["TOTAL"].ToString();
             }
          }
 
          catch (Exception ex)
          {
             Connection.con.Close();
-            lblTotalSales.Text = "0";
+            lblTotalSales.Text = "P0";
          }
       }
 
       private void viewOrdersDb()
       {
          Connection.DB();
-         Function.gen = "SELECT * FROM OrdersDB";
+         Function.gen = "SELECT orderid AS [ORDER ID], userid, productid, quantitybought, 'P' + convert(varchar, cast(totalprice AS MONEY), 1) AS [TOTAL PRICE], status as [STATUS], timeoftransaction AS [TIME OF TRANSACTION] FROM OrdersDB";
          Function.fill(Function.gen, dataGridView1);
+         dataGridView1.Columns["userid"].Visible = false;
+         dataGridView1.Columns["productid"].Visible = false;
+         dataGridView1.Columns["quantitybought"].Visible = false;
+      }
+
+      private void viewReturn()
+      {
+         Connection.DB();
+         Function.gen = "SELECT orderid AS [ORDER ID], userid, productid, quantitybought, 'P' + convert(varchar, cast(totalprice AS MONEY), 1) AS [TOTAL PRICE], status as [STATUS], timeoftransaction AS [TIME OF TRANSACTION] FROM OrdersDB WHERE Status = '" + "Return" + "' ";
+         Function.fill(Function.gen, datagridViewReturn);
+         datagridViewReturn.Columns["userid"].Visible = false;
+         datagridViewReturn.Columns["productid"].Visible = false;
+         datagridViewReturn.Columns["quantitybought"].Visible = false;
+      }
+
+      private void viewDelivered()
+      {
+         Connection.DB();
+         Function.gen = "SELECT orderid AS [ORDER ID], userid, productid, quantitybought, 'P' + convert(varchar, cast(totalprice AS MONEY), 1) AS [TOTAL PRICE], status as [STATUS], timeoftransaction AS [TIME OF TRANSACTION] FROM OrdersDB WHERE Status = '" + "Order Received" + "' ";
+         Function.fill(Function.gen, datagridViewDelivered);
+         datagridViewDelivered.Columns["userid"].Visible = false;
+         datagridViewDelivered.Columns["productid"].Visible = false;
+         datagridViewDelivered.Columns["quantitybought"].Visible = false;
       }
 
       private void btnHome_Click(object sender, EventArgs e)
@@ -77,3 +102,10 @@ namespace TestQua_Project__APP_.Admin
       }
    }
 }
+/*
+   Hide userid
+   Hide productid
+   Hide Quantitybought
+   Fix Price
+   total sales labe add P
+ */

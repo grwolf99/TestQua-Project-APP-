@@ -15,6 +15,8 @@ namespace TestQua_Project__APP_.Admin
    public partial class AddFromSupply : Form
    {
       private string imageLocation = "";
+      private int Quantity = 0;
+      private int SupplyQuantity;
 
       public AddFromSupply()
       {
@@ -22,6 +24,11 @@ namespace TestQua_Project__APP_.Admin
       }
 
       private void AddFromSupply_Load(object sender, EventArgs e)
+      {
+         getFields();
+      }
+
+      private void getFields()
       {
          try
          {
@@ -36,9 +43,8 @@ namespace TestQua_Project__APP_.Admin
                lblName.Text = Function.reader["productname"].ToString();
                lblDescription.Text = Function.reader["productdescrip"].ToString();
                lblPrice.Text = Function.reader["productprice"].ToString();
+               SupplyQuantity = Convert.ToInt32(Function.reader["quantity"]);
                lblQuantity.Text = Function.reader["quantity"].ToString();
-               //setMax = Convert.ToInt32(Function.reader["quantity"]);
-               //ProductQuantity = Convert.ToInt32(Function.reader["quantity"]);
                byte[] img = (byte[])(Function.reader[4]);
 
                if (img == null)
@@ -62,11 +68,6 @@ namespace TestQua_Project__APP_.Admin
          }
       }
 
-      private void getFields()
-      { 
-         
-      }
-
       private void btnAddtoCart_Click(object sender, EventArgs e)
       {
          try
@@ -77,11 +78,19 @@ namespace TestQua_Project__APP_.Admin
             img = br.ReadBytes((int)fs.Length);
 
             Connection.DB();
-            Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage, Quantity, TImeStored) VALUES('" + lblName.Text + "', '" + lblDescription.Text + "', '" + lblPrice.Text + "', @img, '" + lblQuantity.Text + "', '" + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt") + "' )";
+            Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage, Quantity, TImeStored) VALUES('" + lblName.Text + "', '" + lblDescription.Text + "', '" + lblPrice.Text + "', @img, '" + Quantity + "', '" + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt") + "' )";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.Parameters.Add(new SqlParameter("@img", img));
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Connection.con.Close();
+
+            //I need a new GUI for add/minus of quantity for all forms
+            Connection.DB();
+            Function.gen = "UPDATE WarehouseDbb SET  quantity = '" + (SupplyQuantity) + "' WHERE productid = '" + AdminProduct.productid + "' ";
+            Function.command = new SqlCommand(Function.gen, Connection.con);
+            Function.command.ExecuteNonQuery();
+            MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Connection.con.Close();
          }
 
@@ -89,6 +98,30 @@ namespace TestQua_Project__APP_.Admin
          {
             MessageBox.Show(ex.Message);
          }
+      }
+
+      private void btnPlus_Click(object sender, EventArgs e)
+      {
+         Quantity += 1;
+      }
+
+      private void btnMinus_Click(object sender, EventArgs e)
+      {
+         Quantity -= 1;
+      }
+
+      private void txtQuantity_TextChanged(object sender, EventArgs e)
+      {
+         //Add trap here that will only accept integer
+         Quantity = Convert.ToInt32(txtQuantity.Text);
+      }
+
+      private void btnClose_Click(object sender, EventArgs e)
+      {
+         var adminproduct = new AdminProduct();
+         adminproduct.Show();
+         adminproduct.tabcontrolAdminProducts.SelectedIndex = 2;
+         Close();
       }
    }
 }

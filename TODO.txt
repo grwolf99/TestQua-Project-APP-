@@ -1,32 +1,48 @@
+ADMIN
+SKIP -Home still nothing in there
+DONE -Accounts, ViewAccounts fix the datagrid and Probably trapping of datasw (NO TRAPS)
+DONE -Products, ViewProducts fix the datagrid
+DONE -Products, AddSupply fix the datagrid
+ -Reports, All, fix datagrid
+ -AddFromSupply, fix buttons, screen, and quantity
+
+Customer 
+ -Home still nothing in there
+ -Profile add traps
+ -Products, adjust layout a bit, txtSearch adjust size, add icon for cart
+ -ViewCart, fix datagrid and UX
+ -Checkout, fix datagrid  and UX
+ -Order, fix datagrid
+ -ViewOrder, fix datagrid and UX
+
+GUEST
+ -Home, I dont know what to put here
+ -Product, add filter for sold-out product and adjust textbox
+ -Register, fix link
+
+SUPPLIER
+ -Home, same issue with others
+ -Profile, need review
+ -Transactions, add datagrid here
+ -Product, adjust/fix everything
+ -All, fix link
+
+LOGIN
+ -Fix username text
+ -UX
+
+REGISTER 
+ -Constraints for input field
+ -UI
+
+HOME
+ -Review UI and UX
+
+SPLASHSCREEN
+  -Review for final design
+
 OVERALL
- -Increase form size
- -Fix UX of login
- 
-ADMIN AND SUPPLIER
- -Implement functionalities
- -Add billing transaction
-
-CUSTOMER
- -Add quantity to view products
-
-TRAPPING OF DATA/BUGS
- -Fix View Cart
-
-ALL ACTORS
- -Fix dashboard/homepage
-
-DATAGRID
- -Display money format with peso sign
-
-DATA VISUALIZATION
- -add to all billing transaction forms
-
-DESIGNS
- -Improve design
-
-DATAS
- -Gather and research datas for the system
-
-DOCUMENTATION
- -For semifinals
- -software testing
+ -Fix UX
+ -Need design
+ -Adjust size
+ -Trap data

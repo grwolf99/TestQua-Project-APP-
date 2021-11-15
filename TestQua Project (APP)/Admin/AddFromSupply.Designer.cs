@@ -30,7 +30,6 @@
       {
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFromSupply));
          this.pictureboxProductPic = new System.Windows.Forms.PictureBox();
-         this.numericUpandDown_Quantity = new System.Windows.Forms.NumericUpDown();
          this.panel2 = new System.Windows.Forms.Panel();
          this.label4 = new System.Windows.Forms.Label();
          this.label3 = new System.Windows.Forms.Label();
@@ -42,8 +41,10 @@
          this.lblName = new System.Windows.Forms.Label();
          this.btnAddtoCart = new System.Windows.Forms.Button();
          this.btnClose = new System.Windows.Forms.Button();
+         this.txtQuantity = new System.Windows.Forms.TextBox();
+         this.btnMinus = new System.Windows.Forms.Button();
+         this.btnPlus = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpandDown_Quantity)).BeginInit();
          this.panel2.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -56,13 +57,6 @@
          this.pictureboxProductPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.pictureboxProductPic.TabIndex = 91;
          this.pictureboxProductPic.TabStop = false;
-         // 
-         // numericUpandDown_Quantity
-         // 
-         this.numericUpandDown_Quantity.Location = new System.Drawing.Point(330, 480);
-         this.numericUpandDown_Quantity.Name = "numericUpandDown_Quantity";
-         this.numericUpandDown_Quantity.Size = new System.Drawing.Size(120, 20);
-         this.numericUpandDown_Quantity.TabIndex = 90;
          // 
          // panel2
          // 
@@ -183,12 +177,44 @@
          // 
          this.btnClose.BackColor = System.Drawing.Color.Plum;
          this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-         this.btnClose.Location = new System.Drawing.Point(160, 14);
+         this.btnClose.Location = new System.Drawing.Point(12, 12);
          this.btnClose.Name = "btnClose";
          this.btnClose.Size = new System.Drawing.Size(99, 47);
          this.btnClose.TabIndex = 87;
          this.btnClose.Text = "Close";
          this.btnClose.UseVisualStyleBackColor = false;
+         this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+         // 
+         // txtQuantity
+         // 
+         this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txtQuantity.Location = new System.Drawing.Point(274, 462);
+         this.txtQuantity.Name = "txtQuantity";
+         this.txtQuantity.Size = new System.Drawing.Size(100, 32);
+         this.txtQuantity.TabIndex = 92;
+         this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
+         // 
+         // btnMinus
+         // 
+         this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.btnMinus.Location = new System.Drawing.Point(229, 462);
+         this.btnMinus.Name = "btnMinus";
+         this.btnMinus.Size = new System.Drawing.Size(39, 31);
+         this.btnMinus.TabIndex = 93;
+         this.btnMinus.Text = "-";
+         this.btnMinus.UseVisualStyleBackColor = true;
+         this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+         // 
+         // btnPlus
+         // 
+         this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.btnPlus.Location = new System.Drawing.Point(379, 462);
+         this.btnPlus.Name = "btnPlus";
+         this.btnPlus.Size = new System.Drawing.Size(39, 31);
+         this.btnPlus.TabIndex = 94;
+         this.btnPlus.Text = "+";
+         this.btnPlus.UseVisualStyleBackColor = true;
+         this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
          // 
          // AddFromSupply
          // 
@@ -196,27 +222,29 @@
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(986, 538);
+         this.Controls.Add(this.btnPlus);
+         this.Controls.Add(this.btnMinus);
+         this.Controls.Add(this.txtQuantity);
          this.Controls.Add(this.pictureboxProductPic);
-         this.Controls.Add(this.numericUpandDown_Quantity);
          this.Controls.Add(this.panel2);
          this.Controls.Add(this.btnAddtoCart);
          this.Controls.Add(this.btnClose);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "AddFromSupply";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "AddFromSupply";
          this.Load += new System.EventHandler(this.AddFromSupply_Load);
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpandDown_Quantity)).EndInit();
          this.panel2.ResumeLayout(false);
          this.panel2.PerformLayout();
          this.ResumeLayout(false);
+         this.PerformLayout();
 
       }
 
       #endregion
 
       private System.Windows.Forms.PictureBox pictureboxProductPic;
-      private System.Windows.Forms.NumericUpDown numericUpandDown_Quantity;
       private System.Windows.Forms.Panel panel2;
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.Label label3;
@@ -228,5 +256,8 @@
       private System.Windows.Forms.Label lblName;
       private System.Windows.Forms.Button btnAddtoCart;
       private System.Windows.Forms.Button btnClose;
+      private System.Windows.Forms.TextBox txtQuantity;
+      private System.Windows.Forms.Button btnMinus;
+      private System.Windows.Forms.Button btnPlus;
    }
 }

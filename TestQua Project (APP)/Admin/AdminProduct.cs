@@ -75,6 +75,7 @@ namespace TestQua_Project__APP_.Admin
       {
          ViewProducts();
          btnProducts.FlatStyle = FlatStyle.Standard;
+         setButtonVisibiity(false);
          ViewWarehouse();
       }
 
@@ -114,6 +115,7 @@ namespace TestQua_Project__APP_.Admin
             Connection.con.Close();
             ViewProducts();
             clearFields();
+            setButtonVisibiity(false);
          }
 
          catch (Exception ex)
@@ -136,6 +138,7 @@ namespace TestQua_Project__APP_.Admin
                Function.command.ExecuteNonQuery();
                Connection.con.Close();
                clearFields();
+               setButtonVisibiity(false);
             }
          }
 
@@ -148,25 +151,31 @@ namespace TestQua_Project__APP_.Admin
       private void ViewProducts()
       {
          Connection.DB();
-         Function.gen = "SELECT * from ProductInformation";
+         Function.gen = "SELECT productname as [NAME], productdescrip as [DESCRIPTION], 'P' + convert(varchar, cast(productprice AS MONEY), 1) as [PRICE], quantity as [QUANTITY],  productid, productimage, productprice from ProductInformation";
          Function.fill(Function.gen, datagridViewProduct);
+         datagridViewProduct.Columns["productid"].Visible = false;
+         datagridViewProduct.Columns["productimage"].Visible = false;
+         datagridViewProduct.Columns["productprice"].Visible = false;
       }
 
       private void ViewWarehouse()
       {
          Connection.DB();
-         Function.gen = "SELECT * from Warehousedb";
+         Function.gen = "SELECT productid, productimage, productprice, productname as [NAME], productdescrip as [DESCRIPTION], 'P' + convert(varchar, cast(productprice AS MONEY), 1) as [PRICE], quantity as [QUANTITY]  from Warehousedb";
          Function.fill(Function.gen, datagridViewWarehouse);
+         datagridViewWarehouse.Columns["productid"].Visible = false;
+         datagridViewWarehouse.Columns["productimage"].Visible = false;
+         datagridViewWarehouse.Columns["productprice"].Visible = false;
       }
 
       private void datagridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
       {
-         txtProductId.Text = datagridViewProduct[0, e.RowIndex].Value.ToString();
-         txtProductName.Text = datagridViewProduct[1, e.RowIndex].Value.ToString();
-         txtProductDescription.Text = datagridViewProduct[2, e.RowIndex].Value.ToString();
-         txtPrice.Text = datagridViewProduct[3, e.RowIndex].Value.ToString();
-         txtQuantity.Text = datagridViewProduct[5, e.RowIndex].Value.ToString();
-         byte[] img = (byte[])(datagridViewProduct[4, e.RowIndex].Value);
+         txtProductId.Text = datagridViewProduct.Rows[e.RowIndex].Cells["productid"].Value.ToString();
+         txtProductName.Text = datagridViewProduct.Rows[e.RowIndex].Cells["NAME"].Value.ToString();
+         txtProductDescription.Text = datagridViewProduct.Rows[e.RowIndex].Cells["DESCRIPTION"].Value.ToString();
+         txtPrice.Text = datagridViewProduct.Rows[e.RowIndex].Cells["productprice"].Value.ToString();
+         txtQuantity.Text = datagridViewProduct.Rows[e.RowIndex].Cells["QUANTITY"].Value.ToString();
+         byte[] img = (byte[])(datagridViewProduct.Rows[e.RowIndex].Cells["productimage"].Value);
 
          if (img == null)
          {
@@ -179,6 +188,7 @@ namespace TestQua_Project__APP_.Admin
          }
 
          tabcontrolAdminProducts.SelectedIndex = 0;
+         setButtonVisibiity(true);
       }
 
       private void btnHome_Click(object sender, EventArgs e)
@@ -186,6 +196,15 @@ namespace TestQua_Project__APP_.Admin
          var adminhome = new AdminHome();
          adminhome.Show();
          Close();
+      }
+
+      private void setButtonVisibiity(bool value)
+      {
+         btnSave.Enabled = value ? false : true;
+         btnDelete.Enabled = value;
+         btnUpdate.Enabled = value;
+         btnBrowse.Enabled = value;
+         btnUpdatePic.Enabled = value;
       }
 
       private void btnAccounts_Click(object sender, EventArgs e)
@@ -241,3 +260,11 @@ namespace TestQua_Project__APP_.Admin
       }
    }
 }
+
+
+/*
+   Hide productid
+   Hide productimage
+   Fix price display
+   Fix rows and columns
+ */

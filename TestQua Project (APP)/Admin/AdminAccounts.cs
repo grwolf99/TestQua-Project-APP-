@@ -14,8 +14,11 @@ namespace TestQua_Project__APP_.Admin
       private void dataviewAccounts()
       {
          Connection.DB();
-         Function.gen = "SELECT * FROM UserInformation";
+         Function.gen = "SELECT role.rolename as [ROLE NAME], userinformation.userid, userinformation.roleid, userinformation.profilepicture, userinformation.firstname AS [FIRST NAME], userinformation.lastname AS [LAST NAME], userinformation.username AS [USERNAME], userinformation.password AS [PASSWORD], userinformation.age As [AGE], userinformation.contactno AS [CONTACT NO.], userinformation.address AS [ADDRESS], userinformation.gender AS [GENDER], userinformation.email AS [EMAIL], userinformation.dateregistered AS [DATE REGISTERED]  FROM UserInformation INNER JOIN Role ON Role.RoleId = UserInformation.RoleId";
          Function.fill(Function.gen, viewAccounts);
+         viewAccounts.Columns["roleid"].Visible = false;
+         viewAccounts.Columns["ProfilePicture"].Visible = false;
+         viewAccounts.Columns["Userid"].Visible = false;
       }
 
       private void btnAccounts_Click(object sender, EventArgs e)
@@ -50,17 +53,17 @@ namespace TestQua_Project__APP_.Admin
       {
          try
          {
-            txtUserid.Text = viewAccounts[0, e.RowIndex].Value.ToString();
-            txtRoleId.Text = viewAccounts[1, e.RowIndex].Value.ToString();
-            txtFirstname.Text = viewAccounts[2, e.RowIndex].Value.ToString();
-            txtLastname.Text = viewAccounts[3, e.RowIndex].Value.ToString();
-            txtAge.Text = viewAccounts[4, e.RowIndex].Value.ToString();
-            txtAddress.Text = viewAccounts[5, e.RowIndex].Value.ToString();
-            cmbGender.Text = viewAccounts[6, e.RowIndex].Value.ToString();
-            txtEmail.Text = viewAccounts[7, e.RowIndex].Value.ToString();
-            txtUsername.Text = viewAccounts[9, e.RowIndex].Value.ToString();
-            txtPassword.Text = viewAccounts[10, e.RowIndex].Value.ToString();
-            txtContacno.Text = viewAccounts[11, e.RowIndex].Value.ToString();
+            txtUserid.Text = viewAccounts.Rows[e.RowIndex].Cells["userid"].Value.ToString();
+            txtRoleId.Text = viewAccounts.Rows[e.RowIndex].Cells["roleid"].Value.ToString();
+            txtFirstname.Text = viewAccounts.Rows[e.RowIndex].Cells["FIRST NAME"].Value.ToString();
+            txtLastname.Text = viewAccounts.Rows[e.RowIndex].Cells["LAST NAME"].Value.ToString();
+            txtAge.Text = viewAccounts.Rows[e.RowIndex].Cells["AGE"].Value.ToString();
+            txtAddress.Text = viewAccounts.Rows[e.RowIndex].Cells["ADDRESS"].Value.ToString();
+            cmbGender.Text = viewAccounts.Rows[e.RowIndex].Cells["GENDER"].Value.ToString();
+            txtEmail.Text = viewAccounts.Rows[e.RowIndex].Cells["EMAIL"].Value.ToString();
+            txtUsername.Text = viewAccounts.Rows[e.RowIndex].Cells["USERNAME"].Value.ToString();
+            txtPassword.Text = viewAccounts.Rows[e.RowIndex].Cells["PASSWORD"].Value.ToString();
+            txtContacno.Text = viewAccounts.Rows[e.RowIndex].Cells["CONTACT NO."].Value.ToString();
 
             if (txtRoleId.Text.Equals("1"))
             {
@@ -192,7 +195,6 @@ namespace TestQua_Project__APP_.Admin
          txtEmail.Clear();
          txtUsername.Clear();
          txtPassword.Clear();
-         txtConfirmPassword.Clear();
 
       }
 
@@ -202,6 +204,9 @@ namespace TestQua_Project__APP_.Admin
          {
             Function.gen = "SELECT * FROM UserInformation WHERE UserId LIKE '" + txtSearch.Text + "%' OR FirstName LIKE '" + txtSearch.Text + "%' OR LastName LIKE '" + txtSearch.Text + "%' OR Username LIKE '" + txtSearch.Text + "%' OR Email LIKE '" + txtSearch.Text + "%' OR RoleId LIKE '" + txtSearch.Text + "%' ";
             Function.fill(Function.gen, viewAccounts);
+            //dataGridView1.Columns["userid"].Visible = false;
+            viewAccounts.Columns["UserId"].Visible = false;
+            viewAccounts.Columns["UserId"].Visible = false;
          }
 
          catch (Exception ex)
@@ -225,3 +230,9 @@ namespace TestQua_Project__APP_.Admin
       }
    }
 }
+/*
+ DATAGRID 
+  -Hide userid
+  -Display Role name instead of ID
+  -Hide Profile picture
+ */

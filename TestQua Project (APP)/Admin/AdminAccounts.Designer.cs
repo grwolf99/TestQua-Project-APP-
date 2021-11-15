@@ -48,8 +48,6 @@ namespace TestQua_Project__APP_.Admin
          this.txtUserid = new System.Windows.Forms.TextBox();
          this.label3 = new System.Windows.Forms.Label();
          this.label11 = new System.Windows.Forms.Label();
-         this.label12 = new System.Windows.Forms.Label();
-         this.txtConfirmPassword = new System.Windows.Forms.TextBox();
          this.txtUsername = new System.Windows.Forms.TextBox();
          this.txtPassword = new System.Windows.Forms.TextBox();
          this.cmbGender = new System.Windows.Forms.ComboBox();
@@ -200,8 +198,6 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage1.Controls.Add(this.txtUserid);
          this.tabPage1.Controls.Add(this.label3);
          this.tabPage1.Controls.Add(this.label11);
-         this.tabPage1.Controls.Add(this.label12);
-         this.tabPage1.Controls.Add(this.txtConfirmPassword);
          this.tabPage1.Controls.Add(this.txtUsername);
          this.tabPage1.Controls.Add(this.txtPassword);
          this.tabPage1.Controls.Add(this.cmbGender);
@@ -231,7 +227,7 @@ namespace TestQua_Project__APP_.Admin
          this.txtRoleId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtRoleId.Enabled = false;
          this.txtRoleId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtRoleId.Location = new System.Drawing.Point(589, 288);
+         this.txtRoleId.Location = new System.Drawing.Point(590, 243);
          this.txtRoleId.Name = "txtRoleId";
          this.txtRoleId.Size = new System.Drawing.Size(125, 26);
          this.txtRoleId.TabIndex = 63;
@@ -275,7 +271,7 @@ namespace TestQua_Project__APP_.Admin
             "Admin",
             "Customer",
             "Supplier"});
-         this.cmbRole.Location = new System.Drawing.Point(589, 210);
+         this.cmbRole.Location = new System.Drawing.Point(590, 165);
          this.cmbRole.Name = "cmbRole";
          this.cmbRole.Size = new System.Drawing.Size(121, 28);
          this.cmbRole.TabIndex = 59;
@@ -284,7 +280,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          this.Role.AutoSize = true;
          this.Role.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.Role.Location = new System.Drawing.Point(378, 211);
+         this.Role.Location = new System.Drawing.Point(379, 166);
          this.Role.Name = "Role";
          this.Role.Size = new System.Drawing.Size(49, 24);
          this.Role.TabIndex = 58;
@@ -294,7 +290,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          this.txtUserid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.txtUserid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtUserid.Location = new System.Drawing.Point(589, 256);
+         this.txtUserid.Location = new System.Drawing.Point(590, 211);
          this.txtUserid.Name = "txtUserid";
          this.txtUserid.Size = new System.Drawing.Size(125, 26);
          this.txtUserid.TabIndex = 53;
@@ -319,25 +315,6 @@ namespace TestQua_Project__APP_.Admin
          this.label11.Size = new System.Drawing.Size(141, 24);
          this.label11.TabIndex = 51;
          this.label11.Text = "Enter password";
-         // 
-         // label12
-         // 
-         this.label12.AutoSize = true;
-         this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label12.Location = new System.Drawing.Point(378, 169);
-         this.label12.Name = "label12";
-         this.label12.Size = new System.Drawing.Size(161, 24);
-         this.label12.TabIndex = 50;
-         this.label12.Text = "Confirm password";
-         // 
-         // txtConfirmPassword
-         // 
-         this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-         this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtConfirmPassword.Location = new System.Drawing.Point(589, 170);
-         this.txtConfirmPassword.Name = "txtConfirmPassword";
-         this.txtConfirmPassword.Size = new System.Drawing.Size(125, 26);
-         this.txtConfirmPassword.TabIndex = 49;
          // 
          // txtUsername
          // 
@@ -518,6 +495,8 @@ namespace TestQua_Project__APP_.Admin
          // viewAccounts
          // 
          this.viewAccounts.AllowUserToAddRows = false;
+         this.viewAccounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+         this.viewAccounts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
          this.viewAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
          this.viewAccounts.Location = new System.Drawing.Point(-4, 47);
          this.viewAccounts.Name = "viewAccounts";
@@ -589,8 +568,6 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.TextBox txtUserid;
       private System.Windows.Forms.Label label3;
       private System.Windows.Forms.Label label11;
-      private System.Windows.Forms.Label label12;
-      private System.Windows.Forms.TextBox txtConfirmPassword;
       private System.Windows.Forms.TextBox txtUsername;
       private System.Windows.Forms.TextBox txtPassword;
       private System.Windows.Forms.ComboBox cmbGender;

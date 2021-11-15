@@ -40,15 +40,21 @@ namespace TestQua_Project__APP_.Admin
          this.btnAccounts = new System.Windows.Forms.Button();
          this.tabControl1 = new System.Windows.Forms.TabControl();
          this.tabPage1 = new System.Windows.Forms.TabPage();
+         this.lblTotalSales = new System.Windows.Forms.Label();
+         this.label1 = new System.Windows.Forms.Label();
          this.dataGridView1 = new System.Windows.Forms.DataGridView();
          this.tabPage2 = new System.Windows.Forms.TabPage();
          this.tabPage3 = new System.Windows.Forms.TabPage();
-         this.label1 = new System.Windows.Forms.Label();
-         this.lblTotalSales = new System.Windows.Forms.Label();
+         this.datagridViewDelivered = new System.Windows.Forms.DataGridView();
+         this.datagridViewReturn = new System.Windows.Forms.DataGridView();
          this.panel1.SuspendLayout();
          this.tabControl1.SuspendLayout();
          this.tabPage1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+         this.tabPage2.SuspendLayout();
+         this.tabPage3.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewDelivered)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewReturn)).BeginInit();
          this.SuspendLayout();
          // 
          // btnHome
@@ -190,6 +196,24 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage1.Text = "View Sales";
          this.tabPage1.UseVisualStyleBackColor = true;
          // 
+         // lblTotalSales
+         // 
+         this.lblTotalSales.AutoSize = true;
+         this.lblTotalSales.Location = new System.Drawing.Point(576, 9);
+         this.lblTotalSales.Name = "lblTotalSales";
+         this.lblTotalSales.Size = new System.Drawing.Size(20, 24);
+         this.lblTotalSales.TabIndex = 2;
+         this.lblTotalSales.Text = "0";
+         // 
+         // label1
+         // 
+         this.label1.AutoSize = true;
+         this.label1.Location = new System.Drawing.Point(475, 9);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(107, 24);
+         this.label1.TabIndex = 1;
+         this.label1.Text = "Total Sales:";
+         // 
          // dataGridView1
          // 
          this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -202,6 +226,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // tabPage2
          // 
+         this.tabPage2.Controls.Add(this.datagridViewDelivered);
          this.tabPage2.Location = new System.Drawing.Point(4, 33);
          this.tabPage2.Name = "tabPage2";
          this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -212,6 +237,7 @@ namespace TestQua_Project__APP_.Admin
          // 
          // tabPage3
          // 
+         this.tabPage3.Controls.Add(this.datagridViewReturn);
          this.tabPage3.Location = new System.Drawing.Point(4, 33);
          this.tabPage3.Name = "tabPage3";
          this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -220,23 +246,25 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage3.Text = "Returned Products";
          this.tabPage3.UseVisualStyleBackColor = true;
          // 
-         // label1
+         // datagridViewDelivered
          // 
-         this.label1.AutoSize = true;
-         this.label1.Location = new System.Drawing.Point(475, 9);
-         this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(107, 24);
-         this.label1.TabIndex = 1;
-         this.label1.Text = "Total Sales:";
+         this.datagridViewDelivered.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+         this.datagridViewDelivered.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+         this.datagridViewDelivered.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.datagridViewDelivered.Location = new System.Drawing.Point(6, 39);
+         this.datagridViewDelivered.Name = "datagridViewDelivered";
+         this.datagridViewDelivered.Size = new System.Drawing.Size(800, 410);
+         this.datagridViewDelivered.TabIndex = 1;
          // 
-         // lblTotalSales
+         // datagridViewReturn
          // 
-         this.lblTotalSales.AutoSize = true;
-         this.lblTotalSales.Location = new System.Drawing.Point(576, 9);
-         this.lblTotalSales.Name = "lblTotalSales";
-         this.lblTotalSales.Size = new System.Drawing.Size(20, 24);
-         this.lblTotalSales.TabIndex = 2;
-         this.lblTotalSales.Text = "0";
+         this.datagridViewReturn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+         this.datagridViewReturn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+         this.datagridViewReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.datagridViewReturn.Location = new System.Drawing.Point(6, 38);
+         this.datagridViewReturn.Name = "datagridViewReturn";
+         this.datagridViewReturn.Size = new System.Drawing.Size(800, 410);
+         this.datagridViewReturn.TabIndex = 1;
          // 
          // AdminReport
          // 
@@ -262,6 +290,10 @@ namespace TestQua_Project__APP_.Admin
          this.tabPage1.ResumeLayout(false);
          this.tabPage1.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+         this.tabPage2.ResumeLayout(false);
+         this.tabPage3.ResumeLayout(false);
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewDelivered)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewReturn)).EndInit();
          this.ResumeLayout(false);
 
       }
@@ -283,5 +315,7 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.DataGridView dataGridView1;
       private System.Windows.Forms.Label lblTotalSales;
       private System.Windows.Forms.Label label1;
+      private System.Windows.Forms.DataGridView datagridViewDelivered;
+      private System.Windows.Forms.DataGridView datagridViewReturn;
    }
 }

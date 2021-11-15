@@ -87,6 +87,9 @@ namespace TestQua_Project__APP_.Admin
          // 
          // datagridViewProduct
          // 
+         this.datagridViewProduct.AllowUserToAddRows = false;
+         this.datagridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+         this.datagridViewProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
          this.datagridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
          this.datagridViewProduct.Location = new System.Drawing.Point(0, 42);
          this.datagridViewProduct.Name = "datagridViewProduct";
@@ -490,7 +493,6 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.TabPage tabPage1;
       private System.Windows.Forms.Label label5;
       private System.Windows.Forms.TextBox txtQuantity;
-      private System.Windows.Forms.TabControl tabcontrolAdminProducts;
       private System.Windows.Forms.Button btnLogout;
       private System.Windows.Forms.Button btnProducts;
       private System.Windows.Forms.Button btnReports;
@@ -511,5 +513,6 @@ namespace TestQua_Project__APP_.Admin
       private System.Windows.Forms.TabPage tabPage4;
       private System.Windows.Forms.DataGridView datagridViewWarehouse;
       private System.Windows.Forms.TextBox txtSearchWarehouse;
+      public System.Windows.Forms.TabControl tabcontrolAdminProducts;
    }
 }
