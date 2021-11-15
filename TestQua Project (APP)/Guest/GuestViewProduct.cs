@@ -12,6 +12,7 @@ namespace TestQua_Project__APP_.Guest
       private PictureBox pic = new PictureBox();
       private Label price;
       private Label name;
+      private Label quantity;
 
       public GuestViewProduct()
       {
@@ -35,43 +36,56 @@ namespace TestQua_Project__APP_.Guest
 
          while (Function.reader.Read())
          {
-            long len = Function.reader.GetBytes(4, 0, null, 0, 0);
-            byte[] array = new byte[Convert.ToInt32(len + 1)];
-            Function.reader.GetBytes(4, 0, array, 0, Convert.ToInt32(len));
-            pic = new PictureBox();
-            pic.Width = 290;
-            pic.Height = 300;
-            pic.BackgroundImageLayout = ImageLayout.Stretch;
-            pic.Tag = Function.reader["productid"].ToString();
+            if (Convert.ToInt32(Function.reader["quantity"]) > 0)
+            {
+               long len = Function.reader.GetBytes(4, 0, null, 0, 0);
+               byte[] array = new byte[Convert.ToInt32(len + 1)];
+               Function.reader.GetBytes(4, 0, array, 0, Convert.ToInt32(len));
+               pic = new PictureBox();
+               pic.Width = 290;
+               pic.Height = 300;
+               pic.BackgroundImageLayout = ImageLayout.Stretch;
+               pic.Tag = Function.reader["productid"].ToString();
 
-            price = new Label();
-            name = new Label();
+               price = new Label();
+               name = new Label();
+               quantity = new Label();
 
-            name.Text = Function.reader["productname"].ToString();
-            name.BackColor = Color.FromArgb(46, 134, 222);
-            name.Font = new Font("Arial", 24, FontStyle.Bold);
-            name.TextAlign = ContentAlignment.MiddleCenter;
-            name.Dock = DockStyle.Bottom;
-            name.Height = 40;
-            name.Tag = Function.reader["productname"].ToString();
+               name.Text = Function.reader["productname"].ToString();
+               name.BackColor = Color.FromArgb(46, 134, 222);
+               name.Font = new Font("Arial", 24, FontStyle.Bold);
+               name.TextAlign = ContentAlignment.MiddleCenter;
+               name.Dock = DockStyle.Bottom;
+               name.Height = 40;
+               name.Tag = Function.reader["productname"].ToString();
 
-            price.Text = "P" + Function.reader["productprice"].ToString() + ".00";
-            price.ForeColor = Color.White;
-            price.Font = new Font("Arial", 24, FontStyle.Bold);
-            price.BackColor = Color.FromArgb(113, 1, 147);
-            price.Dock = DockStyle.Bottom;
-            price.Width = 70;
-            price.Height = 40;
-            price.Tag = Function.reader["productprice"].ToString();
+               price.Text = "P" + Function.reader["productprice"].ToString() + ".00";
+               price.ForeColor = Color.White;
+               price.Font = new Font("Arial", 24, FontStyle.Bold);
+               price.BackColor = Color.FromArgb(113, 1, 147);
+               price.Dock = DockStyle.Bottom;
+               price.Width = 70;
+               price.Height = 40;
+               price.Tag = Function.reader["productprice"].ToString();
 
-            MemoryStream ms = new MemoryStream(array);
-            Bitmap bitmap = new Bitmap(ms);
-            pic.BackgroundImage = bitmap;
-            pic.Controls.Add(name);
-            pic.Controls.Add(price);
-            flowlayoutViewProducts.Controls.Add(pic);
+               quantity.Text = Function.reader["Quantity"].ToString() + " qty.";
+               quantity.ForeColor = Color.White;
+               quantity.Font = new Font("Arial", 24);
+               quantity.BackColor = Color.FromArgb(113, 1, 147);
+               quantity.Dock = DockStyle.Bottom;
+               quantity.Width = 70;
+               quantity.Height = 40;
 
-            pic.Click += new EventHandler(OnClick);
+               MemoryStream ms = new MemoryStream(array);
+               Bitmap bitmap = new Bitmap(ms);
+               pic.BackgroundImage = bitmap;
+               pic.Controls.Add(name);
+               pic.Controls.Add(price);
+               pic.Controls.Add(quantity);
+               flowlayoutViewProducts.Controls.Add(pic);
+
+               pic.Click += new EventHandler(OnClick);
+            }
          }
 
          flowlayoutViewProducts.AutoScroll = true;

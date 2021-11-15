@@ -44,8 +44,10 @@
          this.txtQuantity = new System.Windows.Forms.TextBox();
          this.btnMinus = new System.Windows.Forms.Button();
          this.btnPlus = new System.Windows.Forms.Button();
+         this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).BeginInit();
          this.panel2.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
          this.SuspendLayout();
          // 
          // pictureboxProductPic
@@ -216,12 +218,21 @@
          this.btnPlus.UseVisualStyleBackColor = true;
          this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
          // 
+         // numericUpDown1
+         // 
+         this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.numericUpDown1.Location = new System.Drawing.Point(59, 462);
+         this.numericUpDown1.Name = "numericUpDown1";
+         this.numericUpDown1.Size = new System.Drawing.Size(120, 41);
+         this.numericUpDown1.TabIndex = 95;
+         // 
          // AddFromSupply
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(986, 538);
+         this.Controls.Add(this.numericUpDown1);
          this.Controls.Add(this.btnPlus);
          this.Controls.Add(this.btnMinus);
          this.Controls.Add(this.txtQuantity);
@@ -237,6 +248,7 @@
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).EndInit();
          this.panel2.ResumeLayout(false);
          this.panel2.PerformLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -259,5 +271,6 @@
       private System.Windows.Forms.TextBox txtQuantity;
       private System.Windows.Forms.Button btnMinus;
       private System.Windows.Forms.Button btnPlus;
+      private System.Windows.Forms.NumericUpDown numericUpDown1;
    }
 }

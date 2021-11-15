@@ -53,18 +53,19 @@ namespace TestQua_Project__APP_.Customer
       public void viewOrders()
       {
          Connection.DB();
-         Function.gen = "SELECT * FROM OrdersDB WHERE userid = '" + Login.userid + "' ";
+         Function.gen = "SELECT orderid AS [ORDER ID], userid, productid, totalprice, quantitybought, 'P' + convert(varchar, cast(TotalPrice AS MONEY), 1) AS [TOTAL PRICE], status AS [STATUS], timeoftransaction AS [TIME OF TRANSACTION] FROM OrdersDB WHERE userid = '" + Login.userid + "' ";
          Function.fill(Function.gen, dataGridView1);
          dataGridView1.Columns["productid"].Visible = false;
          dataGridView1.Columns["QuantityBought"].Visible = false;
          dataGridView1.Columns["userid"].Visible = false;
+         dataGridView1.Columns["totalprice"].Visible = false;
       }
 
       private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
       {
-         TotalPrice = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TotalPrice"].Value);
-         Status = dataGridView1.Rows[e.RowIndex].Cells["status"].Value.ToString();
-         OrderId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["OrderId"].Value);
+         TotalPrice = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["totalprice"].Value);
+         Status = dataGridView1.Rows[e.RowIndex].Cells["STATUS"].Value.ToString();
+         OrderId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ORDER ID"].Value);
 
          string strProductId = dataGridView1.Rows[e.RowIndex].Cells["ProductId"].Value.ToString();
          string[] newProductId = strProductId.Split(',');

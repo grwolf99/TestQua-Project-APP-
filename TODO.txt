@@ -1,23 +1,23 @@
 ADMIN
-SKIP -Home still nothing in there
+ -Home still nothing in there
 DONE -Accounts, ViewAccounts fix the datagrid and Probably trapping of datasw (NO TRAPS)
 DONE -Products, ViewProducts fix the datagrid
 DONE -Products, AddSupply fix the datagrid
- -Reports, All, fix datagrid
+DONE -Reports, All, fix datagrid (Need review if need to view what product(s)?
  -AddFromSupply, fix buttons, screen, and quantity
 
 Customer 
  -Home still nothing in there
  -Profile add traps
  -Products, adjust layout a bit, txtSearch adjust size, add icon for cart
- -ViewCart, fix datagrid and UX
- -Checkout, fix datagrid  and UX
- -Order, fix datagrid
- -ViewOrder, fix datagrid and UX
+DONE -ViewCart, fix datagrid and UX (Need review)
+DONE -Checkout, fix datagrid  and UX (Need reviw)
+DONE -Order, fix datagrid
+DONE -ViewOrder, fix datagrid and UX
 
 GUEST
  -Home, I dont know what to put here
- -Product, add filter for sold-out product and adjust textbox
+DONE -Product, add filter for sold-out product and adjust textbox
  -Register, fix link
 
 SUPPLIER
@@ -28,7 +28,7 @@ SUPPLIER
  -All, fix link
 
 LOGIN
- -Fix username text
+DONE -Fix username text
  -UX
 
 REGISTER 
