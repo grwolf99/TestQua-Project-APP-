@@ -24,7 +24,7 @@ namespace TestQua_Project__APP_.Customer
 
       private void ViewProduct_Load(object sender, EventArgs e)
       {
-         getProductInformation();
+         getProducts();
       }
 
       private void btnClose_Click(object sender, EventArgs e)
@@ -34,12 +34,12 @@ namespace TestQua_Project__APP_.Customer
          Close();
       }
 
-      private void getProductInformation()
+      private void getProducts()
       {
          try
          {
             Connection.DB();
-            Function.gen = "SELECT * FROM ProductInformation WHERE ProductId = '" + productid + "' ";
+            Function.gen = "SELECT * FROM Products WHERE ProductId = '" + productid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
@@ -111,7 +111,7 @@ namespace TestQua_Project__APP_.Customer
                Connection.con.Close();
                Connection.DB();
                setQuantity = ProductQuantity - newQuantity;
-               Function.gen = "UPDATE ProductInformation SET Quantity = '" + setQuantity + "' WHERE productid = '" + productid + "' ";
+               Function.gen = "UPDATE Products SET Quantity = '" + setQuantity + "' WHERE productid = '" + productid + "' ";
                Function.command = new SqlCommand(Function.gen, Connection.con);
                Function.command.ExecuteNonQuery();
                Connection.con.Close();
@@ -153,7 +153,7 @@ namespace TestQua_Project__APP_.Customer
       {
          try
          {
-            if (Convert.ToInt32(txtQuantity.Text) < setMax+1 && Convert.ToInt32(txtQuantity.Text) > setMin)
+            if (Convert.ToInt32(txtQuantity.Text) < setMax + 1 && Convert.ToInt32(txtQuantity.Text) > setMin)
             {
                newQuantity = Convert.ToInt32(txtQuantity.Text);
             }
@@ -164,8 +164,8 @@ namespace TestQua_Project__APP_.Customer
          }
 
          catch (Exception ex)
-         { 
-         
+         {
+
          }
       }
    }

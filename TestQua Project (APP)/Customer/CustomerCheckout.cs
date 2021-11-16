@@ -47,7 +47,7 @@ namespace TestQua_Project__APP_.Customer
       private void setViewCart()
       {
          Connection.DB();
-         Function.gen = "SELECT cartdb.userid, cartdb.productid, productinformation.productname AS NAME, cartdb.quantity AS QUANTITY, (productinformation.productprice * cartdb.quantity) AS [total], 'P' + convert(varchar, cast((productinformation.productprice * cartdb.quantity) AS MONEY), 1) AS [TOTAL] from CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE userid = '" + Login.userid + "' ";
+         Function.gen = "SELECT cartdb.userid, cartdb.productid, Products.productname AS NAME, cartdb.quantity AS QUANTITY, (Products.productprice * cartdb.quantity) AS [total], 'P' + convert(varchar, cast((Products.productprice * cartdb.quantity) AS MONEY), 1) AS [TOTAL] from CartDb INNER JOIN Products ON CartDB.productid = Products.productid  WHERE userid = '" + Login.userid + "' ";
          Function.fill(Function.gen, dataGridView);
          dataGridView.Columns["userid"].Visible = false;
          dataGridView.Columns["productid"].Visible = false;
@@ -70,7 +70,7 @@ namespace TestQua_Project__APP_.Customer
                   quantity += QuantityBought[i].ToString();
 
                   Connection.DB();
-                  Function.gen = "INSERT INTO OrdersDb(Userid, ProductId, QuantityBought, TotalPrice, TimeofTransaction, Status) VALUES('" + Login.userid + "', '" + productID + "', '" + quantity + "', '" + (ViewCart.TotalPrice + 80) + "', '" + DateTime.Now.ToString() + "', '"+ "Shipped Out" +"')";
+                  Function.gen = "INSERT INTO OrdersDb(Userid, ProductId, QuantityBought, TotalPrice, TimeofTransaction, Status) VALUES('" + Login.userid + "', '" + productID + "', '" + quantity + "', '" + (ViewCart.TotalPrice + 80) + "', '" + DateTime.Now.ToString() + "', '" + "Shipped Out" + "')";
                   Function.command = new SqlCommand(Function.gen, Connection.con);
                   Function.command.ExecuteNonQuery();
                   Connection.con.Close();

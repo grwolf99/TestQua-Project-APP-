@@ -30,7 +30,7 @@ namespace TestQua_Project__APP_.Guest
          flowlayoutViewProducts.Controls.Clear();
 
          Connection.DB();
-         Function.gen = "SELECT * FROM ProductInformation WHERE productname LIKE '" + txtSearchProduct.Text + "%' ";
+         Function.gen = "SELECT * FROM Products WHERE productname LIKE '" + txtSearchProduct.Text + "%' ";
          Function.command = new SqlCommand(Function.gen, Connection.con);
          Function.reader = Function.command.ExecuteReader();
 

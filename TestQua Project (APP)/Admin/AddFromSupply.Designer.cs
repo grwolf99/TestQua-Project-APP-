@@ -41,13 +41,10 @@
          this.lblName = new System.Windows.Forms.Label();
          this.btnAddtoCart = new System.Windows.Forms.Button();
          this.btnClose = new System.Windows.Forms.Button();
-         this.txtQuantity = new System.Windows.Forms.TextBox();
-         this.btnMinus = new System.Windows.Forms.Button();
-         this.btnPlus = new System.Windows.Forms.Button();
-         this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+         this.numericQuantity = new System.Windows.Forms.NumericUpDown();
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).BeginInit();
          this.panel2.SuspendLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
          this.SuspendLayout();
          // 
          // pictureboxProductPic
@@ -187,44 +184,14 @@
          this.btnClose.UseVisualStyleBackColor = false;
          this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
          // 
-         // txtQuantity
+         // numericQuantity
          // 
-         this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtQuantity.Location = new System.Drawing.Point(274, 462);
-         this.txtQuantity.Name = "txtQuantity";
-         this.txtQuantity.Size = new System.Drawing.Size(100, 32);
-         this.txtQuantity.TabIndex = 92;
-         this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
-         // 
-         // btnMinus
-         // 
-         this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.btnMinus.Location = new System.Drawing.Point(229, 462);
-         this.btnMinus.Name = "btnMinus";
-         this.btnMinus.Size = new System.Drawing.Size(39, 31);
-         this.btnMinus.TabIndex = 93;
-         this.btnMinus.Text = "-";
-         this.btnMinus.UseVisualStyleBackColor = true;
-         this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
-         // 
-         // btnPlus
-         // 
-         this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.btnPlus.Location = new System.Drawing.Point(379, 462);
-         this.btnPlus.Name = "btnPlus";
-         this.btnPlus.Size = new System.Drawing.Size(39, 31);
-         this.btnPlus.TabIndex = 94;
-         this.btnPlus.Text = "+";
-         this.btnPlus.UseVisualStyleBackColor = true;
-         this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
-         // 
-         // numericUpDown1
-         // 
-         this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.numericUpDown1.Location = new System.Drawing.Point(59, 462);
-         this.numericUpDown1.Name = "numericUpDown1";
-         this.numericUpDown1.Size = new System.Drawing.Size(120, 41);
-         this.numericUpDown1.TabIndex = 95;
+         this.numericQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+         this.numericQuantity.Location = new System.Drawing.Point(285, 432);
+         this.numericQuantity.Name = "numericQuantity";
+         this.numericQuantity.Size = new System.Drawing.Size(120, 38);
+         this.numericQuantity.TabIndex = 92;
+         this.numericQuantity.ValueChanged += new System.EventHandler(this.numericQuantity_ValueChanged);
          // 
          // AddFromSupply
          // 
@@ -232,10 +199,7 @@
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(986, 538);
-         this.Controls.Add(this.numericUpDown1);
-         this.Controls.Add(this.btnPlus);
-         this.Controls.Add(this.btnMinus);
-         this.Controls.Add(this.txtQuantity);
+         this.Controls.Add(this.numericQuantity);
          this.Controls.Add(this.pictureboxProductPic);
          this.Controls.Add(this.panel2);
          this.Controls.Add(this.btnAddtoCart);
@@ -248,9 +212,8 @@
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).EndInit();
          this.panel2.ResumeLayout(false);
          this.panel2.PerformLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).EndInit();
          this.ResumeLayout(false);
-         this.PerformLayout();
 
       }
 
@@ -268,9 +231,6 @@
       private System.Windows.Forms.Label lblName;
       private System.Windows.Forms.Button btnAddtoCart;
       private System.Windows.Forms.Button btnClose;
-      private System.Windows.Forms.TextBox txtQuantity;
-      private System.Windows.Forms.Button btnMinus;
-      private System.Windows.Forms.Button btnPlus;
-      private System.Windows.Forms.NumericUpDown numericUpDown1;
+      private System.Windows.Forms.NumericUpDown numericQuantity;
    }
 }

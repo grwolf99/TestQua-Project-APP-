@@ -56,7 +56,7 @@ namespace TestQua_Project__APP_.Admin
             img = br.ReadBytes((int)fs.Length);
 
             Connection.DB();
-            Function.gen = "UPDATE ProductInformation SET productimage = @img WHERE productid = '" + txtProductId.Text + "' ";
+            Function.gen = "UPDATE Products SET productimage = @img WHERE productid = '" + txtProductId.Text + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.Parameters.Add(new SqlParameter("@img", img));
             Function.command.ExecuteNonQuery();
@@ -89,7 +89,7 @@ namespace TestQua_Project__APP_.Admin
             img = br.ReadBytes((int)fs.Length);
 
             Connection.DB();
-            Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage, Quantity, TImeStored) VALUES('" + txtProductName.Text + "', '" + txtProductDescription.Text + "', '" + txtPrice.Text + "', @img, '" + txtQuantity.Text + "', '" + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt") + "' )";
+            Function.gen = "INSERT INTO Products(ProductName, ProductDescrip, ProductPrice, ProductImage, Quantity, TImeStored) VALUES('" + txtProductName.Text + "', '" + txtProductDescription.Text + "', '" + txtPrice.Text + "', @img, '" + txtQuantity.Text + "', '" + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt") + "' )";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.Parameters.Add(new SqlParameter("@img", img));
             Function.command.ExecuteNonQuery();
@@ -108,7 +108,7 @@ namespace TestQua_Project__APP_.Admin
          try
          {
             Connection.DB();
-            Function.gen = "UPDATE ProductInformation SET productname = '" + txtProductName.Text + "', productdescrip = '" + txtProductDescription.Text + "', productprice = '" + txtPrice.Text + "', quantity = '" + txtQuantity.Text + "' WHERE productid = '" + txtProductId.Text + "' ";
+            Function.gen = "UPDATE Products SET productname = '" + txtProductName.Text + "', productdescrip = '" + txtProductDescription.Text + "', productprice = '" + txtPrice.Text + "', quantity = '" + txtQuantity.Text + "' WHERE productid = '" + txtProductId.Text + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -133,7 +133,7 @@ namespace TestQua_Project__APP_.Admin
 
             if (gen == DialogResult.Yes)
             {
-               Function.gen = "DELETE FROM ProductInformation WHERE UserId = '" + txtProductId.Text + "' ";
+               Function.gen = "DELETE FROM Products WHERE UserId = '" + txtProductId.Text + "' ";
                Function.command = new SqlCommand(Function.gen, Connection.con);
                Function.command.ExecuteNonQuery();
                Connection.con.Close();
@@ -151,7 +151,7 @@ namespace TestQua_Project__APP_.Admin
       private void ViewProducts()
       {
          Connection.DB();
-         Function.gen = "SELECT productname as [NAME], productdescrip as [DESCRIPTION], 'P' + convert(varchar, cast(productprice AS MONEY), 1) as [PRICE], quantity as [QUANTITY],  productid, productimage, productprice from ProductInformation";
+         Function.gen = "SELECT productname as [NAME], productdescrip as [DESCRIPTION], 'P' + convert(varchar, cast(productprice AS MONEY), 1) as [PRICE], quantity as [QUANTITY],  productid, productimage, productprice from Products";
          Function.fill(Function.gen, datagridViewProduct);
          datagridViewProduct.Columns["productid"].Visible = false;
          datagridViewProduct.Columns["productimage"].Visible = false;

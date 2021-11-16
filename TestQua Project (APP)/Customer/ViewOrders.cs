@@ -26,7 +26,7 @@ namespace TestQua_Project__APP_.Customer
             btnOrderReceived.Visible = true;
             btnReturn.Visible = true;
          }
-         else 
+         else
          {
             btnOrderReceived.Visible = false;
             btnReturn.Visible = false;
@@ -41,7 +41,7 @@ namespace TestQua_Project__APP_.Customer
             {
                //'P' + convert(varchar, cast(productprice AS MONEY), 1) AS [productprice]
                Connection.DB();
-               Function.gen = "SELECT productid, productname, productdescrip, productprice, productimage, quantity, timestored FROM ProductInformation WHERE productid = '" + CustomerOrder.ProductIDs[i] + "' ";
+               Function.gen = "SELECT productid, productname, productdescrip, productprice, productimage, quantity, timestored FROM Products WHERE productid = '" + CustomerOrder.ProductIDs[i] + "' ";
                Function.command = new SqlCommand(Function.gen, Connection.con);
                Function.reader = Function.command.ExecuteReader();
 

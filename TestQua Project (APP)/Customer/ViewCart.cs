@@ -31,7 +31,7 @@ namespace TestQua_Project__APP_.Customer
       private void viewCart()
       {
          Connection.DB();
-         Function.gen = "SELECT productinformation.productid, productinformation.productname AS [PRODUCT NAME],productinformation.productprice, 'P' + convert(varchar, cast(productinformation.productprice AS MONEY), 1) AS [PRICE], CartDb.Quantity AS [QUANTITY], ProductInformation.Quantity, productinformation.productimage, 'P' + convert(varchar, cast((ProductInformation.ProductPrice * CartDb.Quantity) AS MONEY), 1) AS [SUB TOTAL] FROM CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE Cartdb.userid = '" + Login.userid + "' ";
+         Function.gen = "SELECT Products.productid, Products.productname AS [PRODUCT NAME],Products.productprice, 'P' + convert(varchar, cast(Products.productprice AS MONEY), 1) AS [PRICE], CartDb.Quantity AS [QUANTITY], Products.Quantity, Products.productimage, 'P' + convert(varchar, cast((Products.ProductPrice * CartDb.Quantity) AS MONEY), 1) AS [SUB TOTAL] FROM CartDb INNER JOIN Products ON CartDB.productid = Products.productid  WHERE Cartdb.userid = '" + Login.userid + "' ";
          Function.fill(Function.gen, datagridViewCart);
          datagridViewCart.Columns["productimage"].Visible = false;
          datagridViewCart.Columns["productid"].Visible = false;
@@ -112,7 +112,7 @@ namespace TestQua_Project__APP_.Customer
          try
          {
             Connection.DB();
-            Function.gen = "SELECT SUM(ProductInformation.ProductPrice * CartDb.Quantity) AS total, 'P' + convert(varchar, cast(SUM(ProductInformation.ProductPrice * CartDb.Quantity) AS MONEY), 1) AS [TOTAL], 'P' + convert(varchar, cast(SUM((ProductInformation.ProductPrice * CartDb.Quantity) + 80) AS MONEY), 1) AS [withShip] FROM productinformation INNER JOIN CartDb ON cartdb.productid = ProductInformation.ProductId WHERE CartDb.UserId = '" + Login.userid + "' ";
+            Function.gen = "SELECT SUM(Products.ProductPrice * CartDb.Quantity) AS total, 'P' + convert(varchar, cast(SUM(Products.ProductPrice * CartDb.Quantity) AS MONEY), 1) AS [TOTAL], 'P' + convert(varchar, cast(SUM((Products.ProductPrice * CartDb.Quantity) + 80) AS MONEY), 1) AS [withShip] FROM Products INNER JOIN CartDb ON cartdb.productid = Products.ProductId WHERE CartDb.UserId = '" + Login.userid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
@@ -140,7 +140,7 @@ namespace TestQua_Project__APP_.Customer
          try
          {
             Connection.DB();
-            Function.gen = "SELECT * FROM ProductInformation WHERE productid = '" + productid + "' ";
+            Function.gen = "SELECT * FROM Products WHERE productid = '" + productid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
@@ -152,14 +152,14 @@ namespace TestQua_Project__APP_.Customer
                if (newQuantity < previousQuantity)
                {
                   Connection.DB();
-                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE ProductInformation SET Quantity = '" + (ProductQuantity + (previousQuantity - newQuantity)) + "' WHERE productid = '" + productid + "'; ";
+                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE Products SET Quantity = '" + (ProductQuantity + (previousQuantity - newQuantity)) + "' WHERE productid = '" + productid + "'; ";
                   Function.command = new SqlCommand(Function.gen, Connection.con);
                   Function.command.ExecuteNonQuery();
                }
                else if (newQuantity > previousQuantity)
                {
                   Connection.DB();
-                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE ProductInformation SET Quantity = '" + (ProductQuantity - (newQuantity - previousQuantity)) + "' WHERE productid = '" + productid + "'; ";
+                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE Products SET Quantity = '" + (ProductQuantity - (newQuantity - previousQuantity)) + "' WHERE productid = '" + productid + "'; ";
                   Function.command = new SqlCommand(Function.gen, Connection.con);
                   Function.command.ExecuteNonQuery();
                }

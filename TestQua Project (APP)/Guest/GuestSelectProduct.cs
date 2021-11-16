@@ -21,12 +21,12 @@ namespace TestQua_Project__APP_.Guest
          Close();
       }
 
-      private void getProductInformation()
+      private void getProducts()
       {
          try
          {
             Connection.DB();
-            Function.gen = "SELECT * FROM ProductInformation WHERE ProductId = '" + productid + "' ";
+            Function.gen = "SELECT * FROM Products WHERE ProductId = '" + productid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
@@ -62,7 +62,7 @@ namespace TestQua_Project__APP_.Guest
 
       private void GuestSelectProduct_Load(object sender, EventArgs e)
       {
-         getProductInformation();
+         getProducts();
       }
    }
 }

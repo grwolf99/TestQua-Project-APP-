@@ -72,26 +72,36 @@ namespace TestQua_Project__APP_.Admin
       {
          try
          {
-            byte[] img = null;
-            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            img = br.ReadBytes((int)fs.Length);
+            Quantity = Convert.ToInt32(numericQuantity.Value);
 
-            Connection.DB();
-            Function.gen = "INSERT INTO ProductInformation(ProductName, ProductDescrip, ProductPrice, ProductImage, Quantity, TImeStored) VALUES('" + lblName.Text + "', '" + lblDescription.Text + "', '" + lblPrice.Text + "', @img, '" + Quantity + "', '" + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt") + "' )";
-            Function.command = new SqlCommand(Function.gen, Connection.con);
-            Function.command.Parameters.Add(new SqlParameter("@img", img));
-            Function.command.ExecuteNonQuery();
-            MessageBox.Show("Success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Connection.con.Close();
+            if(Quantity > 0 && Quantity < SupplyQuantity + 1)
+            {
+               byte[] img = null;
+               FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
+               BinaryReader br = new BinaryReader(fs);
+               img = br.ReadBytes((int)fs.Length);
 
-            //I need a new GUI for add/minus of quantity for all forms
-            Connection.DB();
-            Function.gen = "UPDATE WarehouseDbb SET  quantity = '" + (SupplyQuantity) + "' WHERE productid = '" + AdminProduct.productid + "' ";
-            Function.command = new SqlCommand(Function.gen, Connection.con);
-            Function.command.ExecuteNonQuery();
-            MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Connection.con.Close();
+               Connection.DB();
+               Function.gen = "INSERT INTO Products(ProductName, ProductDescrip, ProductPrice, ProductImage, Quantity, TImeStored) VALUES('" + lblName.Text + "', '" + lblDescription.Text + "', '" + lblPrice.Text + "', @img, '" + Quantity + "', '" + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt") + "' )";
+               Function.command = new SqlCommand(Function.gen, Connection.con);
+               Function.command.Parameters.Add(new SqlParameter("@img", img));
+               Function.command.ExecuteNonQuery();
+               MessageBox.Show("Success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               Connection.con.Close();
+
+               //I need a new GUI for add/minus of quantity for all forms
+               Connection.DB();
+               Function.gen = "UPDATE WarehouseDbb SET  quantity = '" + (SupplyQuantity - (SupplyQuantity - Quantity)) + "' WHERE productid = '" + AdminProduct.productid + "' ";
+               Function.command = new SqlCommand(Function.gen, Connection.con);
+               Function.command.ExecuteNonQuery();
+               MessageBox.Show("Update success.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               Connection.con.Close();
+            }
+            else
+            {
+               numericQuantity.ResetText();
+               MessageBox.Show("Quantity out of range, please redo");
+            }
          }
 
          catch (Exception ex)
@@ -100,28 +110,17 @@ namespace TestQua_Project__APP_.Admin
          }
       }
 
-      private void btnPlus_Click(object sender, EventArgs e)
-      {
-         Quantity += 1;
-      }
-
-      private void btnMinus_Click(object sender, EventArgs e)
-      {
-         Quantity -= 1;
-      }
-
-      private void txtQuantity_TextChanged(object sender, EventArgs e)
-      {
-         //Add trap here that will only accept integer
-         Quantity = Convert.ToInt32(txtQuantity.Text);
-      }
-
       private void btnClose_Click(object sender, EventArgs e)
       {
          var adminproduct = new AdminProduct();
          adminproduct.Show();
          adminproduct.tabcontrolAdminProducts.SelectedIndex = 2;
          Close();
+      }
+
+      private void numericQuantity_ValueChanged(object sender, EventArgs e)
+      {
+
       }
    }
 }
