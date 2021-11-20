@@ -10,6 +10,9 @@ namespace TestQua_Project__APP_.Admin
    {
       string imageLocation = "";
       public static int productid;
+      public static int userid;
+      public static int orderid;
+      private string status;
 
       public AdminProduct()
       {
@@ -76,7 +79,7 @@ namespace TestQua_Project__APP_.Admin
          ViewProducts();
          btnProducts.FlatStyle = FlatStyle.Standard;
          setButtonVisibiity(false);
-         ViewWarehouse();
+         ViewTransactions();
       }
 
       private void btnSave_Click(object sender, EventArgs e)
@@ -95,6 +98,7 @@ namespace TestQua_Project__APP_.Admin
             Function.command.ExecuteNonQuery();
             MessageBox.Show("Success.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Connection.con.Close();
+            updateStatus();
          }
 
          catch (Exception ex)
@@ -116,6 +120,7 @@ namespace TestQua_Project__APP_.Admin
             ViewProducts();
             clearFields();
             setButtonVisibiity(false);
+            updateStatus();
          }
 
          catch (Exception ex)
@@ -151,25 +156,16 @@ namespace TestQua_Project__APP_.Admin
       private void ViewProducts()
       {
          Connection.DB();
-         Function.gen = "SELECT productname as [NAME], productdescrip as [DESCRIPTION], 'P' + convert(varchar, cast(productprice AS MONEY), 1) as [PRICE], quantity as [QUANTITY],  productid, productimage, productprice from Products";
+         Function.gen = "SELECT productname as [NAME], productdescrip as [DESCRIPTION], 'P' + convert(varchar, cast(productprice AS MONEY), 1) as [PRICE], quantity as [QUANTITY], Status as [STATUS],  productid, productimage, productprice from Products";
          Function.fill(Function.gen, datagridViewProduct);
          datagridViewProduct.Columns["productid"].Visible = false;
          datagridViewProduct.Columns["productimage"].Visible = false;
          datagridViewProduct.Columns["productprice"].Visible = false;
       }
 
-      private void ViewWarehouse()
-      {
-         Connection.DB();
-         Function.gen = "SELECT productid, productimage, productprice, productname as [NAME], productdescrip as [DESCRIPTION], 'P' + convert(varchar, cast(productprice AS MONEY), 1) as [PRICE], quantity as [QUANTITY]  from Warehousedb";
-         Function.fill(Function.gen, datagridViewWarehouse);
-         datagridViewWarehouse.Columns["productid"].Visible = false;
-         datagridViewWarehouse.Columns["productimage"].Visible = false;
-         datagridViewWarehouse.Columns["productprice"].Visible = false;
-      }
-
       private void datagridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
       {
+         status = datagridViewProduct.Rows[e.RowIndex].Cells["STATUS"].Value.ToString();
          txtProductId.Text = datagridViewProduct.Rows[e.RowIndex].Cells["productid"].Value.ToString();
          txtProductName.Text = datagridViewProduct.Rows[e.RowIndex].Cells["NAME"].Value.ToString();
          txtProductDescription.Text = datagridViewProduct.Rows[e.RowIndex].Cells["DESCRIPTION"].Value.ToString();
@@ -187,8 +183,34 @@ namespace TestQua_Project__APP_.Admin
             pictureboxProductPic.Image = Image.FromStream(ms);
          }
 
-         tabcontrolAdminProducts.SelectedIndex = 0;
+         if (status == "STOCK LOW")
+         {
+            var gen = MessageBox.Show("Do you want to request to restock this product?", "Stock low", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (gen == DialogResult.Yes)
+            {
+               Connection.DB();
+               Function.gen = "UPDATE Products SET status = '" + "NEED RESTOCK" + "' WHERE productid = '" + txtProductId.Text + "' ";
+               Function.command = new SqlCommand(Function.gen, Connection.con);
+               Function.command.ExecuteNonQuery();
+               MessageBox.Show("Update ");
+            }
+
+         }
+         else
+         {
+            tabcontrolAdminProducts.SelectedIndex = 0;
+         }
+
          setButtonVisibiity(true);
+         updateStatus();
+      }
+
+      private void updateStatus()
+      {
+         var adminhome = new AdminHome();
+         adminhome.updateProductStatus();
+         ViewProducts();
       }
 
       private void btnHome_Click(object sender, EventArgs e)
@@ -205,6 +227,7 @@ namespace TestQua_Project__APP_.Admin
          btnUpdate.Enabled = value;
          btnBrowse.Enabled = value;
          btnUpdatePic.Enabled = value;
+         txtQuantity.Enabled = value ? false : true;
       }
 
       private void btnAccounts_Click(object sender, EventArgs e)
@@ -245,18 +268,26 @@ namespace TestQua_Project__APP_.Admin
          Close();
       }
 
-      private void txtSearchWarehouse_TextChanged(object sender, EventArgs e)
+      public void ViewTransactions()
       {
-         //to be added later
+         Connection.DB();
+         Function.gen = "SELECT transactions.orderid, transactions.userid, transactions.productid, transactions.totalprice, (UserInformation.FirstName + ' ' +  UserInformation.LastName) AS [SUPPLIER NAME], Products.ProductName AS [PRODUCT NAME], Transactions.Quantity AS [QUANTITY], 'P' + convert(varchar, cast(Transactions.TotalPrice AS MONEY), 1) as [TOTAL PRICE], Transactions.Status AS [STATUS] FROM Transactions INNER JOIN Products ON Products.ProductId = Transactions.OrderId INNER JOIN UserInformation ON UserInformation.UserId = Transactions.UserId";
+         Function.fill(Function.gen, datagridViewTransactions);
+         datagridViewTransactions.Columns["OrderId"].Visible = false;
+         datagridViewTransactions.Columns["UserId"].Visible = false;
+         datagridViewTransactions.Columns["ProductId"].Visible = false;
+         datagridViewTransactions.Columns["TotalPrice"].Visible = false;
       }
 
-      private void datagridViewWarehouse_CellClick(object sender, DataGridViewCellEventArgs e)
+      private void datagridViewTransactions_CellClick(object sender, DataGridViewCellEventArgs e)
       {
-         productid = Convert.ToInt32(datagridViewWarehouse.Rows[e.RowIndex].Cells["ProductId"].Value);
-         var addsupply = new AddFromSupply();
-         addsupply.Show();
+         productid = Convert.ToInt32(datagridViewTransactions.Rows[e.RowIndex].Cells["productid"].Value);
+         userid = Convert.ToInt32(datagridViewTransactions.Rows[e.RowIndex].Cells["userid"].Value);
+         orderid = Convert.ToInt32(datagridViewTransactions.Rows[e.RowIndex].Cells["orderid"].Value);
+
+         var verifytransaction = new VerifyTransaction();
+         verifytransaction.Show();
          Close();
-         //Pass those fields to AddFromSupply form then INSERT ProductInfo DB
       }
    }
 }
@@ -267,4 +298,7 @@ namespace TestQua_Project__APP_.Admin
    Hide productimage
    Fix price display
    Fix rows and columns
+
+   -orderid, userid, productid, quantity, totalprice, status
  */
+

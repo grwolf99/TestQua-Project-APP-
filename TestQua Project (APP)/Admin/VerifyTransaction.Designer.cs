@@ -1,6 +1,6 @@
 ﻿namespace TestQua_Project__APP_.Admin
 {
-   partial class AddFromSupply
+   partial class VerifyTransaction
    {
       /// <summary>
       /// Required designer variable.
@@ -28,7 +28,7 @@
       /// </summary>
       private void InitializeComponent()
       {
-         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFromSupply));
+         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerifyTransaction));
          this.pictureboxProductPic = new System.Windows.Forms.PictureBox();
          this.panel2 = new System.Windows.Forms.Panel();
          this.label4 = new System.Windows.Forms.Label();
@@ -39,12 +39,10 @@
          this.lblDescription = new System.Windows.Forms.Label();
          this.lblPrice = new System.Windows.Forms.Label();
          this.lblName = new System.Windows.Forms.Label();
-         this.btnAddtoCart = new System.Windows.Forms.Button();
+         this.btnSave = new System.Windows.Forms.Button();
          this.btnClose = new System.Windows.Forms.Button();
-         this.numericQuantity = new System.Windows.Forms.NumericUpDown();
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).BeginInit();
          this.panel2.SuspendLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
          this.SuspendLayout();
          // 
          // pictureboxProductPic
@@ -160,17 +158,17 @@
          this.lblName.TabIndex = 63;
          this.lblName.Text = "Name";
          // 
-         // btnAddtoCart
+         // btnSave
          // 
-         this.btnAddtoCart.BackColor = System.Drawing.Color.Plum;
-         this.btnAddtoCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-         this.btnAddtoCart.Location = new System.Drawing.Point(513, 494);
-         this.btnAddtoCart.Name = "btnAddtoCart";
-         this.btnAddtoCart.Size = new System.Drawing.Size(170, 31);
-         this.btnAddtoCart.TabIndex = 88;
-         this.btnAddtoCart.Text = "Add to IDK";
-         this.btnAddtoCart.UseVisualStyleBackColor = false;
-         this.btnAddtoCart.Click += new System.EventHandler(this.btnAddtoCart_Click);
+         this.btnSave.BackColor = System.Drawing.Color.Plum;
+         this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+         this.btnSave.Location = new System.Drawing.Point(513, 494);
+         this.btnSave.Name = "btnSave";
+         this.btnSave.Size = new System.Drawing.Size(170, 31);
+         this.btnSave.TabIndex = 88;
+         this.btnSave.Text = "Save";
+         this.btnSave.UseVisualStyleBackColor = false;
+         this.btnSave.Click += new System.EventHandler(this.btnAddtoCart_Click);
          // 
          // btnClose
          // 
@@ -184,35 +182,24 @@
          this.btnClose.UseVisualStyleBackColor = false;
          this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
          // 
-         // numericQuantity
-         // 
-         this.numericQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-         this.numericQuantity.Location = new System.Drawing.Point(285, 432);
-         this.numericQuantity.Name = "numericQuantity";
-         this.numericQuantity.Size = new System.Drawing.Size(120, 38);
-         this.numericQuantity.TabIndex = 92;
-         this.numericQuantity.ValueChanged += new System.EventHandler(this.numericQuantity_ValueChanged);
-         // 
-         // AddFromSupply
+         // VerifyTransaction
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(986, 538);
-         this.Controls.Add(this.numericQuantity);
          this.Controls.Add(this.pictureboxProductPic);
          this.Controls.Add(this.panel2);
-         this.Controls.Add(this.btnAddtoCart);
+         this.Controls.Add(this.btnSave);
          this.Controls.Add(this.btnClose);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-         this.Name = "AddFromSupply";
+         this.Name = "VerifyTransaction";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "AddFromSupply";
          this.Load += new System.EventHandler(this.AddFromSupply_Load);
          ((System.ComponentModel.ISupportInitialize)(this.pictureboxProductPic)).EndInit();
          this.panel2.ResumeLayout(false);
          this.panel2.PerformLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).EndInit();
          this.ResumeLayout(false);
 
       }
@@ -229,8 +216,7 @@
       private System.Windows.Forms.Label lblDescription;
       private System.Windows.Forms.Label lblPrice;
       private System.Windows.Forms.Label lblName;
-      private System.Windows.Forms.Button btnAddtoCart;
+      private System.Windows.Forms.Button btnSave;
       private System.Windows.Forms.Button btnClose;
-      private System.Windows.Forms.NumericUpDown numericQuantity;
    }
 }

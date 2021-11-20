@@ -45,8 +45,6 @@ namespace TestQua_Project__APP_.Supplier
          this.tabPage1 = new System.Windows.Forms.TabPage();
          this.label7 = new System.Windows.Forms.Label();
          this.txtProductId = new System.Windows.Forms.TextBox();
-         this.btnBrowse = new System.Windows.Forms.Button();
-         this.btnUpdatePic = new System.Windows.Forms.Button();
          this.pictureboxProductPic = new System.Windows.Forms.PictureBox();
          this.label6 = new System.Windows.Forms.Label();
          this.txtPrice = new System.Windows.Forms.TextBox();
@@ -54,8 +52,6 @@ namespace TestQua_Project__APP_.Supplier
          this.txtProductDescription = new System.Windows.Forms.TextBox();
          this.label5 = new System.Windows.Forms.Label();
          this.txtProductName = new System.Windows.Forms.TextBox();
-         this.btnDelete = new System.Windows.Forms.Button();
-         this.btnUpdate = new System.Windows.Forms.Button();
          this.btnSave = new System.Windows.Forms.Button();
          this.label8 = new System.Windows.Forms.Label();
          this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -203,11 +199,14 @@ namespace TestQua_Project__APP_.Supplier
          // 
          // datagridViewProduct
          // 
+         this.datagridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+         this.datagridViewProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
          this.datagridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
          this.datagridViewProduct.Location = new System.Drawing.Point(0, 37);
          this.datagridViewProduct.Name = "datagridViewProduct";
          this.datagridViewProduct.Size = new System.Drawing.Size(891, 453);
          this.datagridViewProduct.TabIndex = 68;
+         this.datagridViewProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridViewProduct_CellClick);
          // 
          // txtSearch
          // 
@@ -221,8 +220,6 @@ namespace TestQua_Project__APP_.Supplier
          // 
          this.tabPage1.Controls.Add(this.label7);
          this.tabPage1.Controls.Add(this.txtProductId);
-         this.tabPage1.Controls.Add(this.btnBrowse);
-         this.tabPage1.Controls.Add(this.btnUpdatePic);
          this.tabPage1.Controls.Add(this.pictureboxProductPic);
          this.tabPage1.Controls.Add(this.label6);
          this.tabPage1.Controls.Add(this.txtPrice);
@@ -230,8 +227,6 @@ namespace TestQua_Project__APP_.Supplier
          this.tabPage1.Controls.Add(this.txtProductDescription);
          this.tabPage1.Controls.Add(this.label5);
          this.tabPage1.Controls.Add(this.txtProductName);
-         this.tabPage1.Controls.Add(this.btnDelete);
-         this.tabPage1.Controls.Add(this.btnUpdate);
          this.tabPage1.Controls.Add(this.btnSave);
          this.tabPage1.Controls.Add(this.label8);
          this.tabPage1.Controls.Add(this.txtQuantity);
@@ -257,33 +252,13 @@ namespace TestQua_Project__APP_.Supplier
          // txtProductId
          // 
          this.txtProductId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+         this.txtProductId.Enabled = false;
          this.txtProductId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.txtProductId.Location = new System.Drawing.Point(590, 56);
          this.txtProductId.Name = "txtProductId";
          this.txtProductId.Size = new System.Drawing.Size(125, 26);
          this.txtProductId.TabIndex = 88;
          this.txtProductId.Visible = false;
-         // 
-         // btnBrowse
-         // 
-         this.btnBrowse.Location = new System.Drawing.Point(134, 365);
-         this.btnBrowse.Name = "btnBrowse";
-         this.btnBrowse.Size = new System.Drawing.Size(89, 31);
-         this.btnBrowse.TabIndex = 87;
-         this.btnBrowse.Text = "Browse";
-         this.btnBrowse.UseVisualStyleBackColor = true;
-         this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click_1);
-         // 
-         // btnUpdatePic
-         // 
-         this.btnUpdatePic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.btnUpdatePic.Location = new System.Drawing.Point(246, 365);
-         this.btnUpdatePic.Name = "btnUpdatePic";
-         this.btnUpdatePic.Size = new System.Drawing.Size(89, 31);
-         this.btnUpdatePic.TabIndex = 86;
-         this.btnUpdatePic.Text = "Update Pic";
-         this.btnUpdatePic.UseVisualStyleBackColor = true;
-         this.btnUpdatePic.Click += new System.EventHandler(this.btnUpdatePic_Click_1);
          // 
          // pictureboxProductPic
          // 
@@ -307,6 +282,7 @@ namespace TestQua_Project__APP_.Supplier
          // txtPrice
          // 
          this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+         this.txtPrice.Enabled = false;
          this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.txtPrice.Location = new System.Drawing.Point(590, 214);
          this.txtPrice.Name = "txtPrice";
@@ -326,6 +302,7 @@ namespace TestQua_Project__APP_.Supplier
          // txtProductDescription
          // 
          this.txtProductDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+         this.txtProductDescription.Enabled = false;
          this.txtProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.txtProductDescription.Location = new System.Drawing.Point(590, 160);
          this.txtProductDescription.Name = "txtProductDescription";
@@ -345,35 +322,16 @@ namespace TestQua_Project__APP_.Supplier
          // txtProductName
          // 
          this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+         this.txtProductName.Enabled = false;
          this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.txtProductName.Location = new System.Drawing.Point(590, 104);
          this.txtProductName.Name = "txtProductName";
          this.txtProductName.Size = new System.Drawing.Size(125, 26);
          this.txtProductName.TabIndex = 79;
          // 
-         // btnDelete
-         // 
-         this.btnDelete.Location = new System.Drawing.Point(747, 406);
-         this.btnDelete.Name = "btnDelete";
-         this.btnDelete.Size = new System.Drawing.Size(89, 31);
-         this.btnDelete.TabIndex = 78;
-         this.btnDelete.Text = "Delete";
-         this.btnDelete.UseVisualStyleBackColor = true;
-         this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
-         // 
-         // btnUpdate
-         // 
-         this.btnUpdate.Location = new System.Drawing.Point(652, 405);
-         this.btnUpdate.Name = "btnUpdate";
-         this.btnUpdate.Size = new System.Drawing.Size(89, 31);
-         this.btnUpdate.TabIndex = 77;
-         this.btnUpdate.Text = "Update";
-         this.btnUpdate.UseVisualStyleBackColor = true;
-         this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
-         // 
          // btnSave
          // 
-         this.btnSave.Location = new System.Drawing.Point(553, 405);
+         this.btnSave.Location = new System.Drawing.Point(602, 364);
          this.btnSave.Name = "btnSave";
          this.btnSave.Size = new System.Drawing.Size(89, 31);
          this.btnSave.TabIndex = 76;
@@ -459,8 +417,6 @@ namespace TestQua_Project__APP_.Supplier
       private System.Windows.Forms.TabControl tabControl1;
       private System.Windows.Forms.Label label7;
       private System.Windows.Forms.TextBox txtProductId;
-      private System.Windows.Forms.Button btnBrowse;
-      private System.Windows.Forms.Button btnUpdatePic;
       private System.Windows.Forms.PictureBox pictureboxProductPic;
       private System.Windows.Forms.Label label6;
       private System.Windows.Forms.TextBox txtPrice;
@@ -468,8 +424,6 @@ namespace TestQua_Project__APP_.Supplier
       private System.Windows.Forms.TextBox txtProductDescription;
       private System.Windows.Forms.Label label5;
       private System.Windows.Forms.TextBox txtProductName;
-      private System.Windows.Forms.Button btnDelete;
-      private System.Windows.Forms.Button btnUpdate;
       private System.Windows.Forms.Button btnSave;
       private System.Windows.Forms.Label label8;
       private System.Windows.Forms.TextBox txtQuantity;

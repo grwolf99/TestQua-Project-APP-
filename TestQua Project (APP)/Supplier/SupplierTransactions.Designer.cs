@@ -34,18 +34,13 @@ namespace TestQua_Project__APP_.Supplier
          this.btnLogout = new System.Windows.Forms.Button();
          this.label3 = new System.Windows.Forms.Label();
          this.btnProfile = new System.Windows.Forms.Button();
-         this.panel4 = new System.Windows.Forms.Panel();
          this.btnTransactions = new System.Windows.Forms.Button();
-         this.pictureBox2 = new System.Windows.Forms.PictureBox();
-         this.pictureBox1 = new System.Windows.Forms.PictureBox();
-         this.pictureBox3 = new System.Windows.Forms.PictureBox();
          this.panel1 = new System.Windows.Forms.Panel();
          this.label4 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
-         ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+         this.datagridViewTransactions = new System.Windows.Forms.DataGridView();
          this.panel1.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewTransactions)).BeginInit();
          this.SuspendLayout();
          // 
          // btnHome
@@ -107,14 +102,6 @@ namespace TestQua_Project__APP_.Supplier
          this.btnProfile.UseVisualStyleBackColor = false;
          this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
          // 
-         // panel4
-         // 
-         this.panel4.BackColor = System.Drawing.Color.White;
-         this.panel4.Location = new System.Drawing.Point(220, 280);
-         this.panel4.Name = "panel4";
-         this.panel4.Size = new System.Drawing.Size(854, 310);
-         this.panel4.TabIndex = 45;
-         // 
          // btnTransactions
          // 
          this.btnTransactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
@@ -129,34 +116,6 @@ namespace TestQua_Project__APP_.Supplier
          this.btnTransactions.TabIndex = 47;
          this.btnTransactions.Text = "Transactions";
          this.btnTransactions.UseVisualStyleBackColor = false;
-         // 
-         // pictureBox2
-         // 
-         this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(9)))), ((int)(((byte)(21)))));
-         this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-         this.pictureBox2.Location = new System.Drawing.Point(322, 97);
-         this.pictureBox2.Name = "pictureBox2";
-         this.pictureBox2.Size = new System.Drawing.Size(151, 116);
-         this.pictureBox2.TabIndex = 43;
-         this.pictureBox2.TabStop = false;
-         // 
-         // pictureBox1
-         // 
-         this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-         this.pictureBox1.Location = new System.Drawing.Point(636, 97);
-         this.pictureBox1.Name = "pictureBox1";
-         this.pictureBox1.Size = new System.Drawing.Size(160, 156);
-         this.pictureBox1.TabIndex = 41;
-         this.pictureBox1.TabStop = false;
-         // 
-         // pictureBox3
-         // 
-         this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-         this.pictureBox3.Location = new System.Drawing.Point(479, 97);
-         this.pictureBox3.Name = "pictureBox3";
-         this.pictureBox3.Size = new System.Drawing.Size(151, 116);
-         this.pictureBox3.TabIndex = 44;
-         this.pictureBox3.TabStop = false;
          // 
          // panel1
          // 
@@ -193,32 +152,35 @@ namespace TestQua_Project__APP_.Supplier
          this.label2.TabIndex = 0;
          this.label2.Text = "Bloom and Puff";
          // 
+         // datagridViewTransactions
+         // 
+         this.datagridViewTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.datagridViewTransactions.Location = new System.Drawing.Point(191, 158);
+         this.datagridViewTransactions.Name = "datagridViewTransactions";
+         this.datagridViewTransactions.Size = new System.Drawing.Size(891, 453);
+         this.datagridViewTransactions.TabIndex = 50;
+         // 
          // SupplierTransactions
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(48)))));
          this.ClientSize = new System.Drawing.Size(1087, 664);
+         this.Controls.Add(this.datagridViewTransactions);
          this.Controls.Add(this.btnHome);
          this.Controls.Add(this.btnLogout);
          this.Controls.Add(this.label3);
-         this.Controls.Add(this.pictureBox2);
          this.Controls.Add(this.btnProfile);
-         this.Controls.Add(this.panel4);
          this.Controls.Add(this.btnTransactions);
-         this.Controls.Add(this.pictureBox1);
-         this.Controls.Add(this.pictureBox3);
          this.Controls.Add(this.panel1);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "SupplierTransactions";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "SupplierTransactions";
          this.Load += new System.EventHandler(this.SupplierTransactions_Load);
-         ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
          this.panel1.ResumeLayout(false);
          this.panel1.PerformLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.datagridViewTransactions)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -229,14 +191,11 @@ namespace TestQua_Project__APP_.Supplier
       private System.Windows.Forms.Button btnHome;
       private System.Windows.Forms.Button btnLogout;
       private System.Windows.Forms.Label label3;
-      private System.Windows.Forms.PictureBox pictureBox2;
       private System.Windows.Forms.Button btnProfile;
-      private System.Windows.Forms.Panel panel4;
       private System.Windows.Forms.Button btnTransactions;
-      private System.Windows.Forms.PictureBox pictureBox1;
-      private System.Windows.Forms.PictureBox pictureBox3;
       private System.Windows.Forms.Panel panel1;
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.Label label2;
+      private System.Windows.Forms.DataGridView datagridViewTransactions;
    }
 }
