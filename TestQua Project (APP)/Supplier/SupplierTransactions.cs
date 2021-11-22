@@ -13,14 +13,6 @@ namespace TestQua_Project__APP_.Supplier
       private void SupplierTransactions_Load(object sender, EventArgs e)
       {
          btnTransactions.FlatStyle = FlatStyle.Standard;
-         ViewTransactions();
-      }
-
-      private void ViewTransactions()
-      {
-         Connection.DB();
-         Function.gen = "SELECT * FROM Transactions";
-         Function.fill(Function.gen, datagridViewTransactions);
       }
 
       private void btnHome_Click(object sender, EventArgs e)

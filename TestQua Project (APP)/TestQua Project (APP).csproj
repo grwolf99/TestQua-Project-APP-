@@ -159,11 +159,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\VerifyTransaction.cs">
+    <Compile Include="Admin\AddFromSupply.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\VerifyTransaction.Designer.cs">
-      <DependentUpon>VerifyTransaction.cs</DependentUpon>
+    <Compile Include="Admin\AddFromSupply.Designer.cs">
+      <DependentUpon>AddFromSupply.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminHome.cs">
       <SubType>Form</SubType>
@@ -307,8 +307,8 @@
     <Compile Include="Supplier\SupplierTransactions.Designer.cs">
       <DependentUpon>SupplierTransactions.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin\VerifyTransaction.resx">
-      <DependentUpon>VerifyTransaction.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\AddFromSupply.resx">
+      <DependentUpon>AddFromSupply.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
