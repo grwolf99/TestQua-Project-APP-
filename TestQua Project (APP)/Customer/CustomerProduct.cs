@@ -57,13 +57,13 @@ namespace TestQua_Project__APP_.Customer
          flowlayoutViewProducts.Controls.Clear();
 
          Connection.DB();
-         Function.gen = "SELECT * FROM Products WHERE productname LIKE '" + txtSearchProduct.Text + "%' ";
+         Function.gen = "SELECT * FROM ProductInformation WHERE productname LIKE '" + txtSearchProduct.Text + "%' ";
          Function.command = new SqlCommand(Function.gen, Connection.con);
          Function.reader = Function.command.ExecuteReader();
 
          while (Function.reader.Read())
          {
-            if (Convert.ToInt32(Function.reader["quantity"]) > 0)
+            if (Convert.ToInt32(Function.reader["quantity"]) > 0) 
             {
                long len = Function.reader.GetBytes(4, 0, null, 0, 0);
                byte[] array = new byte[Convert.ToInt32(len + 1)];
@@ -176,5 +176,10 @@ namespace TestQua_Project__APP_.Customer
          customerorder.Show();
          Close();
       }
-   }
+
+        private void lblCountCart_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

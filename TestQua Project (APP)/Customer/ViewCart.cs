@@ -14,8 +14,6 @@ namespace TestQua_Project__APP_.Customer
       private int previousQuantity = 0;
       private int newQuantity = 0;
       public static double TotalPrice = 0;
-      public static string stringTotalPrice;
-      public static string stringWithShip;
       public ViewCart()
       {
          InitializeComponent();
@@ -28,15 +26,20 @@ namespace TestQua_Project__APP_.Customer
          fieldControl(false);
       }
 
+      private void setNumericUpandDown()
+      {
+         numericUpDown_Quantity.Minimum = 1;
+         numericUpDown_Quantity.Maximum = setMax;
+      }
+
       private void viewCart()
       {
          Connection.DB();
-         Function.gen = "SELECT Products.productid, Products.productname AS [PRODUCT NAME],Products.productprice, 'P' + convert(varchar, cast(Products.productprice AS MONEY), 1) AS [PRICE], CartDb.Quantity AS [QUANTITY], Products.Quantity, Products.productimage, 'P' + convert(varchar, cast((Products.ProductPrice * CartDb.Quantity) AS MONEY), 1) AS [SUB TOTAL] FROM CartDb INNER JOIN Products ON CartDB.productid = Products.productid  WHERE Cartdb.userid = '" + Login.userid + "' ";
+         Function.gen = "SELECT productinformation.productid, productinformation.productname AS [PRODUCT NAME], productinformation.productprice AS [PRICE], CartDb.Quantity, ProductInformation.Quantity, productinformation.productimage, (ProductInformation.ProductPrice * CartDb.Quantity) as TOTAL  FROM CartDb INNER JOIN ProductInformation ON CartDB.productid = ProductInformation.productid  WHERE Cartdb.userid = '" + Login.userid + "' ";
          Function.fill(Function.gen, datagridViewCart);
          datagridViewCart.Columns["productimage"].Visible = false;
          datagridViewCart.Columns["productid"].Visible = false;
          datagridViewCart.Columns["quantity1"].Visible = false;
-         datagridViewCart.Columns["productprice"].Visible = false;
       }
 
       private void button1_Click(object sender, EventArgs e)
@@ -61,12 +64,17 @@ namespace TestQua_Project__APP_.Customer
 
       }
 
+      private void numericUpDown_Quantity_ValueChanged(object sender, EventArgs e)
+      {
+         txtTotalPrice.Text = (Convert.ToDouble(numericUpDown_Quantity.Value) * price).ToString();
+         newQuantity = Convert.ToInt32(numericUpDown_Quantity.Value);
+      }
+
       private void clearFields()
       {
          pictureBox.Dispose();
          txtName.Clear();
          txtTotalPrice.Clear();
-         txtQuantity.Clear();
       }
 
       private void fieldControl(bool enable)
@@ -74,9 +82,7 @@ namespace TestQua_Project__APP_.Customer
          btnDelete.Enabled = enable;
          btnUpdate.Enabled = enable;
          txtTotalPrice.Enabled = enable;
-         txtQuantity.Enabled = enable;
-         btnMinus.Enabled = enable;
-         btnPlus.Enabled = enable;
+         numericUpDown_Quantity.Enabled = enable;
          btnCheckout.Enabled = enable ? false : true;
 
       }
@@ -112,17 +118,15 @@ namespace TestQua_Project__APP_.Customer
          try
          {
             Connection.DB();
-            Function.gen = "SELECT SUM(Products.ProductPrice * CartDb.Quantity) AS total, 'P' + convert(varchar, cast(SUM(Products.ProductPrice * CartDb.Quantity) AS MONEY), 1) AS [TOTAL], 'P' + convert(varchar, cast(SUM((Products.ProductPrice * CartDb.Quantity) + 80) AS MONEY), 1) AS [withShip] FROM Products INNER JOIN CartDb ON cartdb.productid = Products.ProductId WHERE CartDb.UserId = '" + Login.userid + "' ";
+            Function.gen = "SELECT SUM(ProductInformation.ProductPrice * CartDb.Quantity) as TOTAL FROM productinformation INNER JOIN CartDb ON cartdb.productid = ProductInformation.ProductId WHERE CartDb.UserId = '" + Login.userid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
             if (Function.reader.HasRows)
             {
                Function.reader.Read();
-               lblTotal.Text = Function.reader["TOTAL"].ToString();
-               TotalPrice = Convert.ToDouble(Function.reader["total"]);
-               stringTotalPrice =  Function.reader["TOTAL"].ToString();
-               stringWithShip = Function.reader["withShip"].ToString();
+               lblTotal.Text = Function.reader["TOTAL"].ToString() + ".00";
+               TotalPrice = Convert.ToDouble(Function.reader["TOTAL"]);
             }
          }
 
@@ -140,7 +144,7 @@ namespace TestQua_Project__APP_.Customer
          try
          {
             Connection.DB();
-            Function.gen = "SELECT * FROM Products WHERE productid = '" + productid + "' ";
+            Function.gen = "SELECT * FROM ProductInformation WHERE productid = '" + productid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
@@ -152,14 +156,14 @@ namespace TestQua_Project__APP_.Customer
                if (newQuantity < previousQuantity)
                {
                   Connection.DB();
-                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE Products SET Quantity = '" + (ProductQuantity + (previousQuantity - newQuantity)) + "' WHERE productid = '" + productid + "'; ";
+                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE ProductInformation SET Quantity = '" + (ProductQuantity + (previousQuantity - newQuantity)) + "' WHERE productid = '" + productid + "'; ";
                   Function.command = new SqlCommand(Function.gen, Connection.con);
                   Function.command.ExecuteNonQuery();
                }
                else if (newQuantity > previousQuantity)
                {
                   Connection.DB();
-                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE Products SET Quantity = '" + (ProductQuantity - (newQuantity - previousQuantity)) + "' WHERE productid = '" + productid + "'; ";
+                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + Login.userid + "'; UPDATE ProductInformation SET Quantity = '" + (ProductQuantity - (newQuantity - previousQuantity)) + "' WHERE productid = '" + productid + "'; ";
                   Function.command = new SqlCommand(Function.gen, Connection.con);
                   Function.command.ExecuteNonQuery();
                }
@@ -182,11 +186,11 @@ namespace TestQua_Project__APP_.Customer
       private void datagridViewCart_CellClick(object sender, DataGridViewCellEventArgs e)
       {
          txtName.Text = datagridViewCart.Rows[e.RowIndex].Cells["PRODUCT NAME"].Value.ToString();
-         price = Convert.ToDouble(datagridViewCart.Rows[e.RowIndex].Cells["productprice"].Value);
+         price = Convert.ToDouble(datagridViewCart.Rows[e.RowIndex].Cells["PRICE"].Value);
          double quantity = Convert.ToDouble(datagridViewCart.Rows[e.RowIndex].Cells["QUANTITY"].Value);
          txtTotalPrice.Text = (quantity * price).ToString();
          productid = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["productid"].Value);
-         txtQuantity.Text = quantity.ToString();
+         numericUpDown_Quantity.Value = Convert.ToDecimal(quantity);
          previousQuantity = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["QUANTITY"].Value);
          setMax = Convert.ToInt32(datagridViewCart.Rows[e.RowIndex].Cells["quantity1"].Value);
          byte[] img = (byte[])(datagridViewCart.Rows[e.RowIndex].Cells["productimage"].Value);
@@ -202,39 +206,8 @@ namespace TestQua_Project__APP_.Customer
             pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
          }
 
+         setNumericUpandDown();
          fieldControl(true);
-      }
-
-      private void btnMinus_Click(object sender, EventArgs e)
-      {
-         --newQuantity;
-         txtQuantity.Text = newQuantity.ToString();
-      }
-
-      private void btnPlus_Click(object sender, EventArgs e)
-      {
-         ++newQuantity;
-         txtQuantity.Text = newQuantity.ToString();
-      }
-
-      private void txtQuantity_TextChanged(object sender, EventArgs e)
-      {
-         try
-         {
-            if (newQuantity < setMax + 1 || newQuantity > 0)
-            {
-               newQuantity = Convert.ToInt32(txtQuantity.Text);
-            }
-            else
-            {
-               MessageBox.Show("Quantity out of range, please redo setting quantity.");
-            }
-         }
-
-         catch (Exception ex)
-         {
-
-         }
       }
    }
 }

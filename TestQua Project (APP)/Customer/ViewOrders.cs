@@ -26,7 +26,7 @@ namespace TestQua_Project__APP_.Customer
             btnOrderReceived.Visible = true;
             btnReturn.Visible = true;
          }
-         else
+         else 
          {
             btnOrderReceived.Visible = false;
             btnReturn.Visible = false;
@@ -39,21 +39,20 @@ namespace TestQua_Project__APP_.Customer
          {
             for (int i = 0; i < CustomerOrder.ProductIDs.Count; i++)
             {
-               //'P' + convert(varchar, cast(productprice AS MONEY), 1) AS [productprice]
                Connection.DB();
-               Function.gen = "SELECT productid, productname, productdescrip, productprice, productimage, quantity, timestored FROM Products WHERE productid = '" + CustomerOrder.ProductIDs[i] + "' ";
+               Function.gen = "SELECT * FROM ProductInformation WHERE productid = '" + CustomerOrder.ProductIDs[i] + "' ";
                Function.command = new SqlCommand(Function.gen, Connection.con);
                Function.reader = Function.command.ExecuteReader();
 
                if (Function.reader.HasRows)
                {
                   Function.reader.Read();
-                  dataGridViewOrder.Rows.Add(dataGridViewOrder.Rows.Count - 1 + 1, Function.reader["ProductName"].ToString(), CustomerOrder.QuantityBought[i], "P" + (Convert.ToDouble(Function.reader["productprice"]) * Convert.ToDouble(CustomerOrder.QuantityBought[i])).ToString() + ".00");
+                  dataGridViewOrder.Rows.Add(dataGridViewOrder.Rows.Count - 1 + 1, Function.reader["ProductName"].ToString(), CustomerOrder.QuantityBought[i], (Convert.ToDouble(Function.reader["productprice"]) * Convert.ToDouble(CustomerOrder.QuantityBought[i])).ToString() + ".00");
                }
             }
 
-            dataGridViewOrder.Rows.Add(" ", "Delivery Fee", "", "P80.00");
-            dataGridViewOrder.Rows.Add(" ", " ", " ", "P" + CustomerOrder.TotalPrice.ToString() + ".00");
+            dataGridViewOrder.Rows.Add(" ", "Delivery Fee", "", "80.00");
+            dataGridViewOrder.Rows.Add(" ", " ", " ", CustomerOrder.TotalPrice.ToString() + ".00");
             dataGridViewOrder.AllowUserToAddRows = false;
          }
 

@@ -24,7 +24,8 @@ namespace TestQua_Project__APP_.Customer
 
       private void ViewProduct_Load(object sender, EventArgs e)
       {
-         getProducts();
+         getProductInformation();
+         setNumericUpandDown();
       }
 
       private void btnClose_Click(object sender, EventArgs e)
@@ -34,12 +35,18 @@ namespace TestQua_Project__APP_.Customer
          Close();
       }
 
-      private void getProducts()
+      private void setNumericUpandDown()
+      {
+         numericUpandDown_Quantity.Minimum = setMin;
+         numericUpandDown_Quantity.Maximum = setMax;
+      }
+
+      private void getProductInformation()
       {
          try
          {
             Connection.DB();
-            Function.gen = "SELECT * FROM Products WHERE ProductId = '" + productid + "' ";
+            Function.gen = "SELECT * FROM ProductInformation WHERE ProductId = '" + productid + "' ";
             Function.command = new SqlCommand(Function.gen, Connection.con);
             Function.reader = Function.command.ExecuteReader();
 
@@ -93,7 +100,7 @@ namespace TestQua_Project__APP_.Customer
                   previousQuantity = quantity;
                   Connection.con.Close();
                   Connection.DB();
-                  Function.gen = "UPDATE CartDb SET Quantity = '" + (newQuantity + previousQuantity) + "' WHERE productid = '" + productid + "' AND userid = '" + userid + "' ";
+                  Function.gen = "UPDATE CartDb SET Quantity = '" + newQuantity + "' WHERE productid = '" + productid + "' AND userid = '" + userid + "' ";
                   Function.command = new SqlCommand(Function.gen, Connection.con);
                   Function.command.ExecuteNonQuery();
                   MessageBox.Show("Cart Updated");
@@ -102,7 +109,7 @@ namespace TestQua_Project__APP_.Customer
                {
                   Connection.con.Close();
                   Connection.DB();
-                  Function.gen = "INSERT INTO CartDb(userid, productid, quantity, checker) VALUES('" + userid + "', '" + productid + "', '" + newQuantity + "', '" + 1 + "' )";
+                  Function.gen = "INSERT INTO CartDb(userid, productid, quantity, checker) VALUES('" + userid + "', '" + productid + "', '" + numericUpandDown_Quantity.Value + "', '" + 1 + "' )";
                   Function.command = new SqlCommand(Function.gen, Connection.con);
                   Function.command.ExecuteNonQuery();
                   MessageBox.Show("Added to Cart");
@@ -110,16 +117,13 @@ namespace TestQua_Project__APP_.Customer
 
                Connection.con.Close();
                Connection.DB();
-               setQuantity = ProductQuantity - newQuantity;
-               Function.gen = "UPDATE Products SET Quantity = '" + setQuantity + "' WHERE productid = '" + productid + "' ";
+               setQuantity = ProductQuantity - (newQuantity - previousQuantity);
+               Function.gen = "UPDATE ProductInformation SET Quantity = '" + setQuantity + "' WHERE productid = '" + productid + "' ";
                Function.command = new SqlCommand(Function.gen, Connection.con);
                Function.command.ExecuteNonQuery();
                Connection.con.Close();
 
-
-               var viewproduct = new ViewProduct();
-               viewproduct.Show();
-               Close();
+               lblQuantity.Text = setQuantity.ToString();
             }
 
             catch (Exception ex)
@@ -127,46 +131,15 @@ namespace TestQua_Project__APP_.Customer
                MessageBox.Show(ex.Message);
             }
          }
-         else if (newQuantity > setMax + 1)
-         {
-            MessageBox.Show("Quantity out of range");
-         }
          else
          {
             MessageBox.Show("Please set the quantity first");
          }
       }
 
-      private void btnPlus_Click(object sender, EventArgs e)
+      private void numericUpandDown_Quantity_ValueChanged(object sender, EventArgs e)
       {
-         ++newQuantity;
-         txtQuantity.Text = newQuantity.ToString();
-      }
-
-      private void btnMinus_Click(object sender, EventArgs e)
-      {
-         --newQuantity;
-         txtQuantity.Text = newQuantity.ToString();
-      }
-
-      private void txtQuantity_TextChanged(object sender, EventArgs e)
-      {
-         try
-         {
-            if (Convert.ToInt32(txtQuantity.Text) < setMax + 1 && Convert.ToInt32(txtQuantity.Text) > setMin)
-            {
-               newQuantity = Convert.ToInt32(txtQuantity.Text);
-            }
-            else
-            {
-               MessageBox.Show("Quantity out of range, please redo setting quantity.");
-            }
-         }
-
-         catch (Exception ex)
-         {
-
-         }
+         newQuantity = Convert.ToInt32(numericUpandDown_Quantity.Value);
       }
    }
 }
